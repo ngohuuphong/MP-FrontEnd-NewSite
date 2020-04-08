@@ -16,7 +16,7 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>font-awesome.css">
     <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>slicknav.css">
     <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>style.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/main.css">

@@ -1,37 +1,51 @@
 <header>
     <div class="header-area ">
-        <div id="sticky-header" class="main-header-area">
-            <div class="container">
+        <div class="container">
+            <div id="sticky-header" class="main-header-area">
                 <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-2">
+                    <div class="col-md-3">
                         <div class="logo">
                             <a href="index.html">
                                 <img src="img/logo.png" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-7">
-                        <div class="main-menu  d-none d-lg-block">
+                    <div class="col-md-9">
+                        <div class="main-menu d-none d-lg-block">
                             <nav>
-                                <ul id="navigation">
-                                    <li><a class="active" href="#">home</a></li>
-                                    <li><a href="Department.html">Test</a></li>
-                                    <li><a href="#">Sub Menu <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Sub 1</a></li>
-                                            <li><a href="#">Sub 2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
+                                <div class="d-flex justify-content-end">
+                                    <ul id="navigation">
+                                        <li>
+                                            <a class="active" href="#">
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> <br/>
+                                                Home
+                                            </a>
+                                        </li> <li>
+                                            <a href="#">
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> <br/>
+                                                Menu
+                                            </a>
+                                        </li> <li>
+                                            <a href="#">
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> <br/>
+                                                Menu
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-arrow-left" aria-hidden="true"></i> <br/>
+                                                Menu
+                                            </a>
+                                        </li>
+                                        <li><a href="#"><i class="fa fa-bars menu_button" aria-hidden="true"></i></i></a>
+                                            <ul class="submenu">
+                                                <li><a href="#">Sub 1</a></li>
+                                                <li><a href="#">Sub 2</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </nav>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-                        <div class="Appointment">
-                            <div class="book_btn d-none d-lg-block">
-                                <a class="popup-with-form" href="#test-form">New Site</a>
-                            </div>
                         </div>
                     </div>
                     <div class="col-12">

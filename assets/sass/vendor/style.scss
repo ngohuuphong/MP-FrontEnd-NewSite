@@ -1,3 +1,7 @@
+body {
+    background-color: #dfe6e6;
+}
+
 @import 'varriable.scss';
 @import 'mixins.scss';
 @import 'extend';
@@ -31,3 +35,5 @@
 @import 'blog';
 // blog part
 @import 'blog_part';
+// left side bar
+@import 'leftside_bar';
