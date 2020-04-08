@@ -12,5 +12,6 @@ $cfg['site']['pages'] = [
     'page1',
     'page2',
     'page3',
+    'entryprise-student'
 ];
 ?>

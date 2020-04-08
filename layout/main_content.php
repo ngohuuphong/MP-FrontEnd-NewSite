@@ -1,7 +1,8 @@
 <div class="row">
     <?php 
+        $page = isset($_GET['page']) ? $_GET['page'] : null; 
         if(isset($page)){
-            $page = $_GET['page']; 
+            
             if($page == null) {
                 $view = 'index'; 
             }else{
