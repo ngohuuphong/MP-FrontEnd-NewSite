@@ -6,6 +6,9 @@
     background-color: white;
     padding-top: 5px;
     padding-bottom: 10px;
+    .container {
+        width: $page_width;
+    }
     .navbar-header {
         a {
             .img_logo {

@@ -8,6 +8,7 @@ $cfg['site']['pages'] = [
     'page1',
     'page2',
     'page3',
-    'entryprise-student'
+    'entryprise-student',
+    'dev_phong_page1'
 ];
 ?>
