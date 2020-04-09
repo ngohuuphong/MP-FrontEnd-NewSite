@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="<?php echo $cfg['assest_path']['css']; ?>style.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/main.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>
+    <?php endif; ?>
 </head>
 
 <body>
