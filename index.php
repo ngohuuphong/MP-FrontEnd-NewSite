@@ -11,15 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cfg['assest_path']['img']; ?>favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cfg['site']['assest_path']; ?>/image/favicon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/sidebar.css"/>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
         <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>
+        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/alert.css"/>
+        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/animation.css"/>
+        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/progress.css"/>
+        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/general.css"/>
     <?php endif; ?>
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
 </head>
