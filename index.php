@@ -17,6 +17,7 @@
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/sidebar.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
         <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>

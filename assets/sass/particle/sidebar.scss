@@ -1,0 +1,42 @@
+$text_color            : #00a3af;
+$text_color_hover      : #00a3af;
+$background_color      : #b8ddc0;
+$background_color_hover: #9dd29c;
+$font_weight_hover     : bold;
+$counter_color         : #fff;
+$counter_background    : #ff6c8e;
+
+
+
+.left-sidebar{
+    background-color: $background_color;
+    ul {
+        li{
+            a {
+                display  : block;
+                padding  : 20px 35px;
+                font-size: 16px;
+                color    : $text_color;
+                text-align: left;
+                vertical-align: middle;
+                line-height: 2;
+
+                i.fa, i.fas, i.fab{
+                    width: 30px;
+                    height: 20px;
+                }
+                .counter{
+                    color: $counter_color;
+                    background-color: $counter_background;
+                    border-radius: 3px;
+                    width: 30px;
+                }
+            }
+            a:hover{
+                color           : $text_color_hover;
+                background-color: $background_color_hover;
+                font-weight     : $font_weight_hover;
+            }
+        }
+    }
+}
