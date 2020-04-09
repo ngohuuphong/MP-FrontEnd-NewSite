@@ -11,13 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cfg['assest_path']['img']; ?>favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo $cfg['site']['assest_path']; ?>/image/favicon.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/font-awesome.css">
-    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/sidebar.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/sidebar.css"/>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
         <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>
@@ -48,9 +48,9 @@
     <!-- footer end  -->
     <!-- container end -->
     <!-- JS here -->
-    <script src="<?php echo $cfg['assest_path']['js']; ?>jquery-3.4.1.min.js"></script>
-    <script src="<?php echo $cfg['assest_path']['js']; ?>bootstrap.min.js"></script>
-    <script src="<?php echo $cfg['assest_path']['js']; ?>fontawesome.min.js"></script>
+    <script src="<?= $cfg['site']['assest_path'] ?>js/jquery-3.4.1.min.js"></script>
+    <script src="<?= $cfg['site']['assest_path'] ?>js/bootstrap.min.js"></script>
+    <script src="<?= $cfg['site']['assest_path'] ?>css/fontawesome.min.css"></script>
 </body>
 
 </html>

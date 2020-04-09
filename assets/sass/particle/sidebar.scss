@@ -11,6 +11,9 @@ $counter_background    : #ff6c8e;
 .left-sidebar{
     background-color: $background_color;
     ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
         li{
             a {
                 display  : block;
@@ -29,7 +32,8 @@ $counter_background    : #ff6c8e;
                     color: $counter_color;
                     background-color: $counter_background;
                     border-radius: 3px;
-                    width: 30px;
+                    padding: 2px 6px;
+                    margin-left: 10px;
                 }
             }
             a:hover{
