@@ -1,4 +1,8 @@
 .navbar {
+    z-index: 999;
+    -webkit-box-shadow: 0 8px 6px -6px #dfdfdf;
+    -moz-box-shadow: 0 8px 6px -6px #dfdfdf;
+    box-shadow: 0 8px 6px -6px #dfdfdf;
     background-color: white;
     padding-top: 5px;
     padding-bottom: 10px;
