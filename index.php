@@ -29,14 +29,14 @@
     <?php include 'layout/header.php'; ?>
     <!-- header-end -->
 
-    <div class="container">
+    <div class="container container_content">
         <!-- container start -->
         <div class="col-md-12 p-0">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <?php include 'layout/leftside_bar.php'; ?>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <?php include 'layout/main_content.php'; ?>
                 </div>
             </div>

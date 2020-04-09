@@ -1,6 +1,51 @@
-.menu_header {
+.navbar {
   background-color: white;
-  height: 80px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.navbar .navbar-header a .img_logo {
+  height: 60px;
+  width: auto;
+}
+.navbar .navbar-header a.navbar-brand {
+  padding: 0 0 0 30px;
+}
+.navbar .navbar-collapse ul li a {
+  padding: 0;
+  padding-left: 30px;
+  line-height: 18px;
+  text-align: center;
+}
+.navbar .navbar-collapse ul li a .img_logo {
+  height: 60px;
+  width: auto;
+}
+.navbar .navbar-collapse ul li a .img_avatar {
+  height: 45px;
+  width: 45px;
+  border-radius: 4px;
+}
+.navbar .navbar-collapse ul li a svg path {
+  color: #999999;
+}
+.navbar .navbar-collapse ul li a .iconbar {
+  width: 23px;
+}
+.navbar .navbar-collapse ul li a .icon-header {
+  width: 20px;
+}
+.navbar .navbar-collapse ul li a .icon-header.favorite {
+  width: 16px;
+}
+.navbar .navbar-collapse ul li a.img {
+  padding: 12px 0 0 5px;
+}
+.navbar .navbar-collapse ul.navbar-right {
+  padding-top: 20px;
+}
+
+.container_content {
+  padding-top: 57px;
 }
 
 /*# sourceMappingURL=style.css.map */
