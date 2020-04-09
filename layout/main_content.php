@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="main_content">
+    <div>
         <?php 
             $page = isset($_GET['page']) ? $_GET['page'] : null; 
             if($page == null) {

@@ -34,15 +34,13 @@
     <?php include 'layout/header.php'; ?>
     <!-- header-end -->
 
-    <div class="container_content">
-        <!-- container start -->
-        <div class="wrapper-main-content">
-            <div class="wrapper-sidebar">
-                <?php include 'layout/leftside_bar.php'; ?>
-            </div>
-            <div class="wrapper-content">
-                <?php include 'layout/main_content.php'; ?>
-            </div>
+    <!-- container start -->
+    <div class="wrapper-main-content">
+        <div class="wrapper-sidebar">
+            <?php include 'layout/leftside_bar.php'; ?>
+        </div>
+        <div class="wrapper-content">
+            <?php include 'layout/main_content.php'; ?>
         </div>
     </div>
 
