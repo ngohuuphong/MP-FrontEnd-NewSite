@@ -1,18 +1,64 @@
 <div class="entryprise-student">
     <h3 class="pannel-heading">エントリーシート</h3>
-イニシャル
-H.I.
-性別 女性
-生年月日
-平成 10年 10月09日(満 49歳) 現住所
-兵庫県
-希望勤務地 東京都・神奈川県・千葉県
-学校種別
-大学
-学歴
-2017年4月 トラスト大学トラスト学部生産学科 入学 2021年3月 トラスト大学トラスト学部生産学科 卒業
-職歴
-2021年4月 (株)トラストグロース ス 2022 年3月 (株)トラストグロース 退社
+    <div class="pannel-body">
+        <div class="wrapper-table">
+            <div class="account-info">
+                <div class="row-table-infor">
+                    <h4 class="thead">イニシャル</h4>
+                    <p class="information">H.I.</p>
+                    <h4 class="thead">性別</h4>
+                    <p class="information"> 女性 </p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">生年月日</h4>
+                    <p class="information">平成 10年 10月09日(満 49歳) </p>
+                    <h4 class="thead">現住所</h4>
+                    <p class="information"> 兵庫県 </p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">希望勤務地</h4>
+                    <p class="information">東京都・神奈川県・千葉県</p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">学校種別</h4>
+                    <p class="information">大学</p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">学歴</h4>
+                    <p class="information">
+                        2017年4月 トラスト大学トラスト学部生産学科 入学 <br> 
+                        2021年3月 トラスト大学トラスト学部生産学科 卒業
+                    </p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">職歴</h4>
+                    <p class="information">
+                        2021年4月 (株)トラストグロース ス <br> 
+                        2022 年3月 (株)トラストグロース 退社
+                    </p>
+                </div>
+                <div class="row-table-infor">
+                    <h4 class="thead">職歴</h4>
+                    <p class="information">
+                        2021年4月 (株)トラストグロース ス <br> 
+                        2022 年3月 (株)トラストグロース 退社
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+ 
+
+
+
+ 
+
+ 
 希望業種 希望職種
 化粧品・ファッション・冠婚葬祭 法人(ルート営業) ・個人(ルート営業)・個人(新規開拓)
 免許・資格
