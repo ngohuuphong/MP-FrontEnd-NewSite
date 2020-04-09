@@ -1,4 +1,5 @@
 <?php include 'config/config.php'; ?>
+<?php include 'helper/index.php' ?>
 
 <!doctype html>
 <html lang="en">
@@ -16,7 +17,6 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/sidebar.css"/>
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
@@ -34,16 +34,14 @@
     <?php include 'layout/header.php'; ?>
     <!-- header-end -->
 
-    <div class="container container_content">
+    <div class="container_content">
         <!-- container start -->
-        <div class="col-md-12 p-0">
-            <div class="row">
-                <div class="col-md-3">
-                    <?php include 'layout/leftside_bar.php'; ?>
-                </div>
-                <div class="col-md-9">
-                    <?php include 'layout/main_content.php'; ?>
-                </div>
+        <div class="wrapper-main-content">
+            <div class="wrapper-sidebar">
+                <?php include 'layout/leftside_bar.php'; ?>
+            </div>
+            <div class="wrapper-content">
+                <?php include 'layout/main_content.php'; ?>
             </div>
         </div>
     </div>
