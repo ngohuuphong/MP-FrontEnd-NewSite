@@ -1,11 +1,17 @@
-$background : 'blue';
+$background_pannel : #00a3af;
+$color_heading_pannel : #fff;
 
-.hung{
-    background-color: $background;
-    color: blue;
-    padding: 50px;
-    .ahihi{
-        text-align: center;
-        color: yellow
-    } 
+.entryprise-student{
+
+    margin-top: 150px;
+    background-color: #fff;
+    .pannel-heading{
+
+        background-color: $background_pannel;
+        color: $color_heading_pannel;
+        font-size: 18px;
+        padding: 20px 15px 10px 15px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
 }

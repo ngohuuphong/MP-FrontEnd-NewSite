@@ -9,6 +9,7 @@ $counter_background    : #ff6c8e;
 
 
 .left-sidebar{
+    height: 100vh;
     background-color: $background_color;
     ul {
         padding: 0;
@@ -16,6 +17,7 @@ $counter_background    : #ff6c8e;
         list-style: none;
         li{
             a {
+                text-decoration: none;
                 display  : block;
                 padding  : 20px 35px;
                 font-size: 16px;
@@ -44,3 +46,4 @@ $counter_background    : #ff6c8e;
         }
     }
 }
+
