@@ -16,11 +16,12 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/font-awesome.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>fontawesome/css/fontawesome.min.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
         <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>
     <?php endif; ?>
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
 </head>
 
 <body>
@@ -47,9 +48,8 @@
     <!-- footer end  -->
     <!-- container end -->
     <!-- JS here -->
-    <script src="<?php echo $cfg['assest_path']['js']; ?>jquery-3.4.1.min.js"></script>
-    <script src="<?php echo $cfg['assest_path']['js']; ?>bootstrap.min.js"></script>
-    <script src="<?php echo $cfg['assest_path']['js']; ?>fontawesome.min.js"></script>
+    <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo $cfg['site']['assest_path']; ?>js/bootstrap.min.js"></script>
 </body>
 
 </html>
