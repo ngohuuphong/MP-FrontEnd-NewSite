@@ -1,63 +1,69 @@
-.navbar {
+#header {
+  position: relative;
   z-index: 999;
   -webkit-box-shadow: 0 8px 6px -6px #dfdfdf;
   -moz-box-shadow: 0 8px 6px -6px #dfdfdf;
   box-shadow: 0 8px 6px -6px #dfdfdf;
   background-color: white;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  width: 960px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 10px 10px 0 10px;
 }
-.navbar .container {
-  width: 1000px;
+#header .header-left {
+  width: 250px;
+  display: inline;
 }
-.navbar .navbar-header a .img_logo {
-  height: 60px;
-  width: auto;
+#header .header-left a .img_logo {
+  width: 60px;
+  height: width;
 }
-.navbar .navbar-header a.navbar-brand {
-  padding: 0 0 0 30px;
+#header .header-right {
+  padding-top: 15px;
+  width: 710px;
+  float: right;
 }
-.navbar .navbar-collapse ul li a {
-  padding: 0;
-  padding-left: 30px;
-  line-height: 18px;
-  text-align: center;
+#header .header-right .avatar {
+  float: left;
+  width: 150px;
 }
-.navbar .navbar-collapse ul li a .img_logo {
-  height: 60px;
-  width: auto;
-}
-.navbar .navbar-collapse ul li a .img_avatar {
-  height: 45px;
+#header .header-right .avatar a .img_avatar {
   width: 45px;
-  border-radius: 4px;
+  height: width;
+  border-radius: 7px;
 }
-.navbar .navbar-collapse ul li a svg path {
+#header .header-right .menu {
+  float: right;
+  width: 560px;
+}
+#header .header-right .menu ul li {
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+  padding-left: 20px;
+  line-height: 18px;
+}
+#header .header-right .menu ul li a {
   color: #999999;
 }
-.navbar .navbar-collapse ul li a .iconbar {
-  width: 23px;
+#header .header-right .menu ul li a svg {
+  color: #999999;
 }
-.navbar .navbar-collapse ul li a .icon-header {
-  width: 20px;
+#header .header-right .menu ul li a svg.icon-bar {
+  width: 25px;
+  padding-bottom: 5px;
+  margin-left: 10px;
 }
-.navbar .navbar-collapse ul li a .icon-header.favorite {
-  width: 16px;
+#header .header-right .menu ul li a svg.icon-menu {
+  width: 18px;
 }
-.navbar .navbar-collapse ul li a.img {
-  padding: 12px 0 0 5px;
-}
-.navbar .navbar-collapse ul.navbar-right {
-  padding-top: 20px;
+#header .header-right .menu ul li a svg.icon-menu.favorite {
+  width: 14px;
 }
 
 .container_content {
   padding-top: 77px;
-  width: 1000px;
-}
-
-body {
-  background-color: #dfe6e6;
+  width: 960px;
 }
 
 .main_content .card-item {
