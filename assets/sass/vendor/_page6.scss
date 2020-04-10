@@ -1,10 +1,10 @@
 $container_margin: 15px;
 $card_height: 300px;
-$card_width: 250px;
-$card_margin: 7.5px;
-$card_border: 15px;
-$card_header_height: 40px;
-@mixin card_item($height: 100%, $width:100%, $borderRadius: 15px) {
+$card_width: 230px;
+$card_margin: 7px;
+$card_border: 20px;
+$card_header_height: 50px;
+@mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
     height: $height;
     width: $width;
     border-radius: $borderRadius;
@@ -12,7 +12,7 @@ $card_header_height: 40px;
 }
 
 @mixin card_item_header() {
-    height: 40px;
+    height: $card_header_height;
     width: 100%;
     background-color: #00a3af;
     border-top-left-radius: $card_border;
@@ -37,11 +37,12 @@ $card_header_height: 40px;
                 margin: $card_margin;
                 .header {
                     @include card_item_header();
-                    padding: 2px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     .icon_wrap {
-                        margin: 0 auto;
-                        width: $card_header_height - 4px;
-                        height: $card_header_height - 4px;
+                        width: 40px;
+                        height: 40px;
                         border-radius: 50%;
                         background-color: white;
                     }
@@ -50,14 +51,44 @@ $card_header_height: 40px;
                     @include card_item_content();
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
+                    justify-content: flex-start;
+                    align-items: center;
                     height: $card_height - $card_header_height;
-                    img {
-                        width: 100%;
-                        height: 100px;
-                        background-color: gray;
+                    div {
+                        position: relative;
+                        margin-top: 15px;
+                        width: 230px;
+                        height: 135px;
+                        img.img1 {
+                            width: 230px;
+                            height: 135px;
+                            background-color: gray;
+                        }
+                        img.img2 {
+                            width: 114px;
+                            width: 114px;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
                     }
-                    p {}
+                    p {
+                        margin: 0;
+                    }
+                    p.p1 {
+                        color: black;
+                        font-size: 14px;
+                        margin-top: 20px;
+                    }
+                    p.p2 {
+                        color: #FF6C8E;
+                        font-size: 12px;
+                        margin-top: 10px;
+                        padding: 2px 0;
+                        border: 3px solid #FF6C8E;
+                        border-radius: 5px;
+                    }
                 }
             }
         }
