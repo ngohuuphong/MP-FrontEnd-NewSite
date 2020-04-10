@@ -5,6 +5,7 @@ define('DS', DIRECTORY_SEPARATOR);
 // define the application path
 define('ROOT', dirname(dirname(__FILE__)));
 
+
 function includeSVG($pathname){
 
     $PATH_SVG = ROOT . DS ."layout". DS . "svg" . DS . $pathname . '.php';
@@ -26,4 +27,8 @@ function includeSVG($pathname){
     
     $svg = file_get_contents( $PATH_SVG );
     return '<span class ="icon-svg">' . $svg . "</span>";
+}
+function asset( $path = null){
+    global $cfg;
+    return $cfg['site']['assest_path'] . $path;
 }
