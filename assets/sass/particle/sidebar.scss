@@ -6,42 +6,40 @@ $font_weight_hover       : bold;
 $counter_color           : #fff;
 $counter_background      : #ff6c8e;
 $max_width_main_content  : 991px;
-
+$width_sidebar           : 270px;
 $background_color_defailt: #dfe6e6;
 
 
-$width_sidebar                  : 230px;
-$width_logo_sidebar           : 20px;
-$height_logo_sidebar           : 20px;
-
-
 .icon-svg{
-    display: inline-block;
-    margin-right  : 15px;
-    width         : $width_logo_sidebar;
-    height        : $height_logo_sidebar;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 15px;
 
     svg{
-        font-weight   : bold;
+        max-width: 28px;
+        max-height: 28px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
     }
 }
 .left-sidebar{
-    width           : $width_sidebar;
-    &.default{
-        background-color: $background_color;
-    }
+    width: $width_sidebar;
+    background-color: $background_color;
     ul {
         padding: 0;
         margin: 0;
         list-style: none;
         li{
             a {
+                vertical-align: middle;
                 text-decoration: none;
                 display  : block;
                 padding  : 20px 35px;
                 font-size: 16px;
                 color    : $text_color;
                 text-align: left;
+                line-height: 2;
 
                 i.fa, i.fas, i.fab{
                     width: 30px;
@@ -53,7 +51,6 @@ $height_logo_sidebar           : 20px;
                     border-radius: 3px;
                     padding: 2px 6px;
                     margin-left: 10px;
-                    font-weight: normal!important;
                 }
             }
             a:hover{

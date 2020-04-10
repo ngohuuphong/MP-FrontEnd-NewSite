@@ -1,61 +1,17 @@
-<aside class="left-sidebar default">
+<aside class="left-sidebar">
     <nav class="left-nav">
         <ul id="nav">
             <li class="current">
-                <a href="#welcome"> 
-                    <?= includeSVG("arrow-circle-up") ?>
-                    <span>トップ</span>
-                </a>
+                <a href="?page=page10"> <?= includeSVG("arrow-circle-up") ?>トップ</a>
             </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG("user-cog") ?> 
-                    <span>学生検索</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG("email") ?> 
-                    <span>メッセージ</span> 
-                    <span class="counter"> 14 </span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG("table") ?>
-                    <span>スケジュール管理</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG("edit-profile") ?>
-                    <span>企業公開ページ作成</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG("database") ?>
-                    <span>登録情報</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG('key-skeleton') ?>
-                    <span>パスワード変更</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG('question-circle') ?>
-                    <span>よくあるご質問</span>
-                </a>
-            </li>
-            <li>
-                <a href="#"> 
-                    <?= includeSVG('person-carry') ?>
-                    <span>ログアウト</span>
-                </a>
-            </li>
+            <li><a href="?page=page1"> <?= includeSVG("user-cog") ?> 学生検索</a></li>
+            <li><a href="?page=page9"> <?= includeSVG("email") ?> メッセージ <i class="counter"> 14 </i></a></li>
+            <li><a href="?page=page5"> <?= includeSVG("table") ?>スケジュール管理</a></li>
+            <li><a href="?page=page7"> <?= includeSVG("edit-profile") ?>企業公開ページ作成</a></li>
+            <li><a href="?page=page8"> <?= includeSVG("database") ?>登録情報</a></li>
+            <li><a href="?page=page4"> <?= includeSVG('key-skeleton') ?>パスワード変更</a></li>
+            <li><a href="?page=page3"> <?= includeSVG('question-circle') ?>よくあるご質問</a></li>
+            <li><a href="?page=page2"> <?= includeSVG('person-carry') ?>ログアウト</a></li>
         </ul>
     </nav>
 </aside>
