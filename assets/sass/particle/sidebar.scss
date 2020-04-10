@@ -9,10 +9,14 @@ $max_width_main_content  : 991px;
 
 $background_color_defailt: #dfe6e6;
 
+$sidebar_color : $text_color;
+$sidebar_background_color : $background_color;
+$sidebar_background_color_hover : $background_color_hover;
 
-$width_sidebar                  : 230px;
-$width_logo_sidebar           : 20px;
-$height_logo_sidebar           : 20px;
+
+$width_sidebar      : 230px;
+$width_logo_sidebar : 20px;
+$height_logo_sidebar: 20px;
 
 
 .icon-svg{
@@ -25,12 +29,10 @@ $height_logo_sidebar           : 20px;
         font-weight   : bold;
     }
 }
-.left-sidebar{
-    width           : $width_sidebar;
-    &.default{
-        background-color: $background_color;
-    }
-    ul {
+
+
+@mixin sidebar-link($color, $hover) {
+    ul.list-menu-sidebar {
         padding: 0;
         margin: 0;
         list-style: none;
@@ -40,9 +42,9 @@ $height_logo_sidebar           : 20px;
                 display  : block;
                 padding  : 20px 35px;
                 font-size: 16px;
-                color    : $text_color;
+                color    : $color;
                 text-align: left;
-
+    
                 i.fa, i.fas, i.fab{
                     width: 30px;
                     height: 20px;
@@ -57,11 +59,20 @@ $height_logo_sidebar           : 20px;
                 }
             }
             a:hover{
-                color           : $text_color_hover;
-                background-color: $background_color_hover;
+                
+                background-color: $hover;
                 font-weight     : $font_weight_hover;
             }
         }
+    }
+}
+.left-sidebar{
+    width           : $width_sidebar;
+
+    &.default{
+        background-color: $sidebar_background_color;
+
+        @include sidebar-link($sidebar_color, $sidebar_background_color_hover)
     }
 }
 
