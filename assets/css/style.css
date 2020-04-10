@@ -1,3 +1,67 @@
+.icon-svg {
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.icon-svg svg {
+  max-width: 28px;
+  max-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.left-sidebar {
+  width: 250px;
+  background-color: #b8ddc0;
+}
+.left-sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.left-sidebar ul li a {
+  vertical-align: middle;
+  text-decoration: none;
+  display: block;
+  padding: 20px 35px;
+  font-size: 16px;
+  color: #00a3af;
+  text-align: left;
+  line-height: 2;
+}
+.left-sidebar ul li a i.fa,
+.left-sidebar ul li a i.fas,
+.left-sidebar ul li a i.fab {
+  width: 30px;
+  height: 20px;
+}
+.left-sidebar ul li a .counter {
+  color: #fff;
+  background-color: #ff6c8e;
+  border-radius: 3px;
+  padding: 2px 6px;
+  margin-left: 10px;
+}
+.left-sidebar ul li a:hover {
+  color: #00a3af;
+  background-color: #9dd29c;
+  font-weight: bold;
+}
+
+.wrapper-main-content {
+  max-width: 960px;
+  display: flex;
+  margin: 0 auto;
+}
+.wrapper-main-content .wrapper-sidebar {
+  background-color: #b8ddc0;
+}
+.wrapper-main-content .wrapper-content {
+  background-color: #dfe6e6;
+  padding: 15px;
+}
+
 #header {
   position: relative;
   z-index: 999;
@@ -8,23 +72,23 @@
   width: 960px;
   height: 80px;
   margin: 0 auto;
-  padding: 10px 10px 0 10px;
+  padding: 10px 0 0 0;
+  display: flex;
 }
 #header .header-left {
   width: 250px;
-  display: inline;
 }
 #header .header-left a .img_logo {
   width: 60px;
   height: width;
 }
 #header .header-right {
+  display: flex;
   padding-top: 15px;
   width: 710px;
-  float: right;
 }
 #header .header-right .avatar {
-  float: left;
+  justify-content: flex-start;
   width: 150px;
 }
 #header .header-right .avatar a .img_avatar {
@@ -33,13 +97,16 @@
   border-radius: 7px;
 }
 #header .header-right .menu {
-  float: right;
+  justify-content: flex-end;
   width: 560px;
+}
+#header .header-right .menu ul {
+  display: flex;
+  justify-content: flex-end;
 }
 #header .header-right .menu ul li {
   text-align: center;
   list-style: none;
-  display: inline-block;
   padding-left: 20px;
   line-height: 18px;
 }
