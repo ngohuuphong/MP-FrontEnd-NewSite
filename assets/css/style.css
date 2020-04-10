@@ -1,68 +1,91 @@
 #header {
   position: relative;
   z-index: 999;
-  -webkit-box-shadow: 0 8px 6px -6px #dfdfdf;
-  -moz-box-shadow: 0 8px 6px -6px #dfdfdf;
-  box-shadow: 0 8px 6px -6px #dfdfdf;
+  -webkit-box-shadow: 0 8px 6px -6px lightgray;
+  -moz-box-shadow: 0 8px 6px -6px lightgray;
+  box-shadow: 0 8px 6px -6px lightgray;
   background-color: white;
   width: 980px;
-  height: 80px;
+  height: 73px;
   margin: 0 auto;
-  padding: 10px 0 0 0;
+  padding: 0;
   display: flex;
 }
 #header .header-left {
   width: 230px;
 }
 #header .header-left a .img_logo {
-  width: 60px;
+  margin: 7px;
+  width: 59px;
   height: width;
 }
 #header .header-right {
   display: flex;
-  padding-top: 15px;
   width: 750px;
 }
 #header .header-right .avatar {
   justify-content: flex-start;
-  width: 150px;
+  width: 300px;
+  margin-top: 22px;
+  align-items: center;
+}
+#header .header-right .avatar a {
+  text-decoration: none;
+  color: #999999;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 #header .header-right .avatar a .img_avatar {
-  width: 45px;
+  width: 35px;
   height: width;
-  border-radius: 7px;
+  border-radius: 3px;
+}
+#header .header-right .avatar a span {
+  font-size: 12px;
+  padding-left: 10px;
 }
 #header .header-right .menu {
   justify-content: flex-end;
-  width: 600px;
+  width: 450px;
 }
 #header .header-right .menu ul {
   display: flex;
   justify-content: flex-end;
   height: 30px;
+  padding-top: 22px;
+  margin: 0 24px 0 0;
 }
 #header .header-right .menu ul li {
   text-align: center;
   list-style: none;
-  padding-left: 20px;
   line-height: 18px;
+  padding-left: 10px;
 }
 #header .header-right .menu ul li a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 37px;
+}
+#header .header-right .menu ul li a .icon-menu {
+  height: 17px;
+  width: auto;
+}
+#header .header-right .menu ul li a .icon-menu.mess {
+  height: 14px;
+}
+#header .header-right .menu ul li a .icon-menu.bars {
+  height: 20px;
+  padding-left: 26px;
+  padding-bottom: 15px;
+}
+#header .header-right .menu ul li a span {
   color: #999999;
-}
-#header .header-right .menu ul li a svg {
-  color: #999999;
-}
-#header .header-right .menu ul li a svg.icon-bar {
-  width: 25px;
-  padding-bottom: 5px;
-  margin-left: 10px;
-}
-#header .header-right .menu ul li a svg.icon-menu {
-  width: 18px;
-}
-#header .header-right .menu ul li a svg.icon-menu.favorite {
-  width: 14px;
+  font-size: 12px;
+  padding-top: 7px;
 }
 
 body {
