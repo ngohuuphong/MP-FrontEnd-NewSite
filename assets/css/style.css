@@ -103,6 +103,7 @@
 #header .header-right .menu ul {
   display: flex;
   justify-content: flex-end;
+  height: 30px;
 }
 #header .header-right .menu ul li {
   text-align: center;
