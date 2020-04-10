@@ -63,6 +63,7 @@
   padding-left: 10px;
 }
 #header .header-right .menu ul li a {
+  position: relative;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -86,6 +87,18 @@
   color: #999999;
   font-size: 12px;
   padding-top: 7px;
+}
+#header .header-right .menu ul li a .popup {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  background-color: #F89938;
+  border-radius: 50%;
+  z-index: 999;
+  top: -15px;
+  right: 9px;
+  color: white;
+  font-size: 10px;
 }
 
 body {
