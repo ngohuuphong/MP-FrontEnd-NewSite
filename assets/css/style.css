@@ -12,7 +12,7 @@
 }
 
 .left-sidebar {
-  width: 250px;
+  width: 230px;
   background-color: #b8ddc0;
 }
 .left-sidebar ul {
@@ -50,7 +50,7 @@
 }
 
 .wrapper-main-content {
-  max-width: 960px;
+  max-width: 980px;
   display: flex;
   margin: 0 auto;
 }
@@ -69,14 +69,14 @@
   -moz-box-shadow: 0 8px 6px -6px #dfdfdf;
   box-shadow: 0 8px 6px -6px #dfdfdf;
   background-color: white;
-  width: 960px;
+  width: 980px;
   height: 80px;
   margin: 0 auto;
   padding: 10px 0 0 0;
   display: flex;
 }
 #header .header-left {
-  width: 250px;
+  width: 230px;
 }
 #header .header-left a .img_logo {
   width: 60px;
@@ -85,7 +85,7 @@
 #header .header-right {
   display: flex;
   padding-top: 15px;
-  width: 710px;
+  width: 750px;
 }
 #header .header-right .avatar {
   justify-content: flex-start;
@@ -98,7 +98,7 @@
 }
 #header .header-right .menu {
   justify-content: flex-end;
-  width: 560px;
+  width: 600px;
 }
 #header .header-right .menu ul {
   display: flex;
@@ -130,7 +130,7 @@
 }
 
 .container_content {
-  width: 960px;
+  width: 980px;
 }
 
 .main_content .card-item {
@@ -146,6 +146,64 @@
   width: 100%;
   height: 50px;
   border-radius: 15px;
+}
+
+.page6 section .cards_container {
+  margin: 15px auto;
+  width: 530px;
+  display: flex;
+}
+.page6 section .cards_container .card_item {
+  height: 300px;
+  width: 250px;
+  border-radius: 15px;
+  background-color: white;
+  margin: 7.5px;
+}
+.page6 section .cards_container .card_item .header {
+  height: 40px;
+  width: 100%;
+  background-color: #00a3af;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 2px;
+}
+.page6 section .cards_container .card_item .header .icon_wrap {
+  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+}
+.page6 section .cards_container .card_item .content {
+  width: 100%;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 260px;
+}
+.page6 section .cards_container .card_item .content img {
+  width: 100%;
+  height: 100px;
+  background-color: gray;
+}
+.page6 section .lists_container {
+  height: 300px;
+  width: 680px;
+  border-radius: 15px;
+  background-color: white;
+  margin: auto;
+}
+.page6 section .lists_container .header {
+  height: 40px;
+  width: 100%;
+  background-color: #00a3af;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
