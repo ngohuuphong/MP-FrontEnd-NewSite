@@ -1,0 +1,72 @@
+
+$btn_padding      : 8px 20px 6px;
+$btn_border_radius: 30px;
+
+$btn_primary_color       : #fff;
+$btn_primary_background  : #4472c4;
+$btn_primary_border      : 1px solid #fff;
+$btn_primary_border_hover: 1px solid #4472c4!important;
+
+
+
+@mixin button-render($color, $background, $border) {
+
+    color           : $color;
+    background-color: $background;
+    border          : $border;
+}
+@mixin button-hover($color, $background, $border) {
+    &:focus,
+    &.focus {
+        color           : $color;
+        background-color: $background;
+        border    : $border;
+    }
+    &:hover {
+        color           : $color;
+        background-color: $background;
+        border    : $border;
+    }
+}
+
+
+@mixin btn_custom($color , $background, $border, $borderRadius){
+
+    border-radius   : $borderRadius;
+    
+    @include button-render($color , $background, $border);
+}
+
+.btn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: $btn_padding;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: none;
+
+    &.btn-primary{
+
+        @include btn_custom($btn_primary_color, $btn_primary_background, $btn_primary_border, $btn_border_radius);
+        @include button-hover($btn_primary_background, $btn_primary_color, $btn_primary_border_hover);
+
+        &.light{
+            @include button-hover($btn_primary_color, $background_color_hover, $btn_primary_border);
+        }
+    }
+    
+}
