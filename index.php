@@ -35,7 +35,7 @@
 
     <!-- container start -->
     <div class="wrapper-main-content">
-        <div class="wrapper-sidebar">
+        <div class="wrapper-sidebar default">
             <?php include 'layout/leftside_bar.php'; ?>
         </div>
         <div class="wrapper-content">

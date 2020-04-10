@@ -5,14 +5,16 @@ $min_width_table_heading: 100px;
 
 .entryprise-student{
 
-    .pannel-heading{
+    .cart{
+        .cart-heading{
 
-        background-color       : $background_pannel;
-        color                  : $color_heading_pannel;
-        font-size              : 18px;
-        padding                : 20px 15px 10px 15px;
-        border-top-left-radius : 15px;
-        border-top-right-radius: 15px;
+            background-color       : $background_pannel;
+            color                  : $color_heading_pannel;
+            font-size              : 18px;
+            padding                : 20px 15px 10px 15px;
+            border-top-left-radius : 15px;
+            border-top-right-radius: 15px;
+        }
     }
     .pannel-body{
         
