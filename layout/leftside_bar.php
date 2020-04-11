@@ -1,8 +1,8 @@
 <aside class="left-sidebar">
     <nav class="left-nav">
         <ul class="list-menu-sidebar">
-            <li class="current">
-                <a href="#welcome" class="active"> 
+            <li class="active">
+                <a href="#welcome"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/top-page.png') ?>"  />
                         <img class="hover" src="<?= asset('image/top-page-hover.png') ?>"  />

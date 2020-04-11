@@ -1,115 +1,130 @@
-$text_color              : #00a3af;
-$text_color_hover        : #00a3af;
-$background_color        : #b8ddc0;
-$background_color_hover  : #9dd29c;
-$font_weight_hover       : bold;
-$counter_color           : #fff;
-$counter_background      : #ff6c8e;
-$max_width_main_content  : 991px;
-$background_color_defailt: #dfe6e6;
 
-$sidebar_color                 : $text_color;
-$sidebar_background_color      : $background_color;
-$sidebar_background_color_hover: $background_color_hover;
+@function convert($value, $convertUnit){
+    $currentUnit: unit($value);
 
-
-$sidebar_primary_color                 : #fff;
-$sidebar_background_primary_color      : #4472c4;
-$sidebar_background_primary_color_hover: #426ab3;
-
-$sidebar_background_color_active : #9dd29c;
-/// BIZ UDゴシック
-
-
-$width_sidebar      : 230px;
-$width_logo_sidebar : 20px;
-$height_logo_sidebar: 20px;
-
-$fontsize : 14px;
-
-
-.icon-svg{
-    text-align: center;
-    vertical-align: middle;
-
-    svg{
-        width     : $width_logo_sidebar;
-        height    : $height_logo_sidebar;
-        text-align    : center;
-        vertical-align: middle;
-        font-weight   : bold;
+    @if $currentUnit == px{
+        @if $convertUnit == ems{
+            @return $value / 16 + 0em;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value / 16);
+        }
+    }@else if $currentUnit == ems{
+  
+        @if $convertUnit == px{
+            @return $value * 16 + 0px;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value);
+        }
+  
+    }@else if $currentUnit == percent{
+  
+        @if $convertUnit == px{
+            @return $value * 16 / 100 + 0px;
+        }
+        @else if $convertUnit == ems{
+            @return $value / 100 + 0em;
+        }
+  
+    }@else if $currentUnit == pt{
+  
+        @if $convertUnit == px{
+            @return $value * 1.3281472 + 0px;
+        }
+        @else if $convertUnit == ems{
+            @return $value / 12 + 0em;
+        }
+        @else if $convertUnit == percent{
+            @return percentage($value / 12)
+        }
+  
     }
 }
 
 
-@mixin sidebar-link($color,$active,  $hover) {
+
+$GREEN_DARK : #9DD29C;
+$GREEN_LIGHT: #B8DDC0;
+$GREEN      : #00A3AF;
+$PINK       : #ff6c8e;
+$WHITE      : #ffffff;
+$BLUE_DARK  : #426AB3;
+$BLUE_LIGHT : #4472C4;
+$ORIGINAL   : #F7931E;
+
+$WIDTH_CONTENT      : 980px;
+$WIDTH_SIDEBAR      : 300px;
+$WIDTH_LOGO_SIDEBAR : 20px;
+$HEIGHT_LOGO_SIDEBAR: 20px;
+
+$FONT_SIZE_SIDEBAR         : convert(13pt ,px);
+$BORDER                    : 1px solid transparent;
+
+
+@mixin sidebar-link( $color, $background) {
+
+    zoom            : 1;
+    text-decoration : none;
+    display         : block;
+    padding         : 19px 10px 19px 19px;
+    font-size       : $FONT_SIZE_SIDEBAR;
+    text-align      : left;
+    color           : $color;
+    border          : $BORDER;
+    background-color: $background;
+
+    &:after {
+        clear      : both;
+        content    : ".";
+        display    : block;
+        height     : 0;
+        line-height: 0;
+        visibility : hidden;
+        overflow   : hidden;
+    }
+    span{
+        color           : $color;
+    }
+}
+@mixin sidebar( $color, $background, $activeColor, $activeBackground, $hoverColor, $hoverBackground) {
     ul.list-menu-sidebar {
-        padding: 0;
-        margin: 0;
+        padding   : 0;
+        margin    : 0;
         list-style: none;
         li{
-            a:after {
-                clear: both;
-                content: ".";
-                display: block;
-                height: 0;
-                line-height: 0;
-                visibility: hidden;
-                overflow: hidden;
-            }
-            a {
-                zoom: 1;
-                vertical-align: middle;
-                text-decoration: none;
-                display  : block;
-                padding  : 19px;
-                font-size: $fontsize;
-                color    : $color;
-                text-align: left;
-    
-                span {
-                    float: left;
-                    padding-top: 5px;
-                }
-                .counter{
-                    color: $counter_color;
-                    background-color: $counter_background;
-                    border-radius: 3px;
-                    padding: 2px 6px;
-                    margin-left: 10px;
-                }
+            @include sidebar-link($color, $background);
+
+            &.active{
+
+                @include sidebar-link($activeColor, $activeBackground);
 
                 .icon-sidebar{
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 15px;
-                    padding-top: 0;
-    
+
                     img:nth-child(1){
-                        display: block;
+
+                        display: none!important;
                     }
                     img:nth-child(2){
-                        display: none;
+
+                        display: block!important;
                     }
                 }
             }
-            a.active{
-                
-                background-color: $active;
+            &:hover{
+                @include sidebar-link($hoverColor, $hoverBackground);
 
                 .icon-sidebar{
-    
+
                     img:nth-child(1){
-                        display: none;
+
+                        display: none!important;
                     }
                     img:nth-child(2){
-                        display: block;
+
+                        display: block!important;
                     }
                 }
-            }
-            a:hover{
-                
-                background-color: $hover;
             }
         }
     }
@@ -117,30 +132,55 @@ $fontsize : 14px;
 
 
 .wrapper-main-content{
-    max-width: $max_width_main_content;
+    max-width: $WIDTH_CONTENT;
     display: flex;
     margin: 0 auto;
     
     .wrapper-sidebar{
-        background-color: $background_color;
         .left-sidebar{
 
-            width           : $width_sidebar;
+            width           : $WIDTH_SIDEBAR;
         }
         &.default{
-            background-color: $sidebar_background_color;
+            background-color: $GREEN_LIGHT;
     
-            @include sidebar-link($sidebar_color, $sidebar_background_color_active ,$sidebar_background_color_hover)
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $WHITE, $BLUE_LIGHT );
+
+            span {
+
+                float      : left;
+                padding-top: 0;
+            }
+            span.counter{
+                color           : $WHITE!important;
+                background-color: $PINK;
+                border-radius   : 3px;
+                padding         : 2px 6px;
+                margin-left     : 10px;
+            }
+            .icon-sidebar{
+                padding-top : 5px;
+                width       : 24px;
+                height      : 24px;
+                margin-right: 15px;
+
+                img:nth-child(1){
+                    display: block;
+                }
+                img:nth-child(2){
+                    display: none;
+                }
+            }
         }
 
-        &.primary{
-            background-color: $sidebar_background_primary_color;
+        // &.primary{
+        //     background-color: $sidebar_background_primary_color;
     
-            @include sidebar-link($sidebar_primary_color, $sidebar_background_color_active ,$sidebar_background_primary_color_hover)
-        }
+        //     @include sidebar-link($sidebar_primary_color, $sidebar_background_color_active ,$sidebar_background_primary_color_hover)
+        // }
     }
     .wrapper-content{
-        background-color: $background_color_defailt;
+        background-color: #f2f2f2;
         padding: 15px;
         flex-grow: 999;
     }
