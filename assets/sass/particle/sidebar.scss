@@ -54,13 +54,22 @@ $BLUE_LIGHT : #4472C4;
 $ORIGINAL   : #F7931E;
 
 $WIDTH_CONTENT      : 980px;
-$WIDTH_SIDEBAR      : 300px;
+$WIDTH_SIDEBAR      : 230px;
 $WIDTH_LOGO_SIDEBAR : 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 
-$FONT_SIZE_SIDEBAR         : convert(13pt ,px);
+$FONT_SIZE_SIDEBAR         : convert(10pt ,px);
 $BORDER                    : 1px solid transparent;
 
+@mixin clearfix(){
+    clear      : both;
+    content    : ".";
+    display    : block;
+    height     : 0;
+    line-height: 0;
+    visibility : hidden;
+    overflow   : hidden;
+}
 
 @mixin sidebar-link( $color, $background) {
 
@@ -75,13 +84,7 @@ $BORDER                    : 1px solid transparent;
     background-color: $background;
 
     &:after {
-        clear      : both;
-        content    : ".";
-        display    : block;
-        height     : 0;
-        line-height: 0;
-        visibility : hidden;
-        overflow   : hidden;
+        @include clearfix()
     }
     span{
         color           : $color;
@@ -184,4 +187,87 @@ $BORDER                    : 1px solid transparent;
         padding: 15px;
         flex-grow: 999;
     }
+}
+
+
+.calendar-table{
+    display: block;
+    background-color: #CCCCCC;
+    .calendar-table-header{
+
+        color : $WHITE;
+        background-color: #4472C4;
+    }
+    .calendar-wrapper-row{
+        display: block;
+        .calendar-row{
+            display: block;
+            .calendar-cell{
+                width     : 14%;
+                min-height: 50px;
+                border    : 1px solid #fff;
+                display   : inline-block;
+            }
+            .calendar-today{
+                background-color: $GREEN !important;
+            }
+            .calendar-sunday{
+                background-color: $PINK ;
+            }
+            .calendar-satday{
+                background-color: $BLUE_DARK ;
+            }
+        }
+    }
+    .calendar-list-header{
+        padding        : 0;
+        margin         : 0;
+        list-style-type: none;
+        width          : 100%;
+        overflow-x     : scroll;
+        text-align     : center;
+        margin         : 0 auto;
+
+        li{
+            float: left;
+            width : 14%;
+            zoom   : 1;
+            padding: 5px 8px;
+            cursor: pointer;
+
+            &::after{
+                @include clearfix()
+            }
+        }
+    }
+    .calendar-footer{
+        padding        : 0;
+        margin         : 0;
+        list-style-type: none;
+        width          : 100%;
+        overflow-x     : scroll;
+        text-align     : center;
+        margin         : 0 auto;
+        
+
+        li{
+            display: block;
+            float  : left;
+            zoom   : 1;
+            padding: 5px 8px;
+            cursor: pointer;
+
+            &::after{
+                @include clearfix()
+            }
+        }
+
+    }
+    
+}
+
+*,
+ :after,
+ :before {
+    box-sizing: border-box;
 }
