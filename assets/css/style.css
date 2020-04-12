@@ -1,4 +1,21 @@
+@font-face {
+  font-family: NotoSansCJKjp;
+  src: url("../fonts/NotoSansCJKjp-Light.otf");
+}
+@font-face {
+  font-family: KozukaGothicPr6N;
+  src: url("../fonts/-pr6n-r_569.otf");
+}
+body {
+  margin: 0;
+}
+
+.container_content {
+  width: 980px;
+}
+
 #header {
+  font-family: NotoSansCJKjp;
   position: relative;
   z-index: 999;
   -webkit-box-shadow: 0 8px 6px -6px lightgray;
@@ -53,14 +70,14 @@
   display: flex;
   justify-content: flex-end;
   height: 30px;
-  padding-top: 22px;
+  padding-top: 23px;
   margin: 0 24px 0 0;
 }
 #header .header-right .menu ul li {
   text-align: center;
   list-style: none;
   line-height: 18px;
-  padding-left: 10px;
+  padding-left: 11px;
 }
 #header .header-right .menu ul li a {
   position: relative;
@@ -71,42 +88,42 @@
   align-items: center;
   height: 37px;
 }
-#header .header-right .menu ul li a .icon-menu {
+#header .header-right .menu ul li a .icon-container {
+  position: relative;
   height: 17px;
-  width: auto;
+  width: 17px;
 }
-#header .header-right .menu ul li a .icon-menu.mess {
-  height: 14px;
-}
-#header .header-right .menu ul li a .icon-menu.bars {
-  height: 20px;
-  padding-left: 26px;
-  padding-bottom: 15px;
-}
-#header .header-right .menu ul li a span {
-  color: #999999;
-  font-size: 12px;
-  padding-top: 7px;
-}
-#header .header-right .menu ul li a .popup {
+#header .header-right .menu ul li a .icon-container .popup {
   width: 17px;
   height: 17px;
   position: absolute;
   background-color: #F89938;
   border-radius: 50%;
   z-index: 999;
-  top: -15px;
-  right: 9px;
+  top: -11px;
+  right: -11px;
   color: white;
-  font-size: 10px;
+  font-size: 9px;
 }
-
-body {
-  margin: 0;
+#header .header-right .menu ul li a .icon-menu {
+  height: 17px;
+  width: auto;
 }
-
-.container_content {
-  width: 980px;
+#header .header-right .menu ul li a .icon-menu.mess {
+  height: 13px;
+  width: auto;
+}
+#header .header-right .menu ul li a .icon-menu.bars {
+  height: 20px;
+  width: 23px;
+  padding-left: 26px;
+  padding-bottom: 15px;
+}
+#header .header-right .menu ul li a span {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 400;
+  padding-top: 7px;
 }
 
 .main_content .card-item {
@@ -124,6 +141,9 @@ body {
   border-radius: 15px;
 }
 
+.page6 {
+  font-family: KozukaGothicPr6N;
+}
 .page6 section .cards_container {
   margin: 15px auto;
   width: 488px;
@@ -194,13 +214,37 @@ body {
   color: #FF6C8E;
   font-size: 12px;
   margin-top: 10px;
-  padding: 2px 0;
+  padding: 1px 0;
   border: 3px solid #FF6C8E;
   border-radius: 5px;
 }
+.page6 section .cards_container .card_item .content .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 53px;
+  margin-top: 42px;
+}
+.page6 section .cards_container .card_item .content .item .title {
+  font-size: 15px;
+  line-height: 15px;
+}
+.page6 section .cards_container .card_item .content .item .num {
+  font-size: 23px;
+  line-height: 23px;
+  margin-top: 22px;
+  color: #FF6C8E;
+  display: flex;
+  align-items: center;
+}
+.page6 section .cards_container .card_item .content .item .num span {
+  padding-left: 4px;
+  font-size: 13px;
+  line-height: 13px;
+}
 .page6 section .lists_container {
-  height: 300px;
-  width: 680px;
+  height: 290px;
+  width: 718px;
   border-radius: 20px;
   background-color: white;
   margin: auto;
@@ -211,7 +255,32 @@ body {
   background-color: #00a3af;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  height: 42px;
   background-color: white;
+  display: flex;
+  align-items: center;
+}
+.page6 section .lists_container .header span {
+  margin-left: 26px;
+}
+.page6 section .lists_container .content {
+  height: 240px;
+  width: 703px;
+  overflow-y: scroll;
+}
+.page6 section .lists_container .content .item_container {
+  background-color: white;
+  height: 72px;
+  width: 650px;
+  border: 0.5px solid #999999;
+  border-radius: 12px;
+  margin: 0 0 7px 22px;
+}
+.page6 section .lists_container .content .item_container .image_div {
+  height: calc(100% - 6px);
+  width: 78px;
+  border-right: 0.5px solid #49BC1F;
+  margin: 3px 0 3px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

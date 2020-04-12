@@ -1,4 +1,5 @@
 #header {
+    font-family: NotoSansCJKjp;
     position: relative;
     z-index: 999;
     -webkit-box-shadow: 0 8px 6px -6px lightgray;
@@ -52,13 +53,13 @@
                 display: flex;
                 justify-content: flex-end;
                 height: 30px;
-                padding-top: 22px;
+                padding-top: 23px;
                 margin: 0 24px 0 0;
                 li {
                     text-align: center;
                     list-style: none;
                     line-height: 18px;
-                    padding-left: 10px;
+                    padding-left: 11px;
                     a {
                         position: relative;
                         text-decoration: none;
@@ -67,34 +68,42 @@
                         justify-content: flex-end;
                         align-items: center;
                         height: 37px;
+                        .icon-container {
+                            position: relative;
+                            height: 17px;
+                            width: 17px;
+                            .popup {
+                                width: 17px;
+                                height: 17px;
+                                position: absolute;
+                                background-color: #F89938;
+                                border-radius: 50%;
+                                z-index: 999;
+                                top: -11px;
+                                right: -11px;
+                                color: white;
+                                font-size: 9px;
+                            }
+                        }
                         .icon-menu {
                             height: 17px;
                             width: auto;
                         }
                         .icon-menu.mess {
-                            height: 14px;
+                            height: 13px;
+                            width: auto;
                         }
                         .icon-menu.bars {
                             height: 20px;
+                            width: 23px;
                             padding-left: 26px;
                             padding-bottom: 15px;
                         }
                         span {
                             color: $menu_color;
                             font-size: 12px;
+                            font-weight: 400;
                             padding-top: 7px;
-                        }
-                        .popup {
-                            width: 17px;
-                            height: 17px;
-                            position: absolute;
-                            background-color: #F89938;
-                            border-radius: 50%;
-                            z-index: 999;
-                            top: -15px;
-                            right: 9px;
-                            color: white;
-                            font-size: 10px;
                         }
                     }
                 }

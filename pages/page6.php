@@ -42,9 +42,23 @@
     <section>
         <div class="lists_container">
             <div class="header">
-                
+                <span>ピックアップ</span>
             </div>
             <div class="content">
+                <div class="item_container">
+                    <div class="image_div">
+
+                    </div>
+                    <div class="content_body">
+
+                    </div>
+                </div>
+                <div class="item_container">
+                    
+                </div>
+                <div class="item_container">
+                    
+                </div>
                 <div class="item_container">
                     
                 </div>

@@ -14,15 +14,19 @@
                     <ul>
                         <li>
                             <a href="../navbar-static-top/">
-                                <img class="icon-menu notice" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_notice.png" alt=""/>
-                                <div class="popup">5</div>
+                                <div class="icon-container">
+                                    <img class="icon-menu notice" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_notice.png" alt=""/>
+                                    <div class="popup">5</div>
+                                </div>
                                 <span>お知らせ</span>
                             </a>
                         </li>
                         <li>
                             <a href="../navbar-static-top/" class="showpopup">
-                                <img class="icon-menu mess" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_mess.png" alt=""/>
-                                <div class="popup">14</div>
+                                <div class="icon-container">
+                                    <img class="icon-menu mess" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_mess.png" alt=""/>
+                                    <div class="popup">14</div>
+                                </div>
                                 <span class="msg">メッセージ</span>
                             </a>
                         </li>

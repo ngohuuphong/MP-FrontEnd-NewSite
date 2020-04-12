@@ -27,6 +27,7 @@ $card_header_height: 50px;
 }
 
 .page6 {
+    font-family: KozukaGothicPr6N;
     section {
         .cards_container {
             margin: $container_margin auto;
@@ -85,19 +86,68 @@ $card_header_height: 50px;
                         color: #FF6C8E;
                         font-size: 12px;
                         margin-top: 10px;
-                        padding: 2px 0;
+                        padding: 1px 0;
                         border: 3px solid #FF6C8E;
                         border-radius: 5px;
+                    }
+                    .item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: 53px;
+                        margin-top: 42px;
+                        .title {
+                            font-size: 15px;
+                            line-height: 15px;
+                        }
+                        .num {
+                            font-size: 23px;
+                            line-height: 23px;
+                            margin-top: 22px;
+                            color: #FF6C8E;
+                            display: flex;
+                            align-items: center;
+                            span {
+                                padding-left: 4px;
+                                font-size: 13px;
+                                line-height: 13px;
+                            }
+                        }
                     }
                 }
             }
         }
         .lists_container {
-            @include card_item(300px, 680px);
+            @include card_item(290px, 718px);
             margin: auto;
             .header {
                 @include card_item_header();
+                height: 42px;
                 background-color: white;
+                display: flex;
+                align-items: center;
+                span {
+                    margin-left: 26px;
+                }
+            }
+            .content {
+                height: 240px;
+                width: 703px;
+                overflow-y: scroll;
+                .item_container {
+                    background-color: white;
+                    height: 72px;
+                    width: 650px;
+                    border: 0.5px solid #999999;
+                    border-radius: 12px;
+                    margin: 0 0 7px 22px;
+                    .image_div {
+                        height: calc(100% - 6px);
+                        width: 78px;
+                        border-right: 0.5px solid #49BC1F;
+                        margin: 3px 0 3px 0;
+                    }
+                }
             }
         }
     }
