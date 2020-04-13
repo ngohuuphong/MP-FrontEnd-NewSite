@@ -3,7 +3,7 @@ $card_height: 500px;
 $card_width: 718px;
 $card_margin: 7px;
 $card_border: 20px;
-$card_header_height: 50px;
+$card_header_height: 41px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
     height: $height;
     width: $width;
@@ -40,8 +40,18 @@ $card_header_height: 50px;
                 .header {
                     @include card_item_header();
                     display: flex;
-                    justify-content: center;
+                    justify-content: flex-start;
                     align-items: center;
+                    img {
+                        height: 20px;
+                        width: auto;
+                        margin-left: 23px;
+                    }
+                    span {
+                        margin-left: 10px;
+                        font-size: convert(14pt, px);
+                        color: white;
+                    }
                 }
                 .content {
                     @include card_item_content();
