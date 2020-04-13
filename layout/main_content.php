@@ -1,18 +1,27 @@
 <div class="row">
     <div>
-        <?php 
-            $page = isset($_GET['page']) ? $_GET['page'] : null; 
-            if($page == null) {
-                $view = 'index'; 
-            }else{
-                $list_page = $cfg['site']['pages'];
-                foreach($list_page as $itm){
-                    if($itm == $page){
-                        $view = $page;
-                    }
+        <?php
+        
+            // define the directory separator
+            define('DS', DIRECTORY_SEPARATOR);
+            // define the application path
+            define('ROOT', dirname(dirname(__FILE__))); 
+
+            $page = isset($_GET['page']) ? $_GET['page'] : 'index'; 
+            
+            $PATH_VIEW = ROOT . DS . 'pages' . DS . $page . '.php';
+            $valid = file_exists( $PATH_VIEW );
+            // if we cannot find any, then find library/core directory
+            if(!$valid){
+
+                $PATH_VIEW = ROOT . DS . 'pages' . DS . 'index' . '.php';
+                $valid = file_exists($PATH_VIEW);
+
+                if(!$valid){
+                    return '';
                 }
             }
-            include 'pages/' . $view . '.php';
+            include $PATH_VIEW;
         ?>
     </div>
 </div>

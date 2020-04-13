@@ -1,10 +1,5 @@
 <?php 
 
-// define the directory separator
-define('DS', DIRECTORY_SEPARATOR);
-// define the application path
-define('ROOT', dirname(dirname(__FILE__)));
-
 
 function includeSVG($pathname){
 
