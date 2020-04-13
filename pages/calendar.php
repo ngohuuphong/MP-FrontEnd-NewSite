@@ -1,6 +1,7 @@
 <div id="draw-calendar"></div>
 
 
+
 <script>
 
 
@@ -29,6 +30,8 @@ function Calendar() {
     this.labelDays  = ["日", "月", "火", "水", "木", "金", "土"];
     this.labelYear  = '年';
     this.labelMonth = '月';
+
+    this.modalEvent = '#js-modal-event';
 
     this.data = {
         '2020' : {
@@ -97,7 +100,10 @@ function Calendar() {
 
         this.selector = _selector;
     }
+    this.setModalEvent = function( _selector ){
 
+        this.modalEvent = _selector;
+    }
     // check how many days in a month code
     this.daysInMonth = function (iMonth, iYear) {
 
@@ -276,10 +282,30 @@ function Calendar() {
             textPlus.addEventListener("click", function() {
 
                 /// show popup
-                alert(instance.selectYear + " " +instance.selectMonth + " " + date);
-                /// mở được 1 csia popup 
-                /// trong cái popup có nut ok 
-                instance.setInstanceToGlobal(OBJECT_DATA)
+                if(!instance.modalEvent){
+                    alert('modal not setting');
+                    return false;
+                }
+                console.log(instance.modalEvent);
+                $(instance.modalEvent).modal({
+                    escapeClose: false,
+                    clickClose: false,
+                    showClose: false
+                });
+                (function(_month, instance){
+
+                    document.getElementById("myBtn").addEventListener("click", function(){
+                        document.getElementById("demo").innerHTML = "Hello World";
+                    });
+
+                    link.addEventListener("click", function() {
+
+                        instance.setSelectMonth(_month);
+                        instance.draw();
+                    }, false);
+                })(month , this);
+                
+                // instance.setInstanceToGlobal(OBJECT_DATA)
 
             }, false);
         })(this.dateLoop, this);
@@ -386,6 +412,7 @@ var selector = document.getElementById('draw-calendar')
 
 var insatnceCalendar = new Calendar();
 insatnceCalendar.setElementDraw(selector);
+
 insatnceCalendar.draw();
 
 
