@@ -10,6 +10,10 @@ $BLUE_DARK  : #426AB3;
 $BLUE_LIGHT : #4472C4;
 $ORIGINAL   : #F7931E;
 
+$PINK_LIGHT : #FFD0F6;
+$BLUE_BERIN : #C4EDED;
+$YELLOW_BE  : #FFFFB7;
+
 $WIDTH_CONTENT      : 980px;
 $WIDTH_SIDEBAR      : 230px;
 $WIDTH_LOGO_SIDEBAR : 20px;
@@ -93,8 +97,8 @@ $BORDER                    : 1px solid transparent;
 
 .wrapper-main-content{
     max-width: $WIDTH_CONTENT;
-    display: flex;
-    margin: 0 auto;
+    display  : flex;
+    margin   : 0 auto;
     
     .wrapper-sidebar{
         .left-sidebar{
@@ -115,11 +119,11 @@ $BORDER                    : 1px solid transparent;
                 color           : $WHITE!important;
                 background-color: $PINK;
                 border-radius   : 3px;
-                width: 22px;
-                height: 17px;
-                padding: 0 3px;
-                margin-left: 10px;
-                font-size:  convert(11pt , px );
+                width           : 22px;
+                height          : 17px;
+                padding         : 2px 3px;
+                margin-left     : 10px;
+                font-size       : convert(11pt , px );
             }
             .icon-sidebar{
                 padding-top : 0;
@@ -165,17 +169,22 @@ $BORDER                    : 1px solid transparent;
             .calendar-cell{
                 width     : 14%;
                 min-height: 50px;
-                border    : 1px solid #fff;
+                border    : 1px solid transparent;
+                background-color: $WHITE;
                 display   : inline-block;
+                margin: 1px;
+            }
+            .calendar-cell-disable{
+                background-color: #746f6f;
             }
             .calendar-today{
-                background-color: $GREEN !important;
+                background-color: $YELLOW_BE !important;
             }
             .calendar-sunday{
-                background-color: $PINK ;
+                background-color: $PINK_LIGHT ;
             }
             .calendar-satday{
-                background-color: $BLUE_DARK ;
+                background-color: $BLUE_BERIN ;
             }
         }
     }
@@ -184,13 +193,12 @@ $BORDER                    : 1px solid transparent;
         margin         : 0;
         list-style-type: none;
         width          : 100%;
-        overflow-x     : scroll;
         text-align     : center;
         margin         : 0 auto;
 
         li{
             float: left;
-            width : 14%;
+            width : 14.2857%;
             zoom   : 1;
             padding: 5px 8px;
             cursor: pointer;
@@ -205,7 +213,6 @@ $BORDER                    : 1px solid transparent;
         margin         : 0;
         list-style-type: none;
         width          : 100%;
-        overflow-x     : scroll;
         text-align     : center;
         margin         : 0 auto;
         
@@ -227,7 +234,7 @@ $BORDER                    : 1px solid transparent;
 }
 @font-face {
     font-family: 'Hiragino Kaku Gothic Pro';
-    src:url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
+    src:url('../fonts/hiragino-kaku-gothic-pron-w3.otf')
 }
 *,
  :after,
