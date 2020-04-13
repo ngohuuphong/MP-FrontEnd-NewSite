@@ -27,6 +27,21 @@ function Calendar() {
     this.labelYear  = '年';
     this.labelMonth = '月';
 
+    this.data = {
+        '2020' : {
+            '01' : {
+                '05' : [
+                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                ]
+            },
+            '04' : {
+                '14' : [
+                    { 'start' : '06:00', 'end' : '17:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                ]
+            }
+        }
+    };
+
     this.classCell       = 'calendar-cell';
     this.classRow        = 'calendar-row';
     this.classInToday    = 'calendar-today';
@@ -196,10 +211,29 @@ function Calendar() {
         }
         else if (this.dateLoop > this.daysInMonth(this.selectMonth, this.selectYear)) {
 
-            cell = -1;
+            cell.classList.add('calendar-cell-disable');
+            cell.innerHTML = '&nbsp;';
         } else {
 
-            cell.innerHTML = this.dateLoop;
+            var textCell           = document.createElement("span");
+                textCell.innerHTML = (this.selectMonth + 1) + "/" + this.dateLoop;
+            
+            if(this.data){
+                if(typeof this.data[this.selectYear] != 'undefined'){
+
+                    if(typeof this.data[this.selectYear][this.formatZeroBefore(this.selectMonth + 1)] != 'undefined'){
+
+                        if(typeof this.data[this.selectYear][this.selectMonth+ 1][this.dateLoop] != 'undefined'){
+
+                            console.log(this.data[this.selectYear])
+                            var dataEvents = this.data[this.selectYear][this.selectMonth][this.dateLoop];
+                            console.log(dataEvents)
+                        }
+                    }
+                }
+            }
+
+            cell.appendChild(textCell);
             // color today's date
             if(this.checkToday()){
                 cell.classList.add(this.classInToday);
@@ -216,6 +250,12 @@ function Calendar() {
             this.dateLoop++;
         }
         return cell;
+    }
+    this.formatZeroBefore = function(number){
+        if (number < 10) {
+            number = "0" + number;
+        }
+        return number;
     }
     this.checkToday = function(){
 
@@ -259,9 +299,7 @@ function Calendar() {
             //creating individual cells, filing them up with data.
             for (let j = 0; j < 7; j++) {
                 var dataCell = this.createCell(i , j);
-                if( dataCell === -1 ){
-                    break;
-                }
+                
                 row.appendChild(dataCell);
             }
 

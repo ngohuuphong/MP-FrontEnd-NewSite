@@ -1,14 +1,19 @@
 $GREEN_DARK: #9DD29C;
 $GREEN_LIGHT: #B8DDC0;
-$GREEN: #00A3AF;
-$PINK: #ff6c8e;
-$WHITE: #ffffff;
-$BLUE_DARK: #426AB3;
-$BLUE_LIGHT: #4472C4;
-$ORIGINAL: #F7931E;
-$WIDTH_CONTENT: 980px;
-$WIDTH_SIDEBAR: 230px;
-$WIDTH_LOGO_SIDEBAR: 20px;
+$GREEN      : #00A3AF;
+$PINK       : #ff6c8e;
+$WHITE      : #ffffff;
+$BLUE_DARK  : #426AB3;
+$BLUE_LIGHT : #4472C4;
+$ORIGINAL   : #F7931E;
+
+$PINK_LIGHT : #FFD0F6;
+$BLUE_BERIN : #C4EDED;
+$YELLOW_BE  : #FFFFB7;
+
+$WIDTH_CONTENT      : 980px;
+$WIDTH_SIDEBAR      : 230px;
+$WIDTH_LOGO_SIDEBAR : 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
 $BORDER: 1px solid transparent;
@@ -75,11 +80,13 @@ $BORDER: 1px solid transparent;
 
 .wrapper-main-content {
     max-width: $WIDTH_CONTENT;
-    display: flex;
-    margin: 0 auto;
-    .wrapper-sidebar {
-        .left-sidebar {
-            width: $WIDTH_SIDEBAR;
+    display  : flex;
+    margin   : 0 auto;
+    
+    .wrapper-sidebar{
+        .left-sidebar{
+
+            width           : $WIDTH_SIDEBAR;
         }
         &.default {
             background-color: $GREEN_LIGHT;
@@ -91,12 +98,12 @@ $BORDER: 1px solid transparent;
             span.counter {
                 color: $WHITE!important;
                 background-color: $PINK;
-                border-radius: 3px;
-                width: 22px;
-                height: 17px;
-                padding: 0 3px;
-                margin-left: 10px;
-                font-size: convert(11pt, px);
+                border-radius   : 3px;
+                width           : 22px;
+                height          : 17px;
+                padding         : 2px 3px;
+                margin-left     : 10px;
+                font-size       : convert(11pt , px );
             }
             .icon-sidebar {
                 padding-top: 0;
@@ -137,17 +144,22 @@ $BORDER: 1px solid transparent;
             .calendar-cell {
                 width: 14%;
                 min-height: 50px;
-                border: 1px solid #fff;
-                display: inline-block;
+                border    : 1px solid transparent;
+                background-color: $WHITE;
+                display   : inline-block;
+                margin: 1px;
             }
-            .calendar-today {
-                background-color: $GREEN !important;
+            .calendar-cell-disable{
+                background-color: #746f6f;
             }
-            .calendar-sunday {
-                background-color: $PINK;
+            .calendar-today{
+                background-color: $YELLOW_BE !important;
             }
-            .calendar-satday {
-                background-color: $BLUE_DARK;
+            .calendar-sunday{
+                background-color: $PINK_LIGHT ;
+            }
+            .calendar-satday{
+                background-color: $BLUE_BERIN ;
             }
         }
     }
@@ -155,14 +167,14 @@ $BORDER: 1px solid transparent;
         padding: 0;
         margin: 0;
         list-style-type: none;
-        width: 100%;
-        overflow-x: scroll;
-        text-align: center;
-        margin: 0 auto;
-        li {
+        width          : 100%;
+        text-align     : center;
+        margin         : 0 auto;
+
+        li{
             float: left;
-            width: 14%;
-            zoom: 1;
+            width : 14.2857%;
+            zoom   : 1;
             padding: 5px 8px;
             cursor: pointer;
             &::after {
@@ -174,11 +186,12 @@ $BORDER: 1px solid transparent;
         padding: 0;
         margin: 0;
         list-style-type: none;
-        width: 100%;
-        overflow-x: scroll;
-        text-align: center;
-        margin: 0 auto;
-        li {
+        width          : 100%;
+        text-align     : center;
+        margin         : 0 auto;
+        
+
+        li{
             display: block;
             float: left;
             zoom: 1;
@@ -193,7 +206,7 @@ $BORDER: 1px solid transparent;
 
 @font-face {
     font-family: 'Hiragino Kaku Gothic Pro';
-    src: url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
+    src:url('../fonts/hiragino-kaku-gothic-pron-w3.otf')
 }
 
 *,
