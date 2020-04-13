@@ -308,7 +308,7 @@ $card_header_height: 40px;
                             height: 60px;
                             width: 60px;
                             border-radius: 50%;
-                            @include box_shadow();
+                            @include img_box_shadow();
                         }
                     }
                     .content_body {

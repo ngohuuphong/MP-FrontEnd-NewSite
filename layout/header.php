@@ -67,7 +67,7 @@
                     <a href="#">パスワード変更</a>
                     <a href="#">よくあるご質問</a>
                     <a href="#">ログアウト</a>
-                    <a class="exit" href="#">× 閉じる</a>
+                    <a class="menu_exit" href="#">× 閉じる</a>
                 </div>
             </div>
     </div>

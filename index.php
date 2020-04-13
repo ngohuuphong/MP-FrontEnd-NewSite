@@ -47,6 +47,9 @@
         $('.showmenu').on('click', function () {
             $('.dropdown-menu').toggle();
         });
+        $('.menu_exit').on('click', function () {
+            $('.dropdown-menu').hide();
+        });
     });
 </script>
 
