@@ -26,12 +26,6 @@ $card_header_height: 50px;
     border-bottom-right-radius: $card_border;
 }
 
-@mixin box_shadow() {
-    -webkit-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
-    box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
-}
-
 .page6 {
     font-family: KozukaGothicPr6N;
     section {
@@ -86,14 +80,14 @@ $card_header_height: 50px;
                     }
                     p.p1 {
                         color: black;
-                        font-size: 14px;
-                        line-height: 14px;
+                        font-size: convert(14pt, px);
+                        line-height: convert(14pt, px);
                         margin-top: 23px;
                     }
                     p.p2 {
                         color: #FF6C8E;
-                        font-size: 12px;
-                        line-height: 12px;
+                        font-size: convert(12pt, px);
+                        line-height: convert(12pt, px);
                         margin-top: 10px;
                         padding: 7px 0;
                         border: 2px solid #FF6C8E;
@@ -106,20 +100,20 @@ $card_header_height: 50px;
                         height: 53px;
                         margin-top: 42px;
                         .title {
-                            font-size: 15px;
-                            line-height: 15px;
+                            font-size: convert(15pt, px);
+                            line-height: convert(15pt, px);
                         }
                         .num {
-                            font-size: 23px;
-                            line-height: 23px;
+                            font-size: convert(23pt, px);
+                            line-height: convert(23pt, px);
                             margin-top: 22px;
                             color: #FF6C8E;
                             display: flex;
                             align-items: center;
                             span {
                                 padding-left: 4px;
-                                font-size: 13px;
-                                line-height: 13px;
+                                font-size: convert(13pt, px);
+                                line-height: convert(13pt, px);
                             }
                         }
                     }
@@ -176,8 +170,8 @@ $card_header_height: 50px;
                             height: 50%;
                             width: 100%;
                             .tag {
-                                font-size: 10px;
-                                line-height: 10px;
+                                font-size: convert(10pt, px);
+                                line-height: convert(10pt, px);
                                 color: #49BC1F;
                                 background-color: white;
                                 border: 1px solid #49BC1F;
@@ -201,8 +195,8 @@ $card_header_height: 50px;
                             justify-content: flex-start;
                             p {
                                 margin: 0;
-                                font-size: 10px;
-                                line-height: 15px;
+                                font-size: convert(10pt, px);
+                                line-height: convert(15pt, px);
                             }
                         }
                     }
