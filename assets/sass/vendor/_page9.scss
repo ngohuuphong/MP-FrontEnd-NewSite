@@ -1,7 +1,6 @@
 $container_margin: 15px;
 $card_height: 500px;
 $card_width: 718px;
-$card_margin: 7px;
 $card_border: 20px;
 $card_header_height: 41px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
@@ -27,7 +26,8 @@ $card_header_height: 41px;
 }
 
 .page9 {
-    font-family: KozukaGothicPr6N;
+    background-color: white;
+    padding: 15px 0;
     section {
         .cards_container {
             margin: $container_margin auto;
@@ -36,7 +36,6 @@ $card_header_height: 41px;
             .card_item {
                 @include card_item($card_height, $card_width);
                 @include box_shadow();
-                margin: $card_margin;
                 .header {
                     @include card_item_header();
                     display: flex;
@@ -55,6 +54,58 @@ $card_header_height: 41px;
                 }
                 .content {
                     @include card_item_content();
+                    height: $card_height - $card_header_height - 23px;
+                    padding: 15px 0 0 23px;
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #f2f2f2;
+                    span {
+                        font-size: convert(13pt, px);
+                        line-height: convert(13pt, px);
+                        color: #70AD47;
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        .textbox {
+                            margin-top: 7px;
+                            width: 540px;
+                            height: 26px;
+                            border: 0.5px solid rgba(153, 153, 153, 0.25);
+                            border-radius: 20px;
+                            padding-left: 13px;
+                            @include box_shadow();
+                        }
+                        .rows {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            margin-top: 10px;
+                            .item {
+                                width: 172px;
+                                margin-right: 13px;
+                                span {
+                                    font-size: convert(11pt, px);
+                                    line-height: convert(11pt, px);
+                                    color: black;
+                                }
+                                select {
+                                    margin-top: 6px;
+                                    height: 26px;
+                                    width: 100%;
+                                    border-radius: 7px;
+                                    border: 0.5px solid rgba(153, 153, 153, 0.5);
+                                }
+                            }
+                        }
+                        .rows.row2 {
+                            margin-top: 16px;
+                        }
+                    }
+                    span.span2 {
+                        margin-top: 19px;
+                    }
                 }
             }
         }

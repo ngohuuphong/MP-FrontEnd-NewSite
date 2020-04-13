@@ -1,87 +1,70 @@
-
-
-
-$GREEN_DARK : #9DD29C;
+$GREEN_DARK: #9DD29C;
 $GREEN_LIGHT: #B8DDC0;
-$GREEN      : #00A3AF;
-$PINK       : #ff6c8e;
-$WHITE      : #ffffff;
-$BLUE_DARK  : #426AB3;
-$BLUE_LIGHT : #4472C4;
-$ORIGINAL   : #F7931E;
-
-$WIDTH_CONTENT      : 980px;
-$WIDTH_SIDEBAR      : 230px;
-$WIDTH_LOGO_SIDEBAR : 20px;
+$GREEN: #00A3AF;
+$PINK: #ff6c8e;
+$WHITE: #ffffff;
+$BLUE_DARK: #426AB3;
+$BLUE_LIGHT: #4472C4;
+$ORIGINAL: #F7931E;
+$WIDTH_CONTENT: 980px;
+$WIDTH_SIDEBAR: 230px;
+$WIDTH_LOGO_SIDEBAR: 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
-
-$FONT_SIZE_SIDEBAR         : convert(14pt ,px);
-$BORDER                    : 1px solid transparent;
-
-@mixin clearfix(){
-    clear      : both;
-    content    : ".";
-    display    : block;
-    height     : 0;
+$FONT_SIZE_SIDEBAR: convert(14pt, px);
+$BORDER: 1px solid transparent;
+@mixin clearfix() {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
     line-height: 0;
-    visibility : hidden;
-    overflow   : hidden;
+    visibility: hidden;
+    overflow: hidden;
 }
 
 @mixin sidebar-link( $color, $background) {
-
-    zoom            : 1;
-    text-decoration : none;
-    display         : block;
-    padding         : 19px 10px 19px 19px;
-    font-size       : $FONT_SIZE_SIDEBAR;
-    text-align      : left;
-    color           : $color;
-    border          : $BORDER;
+    zoom: 1;
+    text-decoration: none;
+    display: block;
+    padding: 19px 10px 19px 19px;
+    font-size: $FONT_SIZE_SIDEBAR;
+    text-align: left;
+    color: $color;
+    border: $BORDER;
     background-color: $background;
-
     &:after {
         @include clearfix()
     }
-    span{
-        color           : $color;
+    span {
+        color: $color;
     }
 }
+
 @mixin sidebar( $color, $background, $activeColor, $activeBackground, $hoverColor, $hoverBackground) {
     ul.list-menu-sidebar {
-        padding   : 0;
-        margin    : 0;
+        padding: 0;
+        margin: 0;
         list-style: none;
-        li{
+        li {
             @include sidebar-link($color, $background);
-
-            &.active{
-
+            &.active {
                 @include sidebar-link($activeColor, $activeBackground);
-
-                .icon-sidebar{
-
-                    img:nth-child(1){
-
+                .icon-sidebar {
+                    img:nth-child(1) {
                         display: none!important;
                     }
-                    img:nth-child(2){
-
+                    img:nth-child(2) {
                         display: block!important;
                     }
                 }
             }
-            &:hover{
+            &:hover {
                 @include sidebar-link($hoverColor, $hoverBackground);
-
-                .icon-sidebar{
-
-                    img:nth-child(1){
-
+                .icon-sidebar {
+                    img:nth-child(1) {
                         display: none!important;
                     }
-                    img:nth-child(2){
-
+                    img:nth-child(2) {
                         display: block!important;
                     }
                 }
@@ -90,145 +73,129 @@ $BORDER                    : 1px solid transparent;
     }
 }
 
-
-.wrapper-main-content{
+.wrapper-main-content {
     max-width: $WIDTH_CONTENT;
     display: flex;
     margin: 0 auto;
-    
-    .wrapper-sidebar{
-        .left-sidebar{
-
-            width           : $WIDTH_SIDEBAR;
+    .wrapper-sidebar {
+        .left-sidebar {
+            width: $WIDTH_SIDEBAR;
         }
-        &.default{
+        &.default {
             background-color: $GREEN_LIGHT;
-    
-            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $WHITE, $BLUE_LIGHT );
-
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $WHITE, $BLUE_LIGHT);
             span {
-
-                float      : left;
+                float: left;
                 padding-top: 0;
             }
-            span.counter{
-                color           : $WHITE!important;
+            span.counter {
+                color: $WHITE!important;
                 background-color: $PINK;
-                border-radius   : 3px;
+                border-radius: 3px;
                 width: 22px;
                 height: 17px;
                 padding: 0 3px;
                 margin-left: 10px;
-                font-size:  convert(11pt , px );
+                font-size: convert(11pt, px);
             }
-            .icon-sidebar{
-                padding-top : 0;
-                width       : 24px;
-                height      : 24px;
+            .icon-sidebar {
+                padding-top: 0;
+                width: 24px;
+                height: 24px;
                 margin-right: 15px;
-
-                img:nth-child(1){
+                img:nth-child(1) {
                     display: block;
                 }
-                img:nth-child(2){
+                img:nth-child(2) {
                     display: none;
                 }
             }
         }
-
         // &.primary{
         //     background-color: $sidebar_background_primary_color;
-    
         //     @include sidebar-link($sidebar_primary_color, $sidebar_background_color_active ,$sidebar_background_primary_color_hover)
         // }
     }
-    .wrapper-content{
-        background-color: #f2f2f2;
-        padding: 15px;
+    .wrapper-content {
+        //background-color: #f2f2f2;
+        //padding: 15px;
         flex-grow: 999;
     }
 }
 
-
-.calendar-table{
+.calendar-table {
     display: block;
     background-color: #CCCCCC;
-    .calendar-table-header{
-
-        color : $WHITE;
+    .calendar-table-header {
+        color: $WHITE;
         background-color: #4472C4;
     }
-    .calendar-wrapper-row{
+    .calendar-wrapper-row {
         display: block;
-        .calendar-row{
+        .calendar-row {
             display: block;
-            .calendar-cell{
-                width     : 14%;
+            .calendar-cell {
+                width: 14%;
                 min-height: 50px;
-                border    : 1px solid #fff;
-                display   : inline-block;
+                border: 1px solid #fff;
+                display: inline-block;
             }
-            .calendar-today{
+            .calendar-today {
                 background-color: $GREEN !important;
             }
-            .calendar-sunday{
-                background-color: $PINK ;
+            .calendar-sunday {
+                background-color: $PINK;
             }
-            .calendar-satday{
-                background-color: $BLUE_DARK ;
+            .calendar-satday {
+                background-color: $BLUE_DARK;
             }
         }
     }
-    .calendar-list-header{
-        padding        : 0;
-        margin         : 0;
+    .calendar-list-header {
+        padding: 0;
+        margin: 0;
         list-style-type: none;
-        width          : 100%;
-        overflow-x     : scroll;
-        text-align     : center;
-        margin         : 0 auto;
-
-        li{
+        width: 100%;
+        overflow-x: scroll;
+        text-align: center;
+        margin: 0 auto;
+        li {
             float: left;
-            width : 14%;
-            zoom   : 1;
+            width: 14%;
+            zoom: 1;
             padding: 5px 8px;
             cursor: pointer;
-
-            &::after{
+            &::after {
                 @include clearfix()
             }
         }
     }
-    .calendar-footer{
-        padding        : 0;
-        margin         : 0;
+    .calendar-footer {
+        padding: 0;
+        margin: 0;
         list-style-type: none;
-        width          : 100%;
-        overflow-x     : scroll;
-        text-align     : center;
-        margin         : 0 auto;
-        
-
-        li{
+        width: 100%;
+        overflow-x: scroll;
+        text-align: center;
+        margin: 0 auto;
+        li {
             display: block;
-            float  : left;
-            zoom   : 1;
+            float: left;
+            zoom: 1;
             padding: 5px 8px;
             cursor: pointer;
-
-            &::after{
+            &::after {
                 @include clearfix()
             }
         }
-
     }
-    
 }
+
 @font-face {
     font-family: 'Hiragino Kaku Gothic Pro';
-    src:url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
+    src: url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
 }
+
 *,
  :after,
  :before {
