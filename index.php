@@ -42,5 +42,12 @@
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/bootstrap.min.js"></script>
 </body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.showmenu').on('click', function () {
+            $('.dropdown-menu').toggle();
+        });
+    });
+</script>
 
 </html>

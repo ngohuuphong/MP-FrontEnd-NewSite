@@ -109,4 +109,29 @@
             }
         }
     }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 40px;
+        top: 70px;
+        width: 170px;
+        height: 260px;
+        z-index: 9999999;
+        .dropdown-content {
+            background-color: #6D9B82;
+            flex-direction: column;
+            a {
+                height: 26px;
+                border-bottom: 0.5px solid rgba(250, 250, 250, 0.25);
+                color: white;
+                font-size: convert(13pt, px);
+                padding-left: 20px;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    background-color: #45877D;
+                }
+            }
+        }
+    }
 }
