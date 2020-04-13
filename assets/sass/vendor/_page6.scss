@@ -127,7 +127,7 @@ $card_header_height: 50px;
             margin: auto;
             .header {
                 @include card_item_header();
-                height: 42px;
+                height: 40px;
                 background-color: white;
                 display: flex;
                 align-items: center;
@@ -160,6 +160,7 @@ $card_header_height: 50px;
                             height: 60px;
                             width: 60px;
                             border-radius: 50%;
+                            @include box_shadow();
                         }
                     }
                     .content_body {
