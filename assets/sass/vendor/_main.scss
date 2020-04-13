@@ -1,11 +1,21 @@
+// @font-face {
+//     font-family: NotoSansCJKjp;
+//     src: url('../fonts/NotoSansCJKjp-Light.otf');
+// }
+// @font-face {
+//     font-family: KozukaGothicPr6N;
+//     src: url('../fonts/-pr6n-r_569.otf');
+// }
 @font-face {
-    font-family: NotoSansCJKjp;
-    src: url('../fonts/NotoSansCJKjp-Light.otf');
+    font-family: 'Hiragino Kaku Gothic Pro';
+    src: url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
 }
 
-@font-face {
-    font-family: KozukaGothicPr6N;
-    src: url('../fonts/-pr6n-r_569.otf');
+*,
+ :after,
+ :before {
+    box-sizing: border-box;
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif
 }
 
 body {
