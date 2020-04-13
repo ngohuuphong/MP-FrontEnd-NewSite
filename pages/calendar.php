@@ -5,11 +5,14 @@
 
 
 
-
+var OBJECT_DATA = null;
 function Calendar() {
 
     this.selector     = null;
     this.dateLoop     = 1;
+    this.dateLoopTemp = 0;
+
+    this.srcPlus = BASE_URL + 'image/icon/plus.png';
 
     this.toDay        = new Date();
     this.currentDate  = this.toDay.getDate();
@@ -36,7 +39,7 @@ function Calendar() {
             },
             '04' : {
                 '14' : [
-                    { 'start' : '06:00', 'end' : '17:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                    { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
                 ]
             }
         }
@@ -52,6 +55,11 @@ function Calendar() {
     this.classTable      = 'calendar-table'
     this.classFooter     = 'calendar-footer';
     this.classLabelHeader= 'calendar-list-header';
+    this.classCellDate   = 'calendar-cell-date';
+    this.classCellDisable= 'calendar-cell-disable';
+    this.classCellEvent  = 'calendar-cell-event';
+    this.classCellHasEvent  = 'calendar-cell-has-event'
+    this.classImagePlus  = 'calendar-cell-image-plus'
 
     this.setCurrentDay = function( _day ){
 
@@ -205,35 +213,36 @@ function Calendar() {
             cell.className = this.classCell;
         var type = 0;
 
-        if (i === 0 && j < this.firstDay) {
-            
+        if (i === 0 && j < this.firstDay && this.dateLoopTemp == 0) {
+            cell.classList.add(this.classCellDisable);
             cell.innerHTML = '&nbsp;';
         }
-        else if (this.dateLoop > this.daysInMonth(this.selectMonth, this.selectYear)) {
+        else if ( this.dateLoopTemp == 1 || this.dateLoop > this.daysInMonth(this.selectMonth, this.selectYear)) {
 
-            cell.classList.add('calendar-cell-disable');
-            cell.innerHTML = '&nbsp;';
+            if(this.dateLoopTemp == 0){
+                this.dateLoopTemp = 1;
+                this.dateLoop = 1
+            }
+            cell.classList.add(this.classCellDisable);
+
+            var textCell           = document.createElement("span");
+            textCell.className = this.classCellDate;
+                textCell.innerHTML = (this.selectMonth + 2) + "/" + this.dateLoop;
+            cell.appendChild(textCell);
+            
+            this.dateLoop++;
+
         } else {
 
             var textCell           = document.createElement("span");
+            textCell.className = this.classCellDate;
                 textCell.innerHTML = (this.selectMonth + 1) + "/" + this.dateLoop;
-            
-            if(this.data){
-                if(typeof this.data[this.selectYear] != 'undefined'){
-
-                    if(typeof this.data[this.selectYear][this.formatZeroBefore(this.selectMonth + 1)] != 'undefined'){
-
-                        if(typeof this.data[this.selectYear][this.selectMonth+ 1][this.dateLoop] != 'undefined'){
-
-                            console.log(this.data[this.selectYear])
-                            var dataEvents = this.data[this.selectYear][this.selectMonth][this.dateLoop];
-                            console.log(dataEvents)
-                        }
-                    }
-                }
-            }
-
             cell.appendChild(textCell);
+
+
+            cell = this.drawEventToDate(cell);
+            cell = this.drawPlusButton(cell);
+            
             // color today's date
             if(this.checkToday()){
                 cell.classList.add(this.classInToday);
@@ -250,6 +259,64 @@ function Calendar() {
             this.dateLoop++;
         }
         return cell;
+    }
+
+    this.setInstanceToGlobal = function(VariableGlobal){
+         
+        VariableGlobal = this;
+    }
+
+    this.drawPlusButton = function(cell){
+
+        var textPlus           = document.createElement("span");
+        textPlus.classList.add(this.classImagePlus);
+
+        (function(date, instance){
+
+            textPlus.addEventListener("click", function() {
+
+                /// show popup
+                alert(instance.selectYear + " " +instance.selectMonth + " " + date);
+                /// mở được 1 csia popup 
+                /// trong cái popup có nut ok 
+                instance.setInstanceToGlobal(OBJECT_DATA)
+
+            }, false);
+        })(this.dateLoop, this);
+
+        var imgPlus     = document.createElement("img");
+            imgPlus.src = this.srcPlus;
+
+        textPlus.appendChild(imgPlus);
+
+        cell.appendChild(textPlus);
+
+        return cell;
+    }
+    this.drawEventToDate = function(cell){
+        if(this.data){
+            if(typeof this.data[this.selectYear] != 'undefined'){
+
+                if(typeof this.data[this.selectYear][this.formatZeroBefore(this.selectMonth + 1)] != 'undefined'){
+
+                    if(typeof this.data[this.selectYear][this.formatZeroBefore(this.selectMonth + 1)][this.formatZeroBefore(this.dateLoop)] != 'undefined'){
+
+                        var dataEvents = this.data[this.selectYear][this.formatZeroBefore(this.selectMonth + 1)][this.formatZeroBefore(this.dateLoop)];
+                        for(var eventLoop = 0; eventLoop < dataEvents.length; eventLoop++ ){
+
+                            var eventIndex = dataEvents[eventLoop];
+                            var textEvent           = document.createElement("p");
+                            textEvent.classList.add(this.classCellEvent);
+                            textEvent.innerHTML = eventIndex.start + '-' + eventIndex.end + " " + eventIndex.type;
+                            
+                            cell.classList.add(this.classCellHasEvent);
+                            cell.appendChild(textEvent);
+                        } 
+                    }
+                }
+            }
+        }
+        return cell
     }
     this.formatZeroBefore = function(number){
         if (number < 10) {
@@ -309,6 +376,8 @@ function Calendar() {
 
         //// reset dateLoop to 1
         this.dateLoop = 1;
+        //// reset dateLoopTemp to 1
+        this.dateLoopTemp = 0;
         return wrapperRow;
     }
 };
@@ -318,5 +387,29 @@ var selector = document.getElementById('draw-calendar')
 var insatnceCalendar = new Calendar();
 insatnceCalendar.setElementDraw(selector);
 insatnceCalendar.draw();
+
+
+
+function hung(){
+    OBJECT_DATA.data = {
+        '2020' : {
+            '01' : {
+                '07' : [
+                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                ]
+            },
+            '04' : {
+                '19' : [
+                    { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                ]
+            },
+            '05' : {
+                '09' : [
+                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                ]
+            },
+        }
+    };
+}
 
 </script>

@@ -17,6 +17,10 @@
 
 
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
+    <script>
+        const BASE_URL = '<?= asset('') ?>';
+    </script>
 </head>
 
 <body>

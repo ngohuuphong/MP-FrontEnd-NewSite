@@ -7,6 +7,7 @@ $BLUE_DARK  : #426AB3;
 $BLUE_LIGHT : #4472C4;
 $ORIGINAL   : #F7931E;
 
+$PINK_DARK : #FF7BAC;
 $PINK_LIGHT : #FFD0F6;
 $BLUE_BERIN : #C4EDED;
 $YELLOW_BE  : #FFFFB7;
@@ -18,25 +19,26 @@ $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
 $BORDER: 1px solid transparent;
 @mixin clearfix() {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
+    clear      : both;
+    content    : ".";
+    display    : block;
+    height     : 0;
     line-height: 0;
-    visibility: hidden;
-    overflow: hidden;
+    visibility : hidden;
+    overflow   : hidden;
 }
 
 @mixin sidebar-link( $color, $background) {
-    zoom: 1;
-    text-decoration: none;
-    display: block;
-    padding: 19px 10px 19px 19px;
-    font-size: $FONT_SIZE_SIDEBAR;
-    text-align: left;
-    color: $color;
-    border: $BORDER;
+    zoom            : 1;
+    text-decoration : none;
+    display         : block;
+    padding         : 19px 10px 19px 19px;
+    font-size       : $FONT_SIZE_SIDEBAR;
+    text-align      : left;
+    color           : $color;
+    border          : $BORDER;
     background-color: $background;
+    cursor          : pointer;
     &:after {
         @include clearfix()
     }
@@ -47,8 +49,8 @@ $BORDER: 1px solid transparent;
 
 @mixin sidebar( $color, $background, $activeColor, $activeBackground, $hoverColor, $hoverBackground) {
     ul.list-menu-sidebar {
-        padding: 0;
-        margin: 0;
+        padding   : 0;
+        margin    : 0;
         list-style: none;
         li {
             @include sidebar-link($color, $background);
@@ -67,10 +69,10 @@ $BORDER: 1px solid transparent;
                 @include sidebar-link($hoverColor, $hoverBackground);
                 .icon-sidebar {
                     img:nth-child(1) {
-                        display: none!important;
+                        display: block!important;
                     }
                     img:nth-child(2) {
-                        display: block!important;
+                        display: none!important;
                     }
                 }
             }
@@ -90,7 +92,7 @@ $BORDER: 1px solid transparent;
         }
         &.default {
             background-color: $GREEN_LIGHT;
-            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $WHITE, $BLUE_LIGHT);
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $BLUE_LIGHT, $GREEN_LIGHT);
             span {
                 float: left;
                 padding-top: 0;
@@ -101,7 +103,7 @@ $BORDER: 1px solid transparent;
                 border-radius   : 3px;
                 width           : 22px;
                 height          : 17px;
-                padding         : 2px 3px;
+                padding         : 0 3px;
                 margin-left     : 10px;
                 font-size       : convert(11pt , px );
             }
@@ -140,14 +142,28 @@ $BORDER: 1px solid transparent;
     .calendar-wrapper-row {
         display: block;
         .calendar-row {
-            display: block;
+            display: flex;
+
             .calendar-cell {
                 width: 14%;
-                min-height: 50px;
                 border    : 1px solid transparent;
                 background-color: $WHITE;
-                display   : inline-block;
+                flex: 1;   
                 margin: 1px;
+                &.calendar-cell-has-event{
+                    background-color: $PINK_LIGHT;
+                }
+                .calendar-cell-date{
+                    display: block;
+                    line-height: 1;
+                    font-size: convert(10pt, px);
+                }
+                .calendar-cell-image-plus{
+                    padding: 5px;
+                    display: block;
+                    line-height: 0;
+                    cursor: pointer;
+                }
             }
             .calendar-cell-disable{
                 background-color: #746f6f;
@@ -161,6 +177,15 @@ $BORDER: 1px solid transparent;
             .calendar-satday{
                 background-color: $BLUE_BERIN ;
             }
+            
+            .calendar-cell-event{
+                background-color: $PINK_DARK;
+                color: $WHITE;
+                overflow: hidden;
+                font-size: convert(9pt, px);
+                padding: 0 5px;
+            }
+            
         }
     }
     .calendar-list-header {
@@ -177,9 +202,12 @@ $BORDER: 1px solid transparent;
             zoom   : 1;
             padding: 5px 8px;
             cursor: pointer;
-            &::after {
+            &:after {
                 @include clearfix()
             }
+        }
+        &:after {
+            @include clearfix()
         }
     }
     .calendar-footer {
@@ -202,16 +230,4 @@ $BORDER: 1px solid transparent;
             }
         }
     }
-}
-
-@font-face {
-    font-family: 'Hiragino Kaku Gothic Pro';
-    src:url('../fonts/hiragino-kaku-gothic-pron-w3.otf')
-}
-
-*,
- :after,
- :before {
-    box-sizing: border-box;
-    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif
 }
