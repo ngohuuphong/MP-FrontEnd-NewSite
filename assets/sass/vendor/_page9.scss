@@ -1,0 +1,52 @@
+$container_margin: 15px;
+$card_height: 500px;
+$card_width: 718px;
+$card_margin: 7px;
+$card_border: 20px;
+$card_header_height: 50px;
+@mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
+    height: $height;
+    width: $width;
+    border-radius: $borderRadius;
+    background-color: white;
+}
+
+@mixin card_item_header() {
+    height: $card_header_height;
+    width: 100%;
+    background-color: #00a3af;
+    border-top-left-radius: $card_border;
+    border-top-right-radius: $card_border;
+}
+
+@mixin card_item_content() {
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: $card_border;
+    border-bottom-right-radius: $card_border;
+}
+
+.page9 {
+    font-family: KozukaGothicPr6N;
+    section {
+        .cards_container {
+            margin: $container_margin auto;
+            width: $card_width;
+            display: flex;
+            .card_item {
+                @include card_item($card_height, $card_width);
+                @include box_shadow();
+                margin: $card_margin;
+                .header {
+                    @include card_item_header();
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .content {
+                    @include card_item_content();
+                }
+            }
+        }
+    }
+}

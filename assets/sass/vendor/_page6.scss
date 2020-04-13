@@ -27,6 +27,7 @@ $card_header_height: 50px;
 }
 
 .page6 {
+    font-family: KozukaGothicPr6N;
     section {
         .cards_container {
             margin: $container_margin auto;
@@ -34,6 +35,7 @@ $card_header_height: 50px;
             display: flex;
             .card_item {
                 @include card_item($card_height, $card_width);
+                @include box_shadow();
                 margin: $card_margin;
                 .header {
                     @include card_item_header();
@@ -78,26 +80,127 @@ $card_header_height: 50px;
                     }
                     p.p1 {
                         color: black;
-                        font-size: 14px;
-                        margin-top: 20px;
+                        font-size: convert(14pt, px);
+                        line-height: convert(14pt, px);
+                        margin-top: 23px;
                     }
                     p.p2 {
                         color: #FF6C8E;
-                        font-size: 12px;
+                        font-size: convert(12pt, px);
+                        line-height: convert(12pt, px);
                         margin-top: 10px;
-                        padding: 2px 0;
-                        border: 3px solid #FF6C8E;
+                        padding: 7px 0;
+                        border: 2px solid #FF6C8E;
                         border-radius: 5px;
+                    }
+                    .item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: 53px;
+                        margin-top: 42px;
+                        .title {
+                            font-size: convert(15pt, px);
+                            line-height: convert(15pt, px);
+                        }
+                        .num {
+                            font-size: convert(23pt, px);
+                            line-height: convert(23pt, px);
+                            margin-top: 22px;
+                            color: #FF6C8E;
+                            display: flex;
+                            align-items: center;
+                            span {
+                                padding-left: 4px;
+                                font-size: convert(13pt, px);
+                                line-height: convert(13pt, px);
+                            }
+                        }
                     }
                 }
             }
         }
         .lists_container {
-            @include card_item(300px, 680px);
+            @include card_item(290px, 718px);
             margin: auto;
             .header {
                 @include card_item_header();
+                height: 42px;
                 background-color: white;
+                display: flex;
+                align-items: center;
+                span {
+                    margin-left: 26px;
+                }
+            }
+            .content {
+                height: 240px;
+                width: 703px;
+                overflow-y: scroll;
+                .item_container {
+                    background-color: white;
+                    height: 72px;
+                    width: 650px;
+                    border: 0.5px solid rgba(153, 153, 153, 0.25);
+                    border-radius: 12px;
+                    margin: 0 0 7px 22px;
+                    display: flex;
+                    @include box_shadow();
+                    .image_div {
+                        height: calc(100% - 6px);
+                        width: 78px;
+                        border-right: 0.5px solid #49BC1F;
+                        margin: 3px 0 3px 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img {
+                            height: 60px;
+                            width: 60px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .content_body {
+                        width: calc(100% - 100px);
+                        height: 100%;
+                        margin-left: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        .tags {
+                            height: 50%;
+                            width: 100%;
+                            .tag {
+                                font-size: convert(10pt, px);
+                                line-height: convert(10pt, px);
+                                color: #49BC1F;
+                                background-color: white;
+                                border: 1px solid #49BC1F;
+                                border-radius: 5px;
+                                padding: 3px 10px;
+                                margin-right: 2px;
+                                span {
+                                    background-color: #FF6C8E;
+                                    color: white;
+                                    border: 1px solid #FF6C8E;
+                                    border-radius: 3px;
+                                    padding: 0.5px 2px;
+                                }
+                            }
+                        }
+                        .contents {
+                            height: 50%;
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            p {
+                                margin: 0;
+                                font-size: convert(10pt, px);
+                                line-height: convert(15pt, px);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
