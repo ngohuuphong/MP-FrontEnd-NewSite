@@ -31,7 +31,7 @@ function Calendar() {
     this.labelYear  = '年';
     this.labelMonth = '月';
 
-    this.modalEvent = '#js-modal-event';
+    this.modalEvent = 'js-modal-event';
 
     this.data = {
         '2020' : {
@@ -286,24 +286,22 @@ function Calendar() {
                     alert('modal not setting');
                     return false;
                 }
-                console.log(instance.modalEvent);
-                $(instance.modalEvent).modal({
+                
+                $("#" + instance.modalEvent).modal({
                     escapeClose: false,
                     clickClose: false,
                     showClose: false
                 });
-                (function(_month, instance){
+                var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
+                $(btnAccept).unbind('click');
 
-                    document.getElementById("myBtn").addEventListener("click", function(){
-                        document.getElementById("demo").innerHTML = "Hello World";
-                    });
-
-                    link.addEventListener("click", function() {
-
-                        instance.setSelectMonth(_month);
-                        instance.draw();
-                    }, false);
-                })(month , this);
+                btnAccept.addEventListener("click", function(){
+                    console.log(instance);
+                    var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'};
+                    instance.setEventForInstance(instance, date, evt);
+                    
+                    $.modal.close();
+                });
                 
                 // instance.setInstanceToGlobal(OBJECT_DATA)
 
@@ -318,6 +316,20 @@ function Calendar() {
         cell.appendChild(textPlus);
 
         return cell;
+    }
+
+    this.setEventForInstance = function(ins, _date, evt){
+
+        if(typeof ins.data[ins.selectYear] != 'undefined'){
+
+            if(typeof ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)] != 'undefined'){
+
+                if(typeof ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)][ins.formatZeroBefore(_date)] != 'undefined'){
+
+                    ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)][ins.formatZeroBefore(_date)].push(evt);
+                }
+            }
+        }
     }
     this.drawEventToDate = function(cell){
         if(this.data){

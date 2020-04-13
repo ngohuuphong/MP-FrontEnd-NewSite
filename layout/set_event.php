@@ -8,6 +8,6 @@
     </div>
     <div class="modal-footer">
         <a href="#" class="d-inline-block btn bg-red text-white" rel="modal:close">hủy</a>
-        <a id="js-accept-event" href="javascript:void(0)" class="d-inline-block btn">đồng ý</a>
+        <a href="javascript:void(0)" class="d-inline-block btn js-accept-event">đồng ý</a>
     </div>
 </div>
