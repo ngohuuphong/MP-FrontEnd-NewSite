@@ -32,7 +32,7 @@
                                 学生からのオファー数
                         </p>
                         <p class="num">
-                                21<span>件</span>
+                                23<span>件</span>
                         </p>
                    </div>
                 </div>
@@ -47,20 +47,108 @@
             <div class="content">
                 <div class="item_container">
                     <div class="image_div">
-
+                        <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">
                     </div>
                     <div class="content_body">
-
+                        <div class="tags">
+                            <span class="tag">2021 卒業 <span>NEW</span></span>
+                            <span class="tag">主体性</span>
+                            <span class="tag">コミュニケーション</span>
+                            <span class="tag">積極性</span>
+                            <span class="tag">明るい</span>
+                        </div>
+                        <div class="contents">
+                            <p>
+                                ここには学生情報が表示されます。エントリーシートの自己PR文が反映されます。ここには学生情報が表示されます。
+                                <br/>
+                                エントリーシートの自己PR文が反映されます。
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div class="item_container">
-                    
+                    <div class="image_div">
+                        <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">
+                    </div>
+                    <div class="content_body">
+                        <div class="tags">
+                            <span class="tag">2021 卒業 <span>NEW</span></span>
+                            <span class="tag">主体性</span>
+                            <span class="tag">コミュニケーション</span>
+                            <span class="tag">積極性</span>
+                            <span class="tag">明るい</span>
+                        </div>
+                        <div class="contents">
+                            <p>
+                                ここには学生情報が表示されます。エントリーシートの自己PR文が反映されます。ここには学生情報が表示されます。
+                                <br/>
+                                エントリーシートの自己PR文が反映されます。
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="item_container">
-                    
+                    <div class="image_div">
+                        <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">
+                    </div>
+                    <div class="content_body">
+                        <div class="tags">
+                            <span class="tag">2021 卒業 <span>NEW</span></span>
+                            <span class="tag">主体性</span>
+                            <span class="tag">コミュニケーション</span>
+                            <span class="tag">積極性</span>
+                            <span class="tag">明るい</span>
+                        </div>
+                        <div class="contents">
+                            <p>
+                                ここには学生情報が表示されます。エントリーシートの自己PR文が反映されます。ここには学生情報が表示されます。
+                                <br/>
+                                エントリーシートの自己PR文が反映されます。
+                            </p>
+                        </div>
+                    </div>
+                </div>  
+                <div class="item_container">
+                    <div class="image_div">
+                        <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">
+                    </div>
+                    <div class="content_body">
+                        <div class="tags">
+                            <span class="tag">2021 卒業 <span>NEW</span></span>
+                            <span class="tag">主体性</span>
+                            <span class="tag">コミュニケーション</span>
+                            <span class="tag">積極性</span>
+                            <span class="tag">明るい</span>
+                        </div>
+                        <div class="contents">
+                            <p>
+                                ここには学生情報が表示されます。エントリーシートの自己PR文が反映されます。ここには学生情報が表示されます。
+                                <br/>
+                                エントリーシートの自己PR文が反映されます。
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 <div class="item_container">
-                    
+                    <div class="image_div">
+                        <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">
+                    </div>
+                    <div class="content_body">
+                        <div class="tags">
+                            <span class="tag">2021 卒業 <span>NEW</span></span>
+                            <span class="tag">主体性</span>
+                            <span class="tag">コミュニケーション</span>
+                            <span class="tag">積極性</span>
+                            <span class="tag">明るい</span>
+                        </div>
+                        <div class="contents">
+                            <p>
+                                ここには学生情報が表示されます。エントリーシートの自己PR文が反映されます。ここには学生情報が表示されます。
+                                <br/>
+                                エントリーシートの自己PR文が反映されます。
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
