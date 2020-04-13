@@ -15,16 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= asset('image/favicon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="<?= asset('css/particle/sidebar.css') ?>"/>
-    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
-    <!-- < ?php if(isset($_GET['page']) && $_GET['page'] == 'entryprise-student'): ?>
-        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/entryprise-student.css"/>
-        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/alert.css"/>
-        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/animation.css"/>
-        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/progress.css"/>
-        <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/particle/general.css"/>
-    < ?php endif; ?> -->
+
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
 </head>
 
