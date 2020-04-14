@@ -8,7 +8,7 @@
 // }
 @font-face {
     font-family: 'Hiragino Kaku Gothic Pro';
-    src: url('../../fonts/hiragino-kaku-gothic-pron-w3.otf')
+    src: url('../fonts/hiragino-kaku-gothic-pron-w3.otf')
 }
 
 *,
@@ -132,7 +132,7 @@ img {
     border: none;
     max-width: 100%;
     height: auto;
-    box-sizing: initial;
+    box-sizing: content-box;
 }
 
 article,

@@ -1,0 +1,16 @@
+<!-- Modal HTML embedded directly into document -->
+<div id="js-modal-event" class="modal">
+    <div class="modal-header">
+    <span class="title-modal-header">
+        <img src="<?= asset('image/icon/modal-add-event.png') ?>" alt="add-event" />
+    </span>
+    予定の登録
+    </div>
+    <div class="modal-body">
+        ahihi
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="d-inline-block btn bg-red text-white" rel="modal:close">hủy</a>
+        <a href="javascript:void(0)" class="d-inline-block btn js-accept-event">đồng ý</a>
+    </div>
+</div>

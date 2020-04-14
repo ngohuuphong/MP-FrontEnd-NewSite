@@ -27,3 +27,7 @@ function asset( $path = null){
     global $cfg;
     return $cfg['site']['assest_path'] . $path;
 }
+function Route( $path = null ){
+    global $cfg;
+    return $cfg['site']['base_url'] . $path;
+}

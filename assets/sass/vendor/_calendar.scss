@@ -1,0 +1,107 @@
+
+.calendar-table {
+    display         : block;
+    background-color: #CCCCCC;
+    .calendar-table-header {
+        color           : $WHITE;
+        background-color: #4472C4;
+    }
+    .calendar-wrapper-row {
+        display: block;
+        .calendar-row {
+            display: flex;
+
+            .calendar-cell {
+                width           : 14%;
+                border          : 1px solid transparent;
+                background-color: $WHITE;
+                flex            : 1;
+                margin          : 1px;
+                &.calendar-cell-has-event{
+                    background-color: $PINK_LIGHT;
+                }
+                .calendar-cell-date{
+                    display    : block;
+                    line-height: 1;
+                    font-size  : convert(10pt, px);
+                }
+                .calendar-cell-image-plus{
+                    width      : 11px;
+                    height     : 11px;
+                    margin    : 5px;
+                    display    : block;
+                    line-height: 0;
+                    cursor     : pointer;
+                }
+            }
+            .calendar-cell-disable{
+                background-color: #746f6f;
+            }
+            .calendar-today{
+                background-color: $YELLOW_BE !important;
+            }
+            .calendar-sunday{
+                background-color: $PINK_LIGHT ;
+            }
+            .calendar-satday{
+                background-color: $BLUE_BERIN ;
+            }
+            
+            .calendar-cell-event{
+                background-color: $PINK_DARK;
+                color           : $WHITE;
+                overflow        : hidden;
+                font-size       : convert(9pt, px);
+                padding         : 0 5px;
+                border: 1px solid transparent;
+                margin-top: 1px ;
+            }
+            
+        }
+    }
+    .calendar-list-header {
+        padding        : 0;
+        margin         : 0;
+        list-style-type: none;
+        width          : 100%;
+        text-align     : center;
+        margin         : 0 auto;
+
+        li{
+            float  : left;
+            width  : 14.2857%;
+            zoom   : 1;
+            padding: 5px 8px;
+            cursor : pointer;
+            &:after {
+                @include clearfix()
+            }
+        }
+        &:after {
+            @include clearfix()
+        }
+    }
+    .calendar-footer {
+        padding        : 0;
+        margin         : 0;
+        list-style-type: none;
+        width          : 100%;
+        text-align     : center;
+        margin         : 0 auto;
+        
+
+        li{
+            display: block;
+            float  : left;
+            zoom   : 1;
+            padding: 5px 8px;
+            cursor : pointer;
+            &::after {
+                @include clearfix()
+            }
+        }
+    }
+    .title-modal-header{
+        
+    }
+}

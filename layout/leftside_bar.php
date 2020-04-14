@@ -2,7 +2,7 @@
     <nav class="left-nav">
         <ul class="list-menu-sidebar">
             <li class="active">
-                <a href="#welcome"> 
+                <a href="<?= Route('?page=page1') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/top-page.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/top-page-hover.png') ?>"  />
@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page2') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/student-search.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/student-search-hover.png') ?>"  />
@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page3') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/email.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/email-hover.png') ?>"  />
@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=calendar') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page5') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/create.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/create-hover.png') ?>"  />
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page6') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/database.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/database-hover.png') ?>"  />
@@ -57,7 +57,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page7') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/key.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/key-hover.png') ?>"  />
@@ -66,19 +66,19 @@
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page8') ?>"> 
                     <span class="icon-sidebar">
-                        <img src="<?= asset('image/icon/question.png') ?>"  />
-                        <img class="hover" src="<?= asset('image/icon/question-hover.png') ?>"  />
+                        <img src="<?= asset('image/icon/QA.png') ?>"  />
+                        <img class="hover" src="<?= asset('image/icon/QA-hover.png') ?>"  />
                     </span>
                     <span>よくあるご質問</span>
                 </a>
             </li>
             <li>
-                <a href="#"> 
+                <a href="<?= Route('?page=page9') ?>"> 
                     <span class="icon-sidebar">
-                        <img src="<?= asset('image/icon/back.png') ?>"  />
-                        <img class="hover" src="<?= asset('image/icon/back-hover.png') ?>"  />
+                        <img src="<?= asset('image/icon/logout.png') ?>"  />
+                        <img class="hover" src="<?= asset('image/icon/logout-hover.png') ?>"  />
                     </span>
                     <span>ログアウト</span>
                 </a>

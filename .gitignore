@@ -1,0 +1,8 @@
+.vscode
+index.js
+node_modules
+package-lock.json
+assets/fontawesome
+bootstrap-sass
+assets/image/4x
+assets/image/1x

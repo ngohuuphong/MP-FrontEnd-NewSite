@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+var gulp       = require('gulp');
+var sass       = require('gulp-sass');
 var livereload = require('gulp-livereload');
-var minify = require('gulp-minify');
-var minifyCss = require('gulp-minify-css');
+var minify     = require('gulp-minify');
+var minifyCss  = require('gulp-minify-css');
 
 gulp.task('sass', function() {
     return gulp.src('assets/sass/vendor/style.scss')
