@@ -1,0 +1,304 @@
+$container_margin: 15px;
+$card_height: 990px;
+$card_width: 600px;
+$card_border: 20px;
+$card_header_height: 46px;
+@mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
+    height: $height;
+    width: $width;
+    border-radius: $borderRadius;
+    background-color: white;
+}
+
+@mixin card_item_header() {
+    height: $card_header_height;
+    width: 100%;
+    background-color: #00a3af;
+    border-top-left-radius: $card_border;
+    border-top-right-radius: $card_border;
+}
+
+@mixin card_item_content() {
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: $card_border;
+    border-bottom-right-radius: $card_border;
+}
+
+@mixin check_box() {
+    .checkbox_container {
+        display: block;
+        position: relative;
+        padding-left: 14px;
+        margin-right: 13px;
+        margin-top: 3px;
+        cursor: pointer;
+        font-size: convert(11pt, px);
+        line-height: convert(11pt, px);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    /* Hide the browser's default checkbox */
+    .checkbox_container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 10.5px;
+        width: 10.5px;
+        background-color: white;
+        border: 0.5px solid rgba(0, 0, 0, 0.5);
+    }
+    /* On mouse-over, add a grey background color */
+    .checkbox_container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    /* Show the checkmark when checked */
+    .checkbox_container input:checked~.checkmark:after {
+        display: block;
+    }
+    /* Style the checkmark/indicator */
+    .checkbox_container .checkmark:after {
+        left: 3px;
+        top: 0px;
+        width: 4px;
+        height: 8px;
+        border: solid rgba(0, 0, 0, 0.9);
+        border-width: 0 1.5px 1.5px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+
+.page1 {
+    background-color: #DFE6E6;
+    padding: 0;
+    min-height: $content_min_height;
+    section {
+        .cards_container {
+            margin: $container_margin auto;
+            width: $card_width;
+            display: flex;
+            .card_item {
+                @include card_item($card_height, $card_width);
+                @include box_shadow();
+                .header {
+                    @include card_item_header();
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    span {
+                        margin-left: 30px;
+                        font-size: convert(14pt, px);
+                        color: white;
+                    }
+                }
+                .content {
+                    @include card_item_content();
+                    height: $card_height - $card_header_height;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    padding: 24px 47px;
+                    font-size: convert(11pt, px);
+                    line-height: convert(18pt, px);
+                    .rows {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 8px 0;
+                        border-bottom: 0.5px solid rgba(179, 179, 179, 0.75);
+                        &:nth-child(1) {
+                            padding-top: 0;
+                        }
+                        .col_title {
+                            width: 75px;
+                            color: #4472C4;
+                        }
+                        .col_content {
+                            width: calc(100% - 75px);
+                            display: flex;
+                            flex-direction: row;
+                            .name {
+                                width: 63px;
+                                font-size: convert(14pt, px);
+                            }
+                            .title_gender {
+                                width: 43px;
+                                color: #4472C4;
+                            }
+                            .birthday {
+                                width: 193px;
+                            }
+                            .title_addr {
+                                width: 55px;
+                            }
+                            &.checkbox_col {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: flex-start;
+                                .checkbox_row {
+                                    display: flex;
+                                    flex-direction: row;
+                                    @include check_box();
+                                    margin-bottom: 15px;
+                                    span {
+                                        margin-right: 30px;
+                                    }
+                                }
+                            }
+                        }
+                        &.avatar_col {
+                            display: flex;
+                            flex-direction: row;
+                            align-items: flex-start;
+                            .leftside {
+                                width: calc(100% - 120px);
+                                display: flex;
+                                flex-direction: column;
+                                .rows {
+                                    display: flex;
+                                    flex-direction: row;
+                                    &:last-child {
+                                        border: 0;
+                                        padding-bottom: 0;
+                                    }
+                                }
+                            }
+                            .rightside {
+                                width: 120px;
+                                display: flex;
+                                justify-content: flex-end;
+                                padding-right: 3px;
+                                padding-top: 12px;
+                                .img_div {
+                                    width: 85px;
+                                    height: 100px;
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        &.img_content {
+                            border: 0;
+                            .col_content {
+                                display: flex;
+                                flex-direction: column;
+                                .img_div {
+                                    width: 100px;
+                                    height: 75px;
+                                    margin-top: 5px;
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buttons_div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            div {
+                width: 315px;
+                height: 29px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .btn_primary {
+                    width: 181px;
+                    height: 28px;
+                    border-radius: 13px;
+                    background-color: #4472C4;
+                    border: 1px solid white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span {
+                        color: white;
+                        font-size: convert(11pt, px);
+                        line-height: 11px;
+                    }
+                    img {
+                        width: 13px;
+                        height: 14px;
+                        margin-right: 5px;
+                    }
+                    img:nth-child(1) {
+                        display: block!important;
+                    }
+                    img:nth-child(2) {
+                        display: none!important;
+                    }
+                    &:hover {
+                        border: 1px solid #4472C4;
+                        background-color: white;
+                        span {
+                            color: #4472C4;
+                            font-size: convert(11pt, px);
+                            line-height: 11px;
+                        }
+                        img:nth-child(1) {
+                            display: none!important;
+                        }
+                        img:nth-child(2) {
+                            display: block!important;
+                        }
+                    }
+                }
+                .btn_secondary {
+                    width: 115px;
+                    height: 28px;
+                    border-radius: 13px;
+                    background-color: white;
+                    border: 1px solid #999999;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    span {
+                        color: #999999;
+                        font-size: convert(11pt, px);
+                        line-height: 11px;
+                    }
+                    &:hover {
+                        border: 1px solid #F7931E;
+                        background-color: white;
+                        span {
+                            color: #F7931E;
+                            font-size: convert(11pt, px);
+                            line-height: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
