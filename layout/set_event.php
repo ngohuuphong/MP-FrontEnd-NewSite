@@ -1,6 +1,9 @@
 <!-- Modal HTML embedded directly into document -->
 <div id="js-modal-event" class="modal">
     <div class="modal-header">
+    <span class="title-modal-header">
+        <img src="<?= asset('image/icon/modal-add-event.png') ?>" alt="add-event" />
+    </span>
     予定の登録
     </div>
     <div class="modal-body">

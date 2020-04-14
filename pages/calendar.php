@@ -241,6 +241,15 @@ function Calendar() {
         if (i === 0 && j < this.firstDay && this.dateLoopTemp == 0) {
             cell.classList.add(this.classCellDisable);
             cell.innerHTML = '&nbsp;';
+            var firstDateOfMonth = new Date(this.selectYear, this.selectMonth, 1);
+            firstDateOfMonth.setDate(firstDateOfMonth.getDate() - this.firstDay + j );
+            
+            var textCell           = document.createElement("span");
+                textCell.className = this.classCellDate;
+
+                textCell.innerHTML = (firstDateOfMonth.getMonth() + 1) + "/" + firstDateOfMonth.getDate();
+            cell.appendChild(textCell);
+
         }
         else if ( this.dateLoopTemp == 1 || this.dateLoop > this.daysInMonth(this.selectMonth, this.selectYear)) {
 
