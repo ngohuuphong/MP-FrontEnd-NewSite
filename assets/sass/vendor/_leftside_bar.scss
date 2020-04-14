@@ -1,44 +1,42 @@
 $GREEN_DARK: #9DD29C;
 $GREEN_LIGHT: #B8DDC0;
-$GREEN      : #00A3AF;
-$PINK       : #ff6c8e;
-$WHITE      : #ffffff;
-$BLUE_DARK  : #426AB3;
-$BLUE_LIGHT : #4472C4;
-$ORIGINAL   : #F7931E;
-
-$PINK_DARK : #FF7BAC;
-$PINK_LIGHT : #FFD0F6;
-$BLUE_BERIN : #C4EDED;
-$YELLOW_BE  : #FFFFB7;
-
-$WIDTH_CONTENT      : 980px;
-$WIDTH_SIDEBAR      : 230px;
-$WIDTH_LOGO_SIDEBAR : 20px;
+$GREEN: #00A3AF;
+$PINK: #ff6c8e;
+$WHITE: #ffffff;
+$BLUE_DARK: #426AB3;
+$BLUE_LIGHT: #4472C4;
+$ORIGINAL: #F7931E;
+$PINK_DARK: #FF7BAC;
+$PINK_LIGHT: #FFD0F6;
+$BLUE_BERIN: #C4EDED;
+$YELLOW_BE: #FFFFB7;
+$WIDTH_CONTENT: 980px;
+$WIDTH_SIDEBAR: 230px;
+$WIDTH_LOGO_SIDEBAR: 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
-$BORDER: 1px solid transparent; 
+$BORDER: 1px solid transparent;
 @mixin clearfix() {
-    clear      : both;
-    content    : "."; 
-    display    : block;
-    height     : 0;
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
     line-height: 0;
-    visibility : hidden;
-    overflow   : hidden;
+    visibility: hidden;
+    overflow: hidden;
 }
 
 @mixin sidebar-link( $color, $background) {
-    zoom            : 1;
-    text-decoration : none;
-    display         : block;
-    padding         : 15px;
-    font-size       : $FONT_SIZE_SIDEBAR;
-    text-align      : left;
-    color           : $color;
-    border          : $BORDER;
+    zoom: 1;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    font-size: $FONT_SIZE_SIDEBAR;
+    text-align: left;
+    color: $color;
+    border: $BORDER;
     background-color: $background;
-    cursor          : pointer;
+    cursor: pointer;
     &:after {
         @include clearfix()
     }
@@ -49,8 +47,8 @@ $BORDER: 1px solid transparent;
 
 @mixin sidebar( $color, $background, $activeColor, $activeBackground, $hoverColor, $hoverBackground) {
     ul.list-menu-sidebar {
-        padding   : 0;
-        margin    : 0;
+        padding: 0;
+        margin: 0;
         list-style: none;
         li {
             @include sidebar-link($color, $background);
@@ -82,13 +80,11 @@ $BORDER: 1px solid transparent;
 
 .wrapper-main-content {
     max-width: $WIDTH_CONTENT;
-    display  : flex;
-    margin   : 0 auto;
-    
-    .wrapper-sidebar{
-        .left-sidebar{
-
-            width           : $WIDTH_SIDEBAR;
+    display: flex;
+    margin: 0 auto;
+    .wrapper-sidebar {
+        .left-sidebar {
+            width: $WIDTH_SIDEBAR;
         }
         &.default {
             background-color: $GREEN_LIGHT;
@@ -100,23 +96,22 @@ $BORDER: 1px solid transparent;
             span.counter {
                 color: $WHITE!important;
                 background-color: $PINK;
-                border-radius   : 3px;
-                width           : 22px;
-                height          : 17px;
-                padding         : 0 3px;
-                margin-left     : 10px;
-                font-size       : convert(11pt , px );
+                border-radius: 3px;
+                width: 22px;
+                height: 17px;
+                padding: 0 3px;
+                margin-left: 10px;
+                font-size: convert(11pt, px);
             }
             .icon-sidebar {
-                padding-top : 0;
-                width       : 20px;
-                height      : 20px;
+                padding-top: 0;
+                width: 20px;
+                height: 20px;
                 margin-right: 15px;
                 vertical-align: middle;
                 img {
                     vertical-align: middle;
                 }
-
                 img:nth-child(1) {
                     display: block;
                 }
@@ -132,7 +127,8 @@ $BORDER: 1px solid transparent;
     }
     .wrapper-content {
         background-color: #DFE6E6;
-        padding: 15px;
+        padding: 15px 0;
         flex-grow: 999;
+        width: $WIDTH_CONTENT - $WIDTH_SIDEBAR;
     }
 }

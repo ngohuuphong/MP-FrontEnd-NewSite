@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page2') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/student-search.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/student-search-hover.png') ?>"  />
@@ -20,7 +20,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page3') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/email.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/email-hover.png') ?>"  />
@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=calendar') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
@@ -39,7 +39,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page5') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/create.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/create-hover.png') ?>"  />
@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page6') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/database.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/database-hover.png') ?>"  />
@@ -57,7 +57,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page7') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/key.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/key-hover.png') ?>"  />
@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page8') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/QA.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/QA-hover.png') ?>"  />
@@ -75,7 +75,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page9') ?>"> 
+                <a href=""> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/logout.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/logout-hover.png') ?>"  />

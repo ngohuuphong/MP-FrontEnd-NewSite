@@ -15,9 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= asset('image/favicon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
 
-    <?php if(isset($_GET['page']) && ($_GET['page'] == 'calendar' || $_GET['page'] == 'page4') ): ?>
     <link rel="stylesheet" href="<?= asset('css/jquery.modal.min.css') ?>">
-    <?php endif; ?>
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
     <script>
         const BASE_URL = '<?= asset('') ?>';
@@ -47,9 +45,7 @@
     <!-- JS here -->
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/bootstrap.min.js"></script>
-    <?php if(isset($_GET['page']) && ($_GET['page'] == 'calendar' || $_GET['page'] == 'page4') ): ?>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
-    <?php endif; ?>
     
 </body>
 <script type="text/javascript">
