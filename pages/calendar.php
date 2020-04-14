@@ -36,7 +36,7 @@ function Calendar() {
     this.data = {
         '2020' : {
             '01' : {
-                '05' : [
+                '07' : [
                     { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
                 ]
             },
@@ -53,7 +53,7 @@ function Calendar() {
     this.classInToday    = 'calendar-today';
     this.classInSunday   = 'calendar-sunday';
     this.classInSatday   = 'calendar-satday';
-    this.classWrapperRow = 'calendar-wrapper-row';
+    this.classWrapperRow = 'calendar-wrapper-row position-relative';
     this.classHeader     = 'calendar-table-header';
     this.classTable      = 'calendar-table'
     this.classFooter     = 'calendar-footer';
@@ -129,38 +129,41 @@ function Calendar() {
             this.selector.appendChild(table);
         }
     }
-    this.drawIconNext = function(){
-
-        
-    }
 
     this.createHeader = function(){
 
         header           = document.createElement("div");
         header.className = this.classHeader;
-        header.innerHTML = this.selectYear + this.labelYear +
-                            ( this.selectMonth + 1 ) + this.labelMonth
-                            + this.selectDate
 
+        titleHead           = document.createElement("div");
+        titleHead.className = 'calendar-title-pannel position-relative';
 
-        titleHeading           = document.createElement("ul");
-        titleHeading.className = this.classLabelHeader;
+        headerIcon           = document.createElement("span");
+        headerIcon.className = "title-modal-header";
 
-        for(var head = 0; head < this.labelDays.length; head++){
+        headerIconImg           = document.createElement("img");
+        headerIconImg.src = BASE_URL + 'image/icon/schedule-hover.png';
 
-            var thead  = document.createElement("li");
-            thead.innerHTML =  this.labelDays[head];
-            
-            titleHeading.appendChild(thead);
-        }
+        headerIcon.appendChild(headerIconImg);
 
-        header.appendChild(titleHeading);
+        
+
+        TextTitleHead = document.createTextNode(this.selectYear  + this.labelYear + " " + 
+                            ( this.selectMonth + 1 ) + this.labelMonth + " "
+                            + "スケジュール");
+        titleHead.appendChild(headerIcon);
+        titleHead.appendChild(TextTitleHead);
+        
+
+        header.appendChild(titleHead);
+
         return header;
     }
 
     this.createFooter = function(){
 
         var footer       = document.createElement("div");
+
         footer.appendChild(this.drawFooter());
 
         return footer;
@@ -170,8 +173,8 @@ function Calendar() {
         var footer           = document.createElement("ul");
             footer.className = this.classFooter;
 
-        var PREV = "<<<";
-        var NEXT = ">>>";
+        var PREV = "<<";
+        var NEXT = ">>";
 
         var TAG_PREV           = document.createElement("li");
             TAG_PREV.innerHTML = PREV;
@@ -180,8 +183,7 @@ function Calendar() {
 
         var YEAR_PREV = this.selectYear - 1;
         var TAG_YEAR_PREV           = document.createElement("li");
-            TAG_YEAR_PREV.innerHTML = YEAR_PREV;
-            TAG_YEAR_PREV.innerHTML = YEAR_PREV;
+            TAG_YEAR_PREV.innerHTML = YEAR_PREV+ " " + this.labelYear;
             (function(_year, instance){
                 TAG_YEAR_PREV.addEventListener("click", function() {
 
@@ -213,7 +215,7 @@ function Calendar() {
 
         var YEAR_NEXT = this.selectYear + 1;
         var TAG_YEAR_NEXT           = document.createElement("li");
-            TAG_YEAR_NEXT.innerHTML = YEAR_NEXT;
+            TAG_YEAR_NEXT.innerHTML = YEAR_NEXT + " " + this.labelYear;
             (function(_year, instance){
                 TAG_YEAR_NEXT.addEventListener("click", function() {
 
@@ -240,7 +242,6 @@ function Calendar() {
 
         if (i === 0 && j < this.firstDay && this.dateLoopTemp == 0) {
             cell.classList.add(this.classCellDisable);
-            cell.innerHTML = '&nbsp;';
             var firstDateOfMonth = new Date(this.selectYear, this.selectMonth, 1);
             firstDateOfMonth.setDate(firstDateOfMonth.getDate() - this.firstDay + j );
             
@@ -448,6 +449,43 @@ function Calendar() {
         var wrapperRow = document.createElement("div");
         wrapperRow.className = this.classWrapperRow;
 
+
+        titleHeading           = document.createElement("ul");
+        titleHeading.className = this.classLabelHeader;
+
+        for(var head = 0; head < this.labelDays.length; head++){
+
+            var thead  = document.createElement("li");
+            thead.innerHTML =  this.labelDays[head];
+            
+            titleHeading.appendChild(thead);
+        }
+
+        wrapperRow.appendChild(titleHeading);
+
+
+
+
+        prevHead           = document.createElement("div");
+        prevHead.className = 'calendar-prev-page';
+        prevImg           = document.createElement("img");
+        prevImg.className = 'calendar-prev-img';
+        prevImg.src = BASE_URL + 'image/icon/calendar-prev.png';
+        prevHead.appendChild(prevImg);
+
+        (function(_month, instance){
+            prevHead.addEventListener("click", function() {
+
+                instance.setSelectMonth(_month);
+                instance.draw();
+            }, false);
+        })(this.selectMonth - 1 , this );
+        
+
+        wrapperRow.appendChild(prevHead);
+
+        var row_table = document.createElement("div");
+            row_table.className = 'calendar-wrapper-table-cell';
         // creating all cells
         for (let i = 0; i < 6; i++) {
             // creates a table row
@@ -462,8 +500,26 @@ function Calendar() {
             }
 
             // appending each row into calendar body.
-            wrapperRow.appendChild(row); 
+            row_table.appendChild(row); 
         }
+        wrapperRow.appendChild(row_table); 
+
+        nextFooter           = document.createElement("div");
+        nextFooter.className = 'calendar-next-page';
+        nextImg           = document.createElement("img");
+        nextImg.className = 'calendar-next-img';
+        nextImg.src = BASE_URL + 'image/icon/calendar-next.png';
+        nextFooter.appendChild(nextImg);
+
+        (function(_month, instance){
+            nextFooter.addEventListener("click", function() {
+
+                instance.setSelectMonth(_month);
+                instance.draw();
+            }, false);
+        })(this.selectMonth + 1 , this );
+
+        wrapperRow.appendChild(nextFooter);
 
         //// reset dateLoop to 1
         this.dateLoop = 1;
