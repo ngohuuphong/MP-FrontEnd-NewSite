@@ -26,8 +26,9 @@ $card_header_height: 46px;
 }
 
 .page10 {
-    background-color: #f2f2f2;
+    background-color: #DFE6E6;
     padding: 15px 0;
+    min-height: $content_min_height;
     section {
         .cards_container {
             margin: $container_margin auto;

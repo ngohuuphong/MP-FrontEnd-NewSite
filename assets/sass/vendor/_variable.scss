@@ -3,6 +3,9 @@ $leftside_width: 230px;
 $avartarside_width: 300px;
 $rightside_width: $page_width - $leftside_width;
 $menu_color: #999999;
+//header height
+$header_height: 73px;
+$content_min_height: calc(100vh - 73px);
 //@function
 $baseSize: 16px;
 $convertBase: $baseSize;
