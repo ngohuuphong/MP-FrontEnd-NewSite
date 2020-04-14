@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li>
-                <a href="<?= Route('?page=page4') ?>"> 
+                <a href="<?= Route('?page=calendar') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
