@@ -84,8 +84,8 @@ $WIDTH_TABLE_CALENDAR : 645px;
                 }
             }
             .calendar-cell-disable{
-                background-color: #f9f9f9;
-                opacity: 0.5;
+                background-color: #f4f4f4;
+                opacity: 0.3;
             }
             .calendar-today{
                 background-color: $YELLOW_BE !important;
@@ -242,7 +242,7 @@ $WIDTH_TABLE_CALENDAR : 645px;
     }
     .modal-body{
         padding                   : 15px 30px 10px 30px;
-        background-color          : #E6E6E6;
+        background-color          : $GREY_LIGHT;
         border-bottom-left-radius : $BORDER_CALENDAR;
         border-bottom-right-radius: $BORDER_CALENDAR;
 
