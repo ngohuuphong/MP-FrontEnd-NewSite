@@ -44,7 +44,6 @@
     <!-- container end -->
     <!-- JS here -->
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
-    <script src="<?php echo $cfg['site']['assest_path']; ?>js/bootstrap.min.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
     
 </body>

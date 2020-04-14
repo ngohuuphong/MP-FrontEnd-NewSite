@@ -1,0 +1,120 @@
+$container_margin: 15px;
+$card_border: 12px;
+@mixin card_item($height: 100%, $width:100%, $borderRadius: 12px) {
+    height: $height;
+    width: $width;
+    border-radius: $borderRadius;
+    background-color: white;
+}
+
+.page3 {
+    background-color: #DFE6E6;
+    padding: 0;
+    min-height: $content_min_height;
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .header {
+            margin: $container_margin auto;
+            width: 550px;
+            height: 42px;
+            border-radius: 20px;
+            border: 1px solid white;
+            background-color: #00A3AF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include box_shadow();
+            span {
+                font-size: convert(17pt, px);
+                line-height: convert(17pt, px);
+                color: white;
+            }
+            img {
+                width: 23.5px;
+                height: 23.5px;
+                margin-right: 10px;
+            }
+        }
+        .content {
+            width: 560px;
+            display: flex;
+            flex-direction: column;
+            .question_div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                width: 100%;
+                height: 46px;
+                margin: 12.5px 0;
+                .question_content {
+                    width: 525px;
+                    height: 100%;
+                    border-radius: 12px;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    @include box_shadow();
+                    .img_div {
+                        width: 35px;
+                        height: 35px;
+                        padding-top: 2px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        margin-right: 3px;
+                    }
+                    p {
+                        font-size: convert(11pt, px);
+                        line-height: convert(11pt, px);
+                    }
+                }
+                .img_div {
+                    width: 18px;
+                    height: 18px;
+                    a {
+                        img {
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .answer_div {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: flex-end;
+                width: 100%;
+                height: 46px;
+                margin: 12.5px 0;
+                .answer_content {
+                    width: 525px;
+                    height: 100%;
+                    border-radius: 12px;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    @include box_shadow();
+                    .img_div {
+                        width: 35px;
+                        height: 35px;
+                        padding-top: 2px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                        margin-right: 3px;
+                    }
+                    p {
+                        font-size: convert(11pt, px);
+                        line-height: convert(11pt, px);
+                    }
+                }
+            }
+        }
+    }
+}
