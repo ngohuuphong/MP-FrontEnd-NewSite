@@ -11,7 +11,8 @@ $card_border: 12px;
 
 .page2 {
     background-color: #DFE6E6;
-    padding: 15px 0;
+    padding: 70px 0 15px 0px;
+    min-height: $content_min_height;
     section {
         .cards_container {
             margin: $container_margin auto;

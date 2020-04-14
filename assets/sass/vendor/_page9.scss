@@ -89,6 +89,7 @@ $card_header_height: 40px;
 .page9 {
     background-color: white;
     padding: 15px 0;
+    min-height: $content_min_height;
     section {
         .cards_container {
             margin: $container_margin auto;
