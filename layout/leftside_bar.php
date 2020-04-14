@@ -68,8 +68,8 @@
             <li>
                 <a href="#"> 
                     <span class="icon-sidebar">
-                        <img src="<?= asset('image/icon/question.png') ?>"  />
-                        <img class="hover" src="<?= asset('image/icon/question-hover.png') ?>"  />
+                        <img src="<?= asset('image/icon/QA.png') ?>"  />
+                        <img class="hover" src="<?= asset('image/icon/QA-hover.png') ?>"  />
                     </span>
                     <span>よくあるご質問</span>
                 </a>
@@ -77,8 +77,8 @@
             <li>
                 <a href="#"> 
                     <span class="icon-sidebar">
-                        <img src="<?= asset('image/icon/back.png') ?>"  />
-                        <img class="hover" src="<?= asset('image/icon/back-hover.png') ?>"  />
+                        <img src="<?= asset('image/icon/logout.png') ?>"  />
+                        <img class="hover" src="<?= asset('image/icon/logout-hover.png') ?>"  />
                     </span>
                     <span>ログアウト</span>
                 </a>

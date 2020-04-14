@@ -129,6 +129,10 @@ function Calendar() {
             this.selector.appendChild(table);
         }
     }
+    this.drawIconNext = function(){
+
+        
+    }
 
     this.createHeader = function(){
 
@@ -177,6 +181,14 @@ function Calendar() {
         var YEAR_PREV = this.selectYear - 1;
         var TAG_YEAR_PREV           = document.createElement("li");
             TAG_YEAR_PREV.innerHTML = YEAR_PREV;
+            TAG_YEAR_PREV.innerHTML = YEAR_PREV;
+            (function(_year, instance){
+                TAG_YEAR_PREV.addEventListener("click", function() {
+
+                    instance.setSelectYear(_year);
+                    instance.draw();
+                }, false);
+            })(YEAR_PREV, this);
 
         footer.appendChild(TAG_YEAR_PREV);
 
@@ -202,6 +214,13 @@ function Calendar() {
         var YEAR_NEXT = this.selectYear + 1;
         var TAG_YEAR_NEXT           = document.createElement("li");
             TAG_YEAR_NEXT.innerHTML = YEAR_NEXT;
+            (function(_year, instance){
+                TAG_YEAR_NEXT.addEventListener("click", function() {
+
+                    instance.setSelectYear(_year);
+                    instance.draw();
+                }, false);
+            })(YEAR_NEXT, this);
 
         footer.appendChild(TAG_YEAR_NEXT);
 
@@ -293,15 +312,53 @@ function Calendar() {
                     showClose: false
                 });
                 var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
-                $(btnAccept).unbind('click');
+                
 
-                btnAccept.addEventListener("click", function(){
-                    console.log(instance);
+                btnAccept.addEventListener("click", handleRemove = function(){
+                    
                     var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'};
-                    instance.setEventForInstance(instance, date, evt);
+                    
+                    if(typeof instance.data[instance.selectYear]  == 'undefined'){
+
+                        instance.data[instance.selectYear] = {};
+
+                        instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
+
+                        instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)]
+                        [instance.formatZeroBefore(date)] = [];
+                    }
+                    
+                    if( typeof instance.data[instance.selectYear]
+                    [instance.formatZeroBefore(instance.selectMonth + 1)] == 'undefined' ){
+
+                        instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
+                        
+                        instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)]
+                        [instance.formatZeroBefore(date)] = [];
+
+                    }
+                    if( typeof instance.data[instance.selectYear]
+                    [instance.formatZeroBefore(instance.selectMonth + 1)]
+                    [instance.formatZeroBefore(date)] == 'undefined' ){
+
+                        instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)]
+                        [instance.formatZeroBefore(date)] = [];
+                    }
+
+                    instance.data[instance.selectYear]
+                        [instance.formatZeroBefore(instance.selectMonth + 1)]
+                        [instance.formatZeroBefore(date)].push(evt)
                     
                     $.modal.close();
-                });
+                    /// remove event listen of btn
+                    btnAccept.removeEventListener('click', handleRemove, false);
+                    instance.draw();
+                }, false);
                 
                 // instance.setInstanceToGlobal(OBJECT_DATA)
 
@@ -318,19 +375,6 @@ function Calendar() {
         return cell;
     }
 
-    this.setEventForInstance = function(ins, _date, evt){
-
-        if(typeof ins.data[ins.selectYear] != 'undefined'){
-
-            if(typeof ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)] != 'undefined'){
-
-                if(typeof ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)][ins.formatZeroBefore(_date)] != 'undefined'){
-
-                    ins.data[ins.selectYear][ins.formatZeroBefore(ins.selectMonth + 1)][ins.formatZeroBefore(_date)].push(evt);
-                }
-            }
-        }
-    }
     this.drawEventToDate = function(cell){
         if(this.data){
             if(typeof this.data[this.selectYear] != 'undefined'){
@@ -427,28 +471,5 @@ insatnceCalendar.setElementDraw(selector);
 
 insatnceCalendar.draw();
 
-
-
-function hung(){
-    OBJECT_DATA.data = {
-        '2020' : {
-            '01' : {
-                '07' : [
-                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                ]
-            },
-            '04' : {
-                '19' : [
-                    { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                ]
-            },
-            '05' : {
-                '09' : [
-                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                ]
-            },
-        }
-    };
-}
 
 </script>

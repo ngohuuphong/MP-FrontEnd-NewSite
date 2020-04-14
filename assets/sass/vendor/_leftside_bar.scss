@@ -17,7 +17,7 @@ $WIDTH_SIDEBAR      : 230px;
 $WIDTH_LOGO_SIDEBAR : 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
-$BORDER: 1px solid transparent;
+$BORDER: 1px solid transparent; 
 @mixin clearfix() {
     clear      : both;
     content    : ".";
@@ -108,10 +108,11 @@ $BORDER: 1px solid transparent;
                 font-size       : convert(11pt , px );
             }
             .icon-sidebar {
-                padding-top: 0;
-                width: 24px;
-                height: 24px;
+                padding-top : 0;
+                width       : 24px;
+                height      : 24px;
                 margin-right: 15px;
+
                 img:nth-child(1) {
                     display: block;
                 }
@@ -133,10 +134,10 @@ $BORDER: 1px solid transparent;
 }
 
 .calendar-table {
-    display: block;
+    display         : block;
     background-color: #CCCCCC;
     .calendar-table-header {
-        color: $WHITE;
+        color           : $WHITE;
         background-color: #4472C4;
     }
     .calendar-wrapper-row {
@@ -145,24 +146,26 @@ $BORDER: 1px solid transparent;
             display: flex;
 
             .calendar-cell {
-                width: 14%;
-                border    : 1px solid transparent;
+                width           : 14%;
+                border          : 1px solid transparent;
                 background-color: $WHITE;
-                flex: 1;   
-                margin: 1px;
+                flex            : 1;
+                margin          : 1px;
                 &.calendar-cell-has-event{
                     background-color: $PINK_LIGHT;
                 }
                 .calendar-cell-date{
-                    display: block;
+                    display    : block;
                     line-height: 1;
-                    font-size: convert(10pt, px);
+                    font-size  : convert(10pt, px);
                 }
                 .calendar-cell-image-plus{
-                    padding: 5px;
-                    display: block;
+                    width      : 11px;
+                    height     : 11px;
+                    padding    : 5px;
+                    display    : block;
                     line-height: 0;
-                    cursor: pointer;
+                    cursor     : pointer;
                 }
             }
             .calendar-cell-disable{
@@ -180,28 +183,28 @@ $BORDER: 1px solid transparent;
             
             .calendar-cell-event{
                 background-color: $PINK_DARK;
-                color: $WHITE;
-                overflow: hidden;
-                font-size: convert(9pt, px);
-                padding: 0 5px;
+                color           : $WHITE;
+                overflow        : hidden;
+                font-size       : convert(9pt, px);
+                padding         : 0 5px;
             }
             
         }
     }
     .calendar-list-header {
-        padding: 0;
-        margin: 0;
+        padding        : 0;
+        margin         : 0;
         list-style-type: none;
         width          : 100%;
         text-align     : center;
         margin         : 0 auto;
 
         li{
-            float: left;
-            width : 14.2857%;
+            float  : left;
+            width  : 14.2857%;
             zoom   : 1;
             padding: 5px 8px;
-            cursor: pointer;
+            cursor : pointer;
             &:after {
                 @include clearfix()
             }
@@ -211,8 +214,8 @@ $BORDER: 1px solid transparent;
         }
     }
     .calendar-footer {
-        padding: 0;
-        margin: 0;
+        padding        : 0;
+        margin         : 0;
         list-style-type: none;
         width          : 100%;
         text-align     : center;
@@ -221,10 +224,10 @@ $BORDER: 1px solid transparent;
 
         li{
             display: block;
-            float: left;
-            zoom: 1;
+            float  : left;
+            zoom   : 1;
             padding: 5px 8px;
-            cursor: pointer;
+            cursor : pointer;
             &::after {
                 @include clearfix()
             }
