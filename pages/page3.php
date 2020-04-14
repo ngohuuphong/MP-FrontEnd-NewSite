@@ -8,37 +8,48 @@
             <?php 
                 $arr = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
                 foreach ($arr as $value){
-                    $text_show = '';
+                    $_question = '';
+                    $_answers = '';
                     switch ($value) {
                         case 1:
-                            $text_show = '学生からアプローチが届きました。見送りたい場合、不採用通知は必要ですか。';
+                            $_question = '学生からアプローチが届きました。見送りたい場合、不採用通知は必要ですか。';
+                            $_answers = '学生からアプローチが届きました。見送りたい場合、不採用通知は必要ですか。 学生からアプローチが届きました。見送りたい場合、不採用通知は必要ですか。学生からアプローチが届きました。見送りたい場合、不採用通知は必要ですか。';
                             break;
                         case 2:
-                            $text_show = '学生へのオファーメール（スカウト）は何件送ることができますか。';
+                            $_question = '学生へのオファーメール（スカウト）は何件送ることができますか。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 3:
-                            $text_show = '学生との連絡は、Ｅメールや電話で行うことはできますか。';
+                            $_question = '学生との連絡は、Ｅメールや電話で行うことはできますか。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 4:
-                            $text_show = '学生の性格タグは何を表していますか。';
+                            $_question = '学生の性格タグは何を表していますか。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 5:
-                            $text_show = 'オファーメール代行サービスを停止したいです。';
+                            $_question = 'オファーメール代行サービスを停止したいです。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 6:
-                            $text_show = '採用を締め切りました。スカウトサービスの利用を停止したいです。';
+                            $_question = '採用を締め切りました。スカウトサービスの利用を停止したいです。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 7:
-                            $text_show = '契約書は郵送ですか。';
+                            $_question = '契約書は郵送ですか。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 8:
-                            $text_show = '料金形態を教えてください。';
+                            $_question = '料金形態を教えてください。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 9:
-                            $text_show = '退会方法を教えてください。';
+                            $_question = '退会方法を教えてください。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;
                         case 10:
-                            $text_show = 'マイページの閲覧・操作時に不具合が発生しました。';
+                            $_question = 'マイページの閲覧・操作時に不具合が発生しました。';
+                            $_answers = '学生へのオファーメール（スカウト）は何件送ることができますか。';
                             break;    
                     }
             ?>
@@ -48,7 +59,7 @@
                         <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/question_icon.png" alt=""/>
                     </div>
                     <p>
-                        <?php echo $text_show; ?>
+                        <?php echo $_question; ?>
                     </p>
                 </div>
                 <div class="img_div">
@@ -61,7 +72,7 @@
                         <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/answer_icon.png" alt=""/>
                     </div>
                     <p>
-                        <?php echo $text_show; ?>
+                        <?php echo $_answers; ?>
                     </p>
                 </div>
                
