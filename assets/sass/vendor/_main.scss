@@ -27,6 +27,7 @@
  :before {
     box-sizing: border-box;
 }
+
 html,
 body,
 div,
@@ -93,39 +94,47 @@ td {
     padding: 0;
     vertical-align: baseline;
 }
+
 :focus {
     outline: 0 !important;
     text-decoration: none !important;
 }
+
 html,
 body {
     margin: 0;
     padding: 0;
 }
+
 body {
     line-height: 1;
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
 }
+
 caption,
 th,
 td {
     text-align: left;
     padding: 5px 10px;
 }
+
 img {
     border: none;
     max-width: 100%;
     height: auto;
     box-sizing: initial;
 }
+
 article,
 aside,
 details,
@@ -141,16 +150,19 @@ main,
 time {
     display: block;
 }
+
 a {
     color: #222;
     text-decoration: none;
 }
+
 a:hover,
 a:active {
     background-color: transparent;
     color: #bbb;
     text-decoration: none;
 }
+
 h1,
 h2,
 h3,
@@ -161,6 +173,7 @@ span {
     margin: 0px;
     padding: 0px;
 }
+
 .h1,
 .h2,
 .h3,
@@ -175,38 +188,49 @@ h5,
 h6 {
     line-height: 1.3;
 }
+
 .table {
     width: 100%;
     margin-bottom: 1rem;
     color: #212529;
 }
+
 table {
     border-collapse: collapse;
 }
-.table-responsive{
+
+.table-responsive {
     display: block;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
 }
+
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
 }
-.table td, .table th {
+
+.table td,
+.table th {
     padding: .75rem;
     vertical-align: top;
     border-bottom: 1px solid #dee2e6;
 }
+
 .table-hover tbody tr:hover {
     color: #212529;
-    background-color: rgba(0,0,0,.075);
+    background-color: rgba(0, 0, 0, .075);
 }
+
+
 /*page
 ----------------------------------------------------*/
+
 .line-height-0 {
     line-height: 0;
 }
+
 body {
     margin: 0px;
     padding: 0px;
@@ -216,23 +240,31 @@ body {
     text-decoration: none;
     line-height: 1.7;
 }
+
 .float-left {
     float: left!important;
 }
+
 .float-right {
     float: right!important;
 }
+
 .float-none {
     float: none!important;
 }
+
 .mobile {
     display: none;
 }
+
+
 /* Clearfix
 -----------------------------------------*/
+
 .clear {
     zoom: 1;
 }
+
 .clear:after {
     clear: both;
     content: ".";
@@ -242,21 +274,28 @@ body {
     visibility: hidden;
     overflow: hidden;
 }
+
+
 /**
 * display
 */
+
 .d-none {
     display: none !important;
 }
+
 .d-inline {
     display: inline !important;
 }
+
 .d-inline-block {
     display: inline-block !important;
 }
+
 .d-block {
     display: block !important;
 }
+
 .position-relative {
     position: relative;
 }
