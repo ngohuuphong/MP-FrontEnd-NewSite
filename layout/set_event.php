@@ -61,8 +61,7 @@
         <div class="item set-memo">
             <label for="memo">メモ</label>
             <textarea name="memo" class="memo">会社：トラストグロース
-場所：西新宿（地下鉄：都庁前）
-            </textarea>
+場所：西新宿（地下鉄：都庁前）</textarea>
         </div>
 
         <div class="modal-footer d-flex">

@@ -57,7 +57,7 @@ function Calendar() {
     this.classHeader     = 'calendar-table-header';
     this.classTable      = 'calendar-table'
     this.classFooter     = 'calendar-footer';
-    this.classLabelHeader= 'calendar-list-header';
+    this.classLabelHeader= 'calendar-list-header calendar-row';
     this.classCellDate   = 'calendar-cell-date';
     this.classCellDisable= 'calendar-cell-disable';
     this.classCellEvent  = 'calendar-cell-event';
@@ -322,7 +322,7 @@ function Calendar() {
                     showClose: false
                 });
                 var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
-                
+                var btnCancel = document.getElementById(instance.modalEvent).getElementsByClassName('js-cancel-event')[0];
 
                 btnAccept.addEventListener("click", handleRemove = function(){
                     
@@ -367,7 +367,13 @@ function Calendar() {
                     $.modal.close();
                     /// remove event listen of btn
                     btnAccept.removeEventListener('click', handleRemove, false);
+                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
                     instance.draw();
+                }, false);
+                btnCancel.addEventListener("click", handleRemoveCancel = function(){
+
+                    btnAccept.removeEventListener('click', handleRemove, false);
+                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
                 }, false);
                 
                 // instance.setInstanceToGlobal(OBJECT_DATA)
@@ -449,19 +455,30 @@ function Calendar() {
         var wrapperRow = document.createElement("div");
         wrapperRow.className = this.classWrapperRow;
 
+        var wrapperRowTableHeade = document.createElement("div");
+        wrapperRowTableHeade.className = "calendar-wrapper-table-cell";
+        
 
-        titleHeading           = document.createElement("ul");
+        titleHeading           = document.createElement("div");
         titleHeading.className = this.classLabelHeader;
 
         for(var head = 0; head < this.labelDays.length; head++){
 
-            var thead  = document.createElement("li");
-            thead.innerHTML =  this.labelDays[head];
+            var thead  = document.createElement("div");
+            thead.className = this.classCell;
+
+            var textCell           = document.createElement("span");
+                textCell.className = this.classCellDate;
+                textCell.innerHTML =  this.labelDays[head];
+
+            thead.appendChild(textCell);
+
+            
             
             titleHeading.appendChild(thead);
         }
-
-        wrapperRow.appendChild(titleHeading);
+        wrapperRowTableHeade.appendChild(titleHeading);
+        wrapperRow.appendChild(wrapperRowTableHeade);
 
 
 
