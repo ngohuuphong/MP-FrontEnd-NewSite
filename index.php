@@ -16,6 +16,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <link rel="stylesheet" href="<?= asset('css/jquery.modal.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/select2.css">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
     <script>
         const BASE_URL = '<?= asset('') ?>';
@@ -34,7 +35,8 @@
         </div>
         <div class="wrapper-content position-relative">
             <?php include 'layout/main_content.php'; ?>
-            <?php if(isset($_GET['page']) && $_GET['page'] == 'calendar'){
+
+            <?php if(isset($_GET['page']) && $_GET['page'] == 'page5'){
                 include("./layout/set_event.php");
             } ?>
         </div>
@@ -48,6 +50,7 @@
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
     <script src="<?= asset('js/calendar.js') ?>"></script>
+    <script src="<?= asset('js/select2.js') ?>"></script>
     
 </body>
 <script type="text/javascript">
