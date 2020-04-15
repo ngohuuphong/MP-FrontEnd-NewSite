@@ -322,7 +322,15 @@
 
                     <div class="divider"><span>企業カテゴリ</span></div>
                     <div class="wrapper-select-custom">
-
+                        <div class="block-select2">
+                            <select multiple class="js-render-select2-multi">
+                                <option value="自動車・電気・機械" selected>自動車・電気・機械</option>
+                                <option value="その他（メーカー）" selected >その他（メーカー）</option>
+                                <option value="通信（IT）" selected >通信（IT）</option>
+                                <option value="test">test</option>
+                            </select>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-add-select2">+追加する</a>
                     </div>
                 </div>
             </div>
@@ -366,6 +374,10 @@
 
         insatnceCalendar.draw();
     }
+
+    $(".js-render-select2-multi").select2({
+        placeholder: "Select a State"
+    });
     
 </script>
 

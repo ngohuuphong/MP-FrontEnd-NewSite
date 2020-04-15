@@ -47,6 +47,8 @@ $GREY_DARK : #CCCCCC;
     .cart {
         width: $WIDTH_CREATE_COMPANY;
         margin: 10px auto;
+        border-radius : 20px;
+        @include box_shadow();
 
         .cart-header{
             background-color       : $GREEN;
@@ -57,8 +59,11 @@ $GREY_DARK : #CCCCCC;
             border-top-right-radius: 20px;
         }
         .cart-body{
-            padding                : 10px $XPADDING_CART;
+            padding                : 10px $XPADDING_CART 25px;
             background-color: $WHITE;
+            border-bottom-left-radius : 20px;
+            border-bottom-right-radius: 20px;
+            
 
             .input-group{
                 &:after{
@@ -150,6 +155,7 @@ $GREY_DARK : #CCCCCC;
             .divider{
                 position  : relative;
                 margin-top: 25px;
+                margin-bottom: 10px;
                 font-size : convert(12pt, px);
 
                 span{
@@ -179,6 +185,43 @@ $GREY_DARK : #CCCCCC;
 
 .wrapper-select-custom{
     position: relative;
-
     
+
+    .block-select2{
+
+        font-size: convert(10pt, px);
+        width: 460px;
+        .select2-container{
+            width: 100%!important;
+        }
+
+        &:after{
+            @include clearfix();
+        }
+        .select2-selection__choice{
+            background-color: $WHITE;
+            color: #478DC7;
+            border-color: #8DCCD6;
+        }
+        .select2-container--default .select2-selection--multiple{
+            border-color: $GREY_DARK;
+        }
+    }
+    .btn-add-select2{
+
+        padding: 2px 9px;
+        font-size: convert(10pt, px);
+        background-color : $BLUE_LIGHT;
+        color            : $WHITE;
+        position         : absolute;
+        right            : 0;
+        top              : 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform   : translateY(-50%);
+        -o-transform     : translateY(-50%);
+        -ms-transform    : translateY(-50%);
+        transform        : translateY(-50%);
+        border: 1px solid $WHITE;
+        border-radius: 11.5px;
+    }
 }
