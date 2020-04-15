@@ -1,4 +1,4 @@
-<div class="page4">
+<div class="change_password">
     <section>
         <div class="cards_container">
             <div class="card_item">

@@ -1,8 +1,8 @@
 <aside class="left-sidebar">
     <nav class="left-nav">
         <ul class="list-menu-sidebar">
-            <li class="<?= isPageActive('index') ?>">
-                <a href="<?= Route('?page=index') ?>"> 
+            <li class="<?= isPageActive('top-page') ?>">
+                <a href="<?= Route('?page=top-page') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/top-page.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/top-page-hover.png') ?>"  />
@@ -10,8 +10,8 @@
                     <span>トップ</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li class="<?= isPageActive('search-student') ?>">
+                <a href="<?= Route('?page=search-student') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/student-search.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/student-search-hover.png') ?>"  />
@@ -19,8 +19,8 @@
                     <span>学生検索</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li class="<?= isPageActive('message') ?>">
+                <a href="<?= Route('?page=message') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/email.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/email-hover.png') ?>"  />
@@ -29,8 +29,8 @@
                     <span class="counter"> 14 </span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('page5') ?>">
-                <a href="<?= Route('?page=page5') ?>"> 
+            <li  class="<?= isPageActive('calendar') ?>">
+                <a href="<?= Route('?page=calendar') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
@@ -38,8 +38,8 @@
                     <span>スケジュール管理</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li  class="<?= isPageActive('create-page-creating') ?>">
+                <a href="<?= Route('?page=create-page-creating') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/create.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/create-hover.png') ?>"  />
@@ -47,8 +47,8 @@
                     <span>企業公開ページ作成</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li  class="<?= isPageActive('register-info-creating') ?>">
+                <a href="<?= Route('?page=register-info-creating') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/database.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/database-hover.png') ?>"  />
@@ -56,8 +56,8 @@
                     <span>登録情報</span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('page4') ?>">
-                <a href="<?= Route('?page=page4') ?>"> 
+            <li  class="<?= isPageActive('change-password-creating') ?>">
+                <a href="<?= Route('?page=change-password-creating') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/key.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/key-hover.png') ?>"  />
@@ -65,8 +65,8 @@
                     <span>パスワード変更</span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('page3') ?>">
-                <a href="<?= Route('?page=page3') ?>"> 
+            <li  class="<?= isPageActive('faq') ?>">
+                <a href="<?= Route('?page=faq') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/QA.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/QA-hover.png') ?>"  />
@@ -74,8 +74,8 @@
                     <span>よくあるご質問</span>
                 </a>
             </li>
-            <li class="<?= isPageActive('page2') ?>">
-                <a href="<?= Route('?page=page2') ?>"> 
+            <li class="<?= isPageActive('logout') ?>">
+                <a href="<?= Route('?page=logout') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/logout.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/logout-hover.png') ?>"  />

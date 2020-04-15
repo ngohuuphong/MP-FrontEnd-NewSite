@@ -7,14 +7,14 @@
             // define the application path
             define('ROOT', dirname(dirname(__FILE__))); 
 
-            $page = isset($_GET['page']) ? $_GET['page'] : 'index'; 
+            $page = isset($_GET['page']) ? $_GET['page'] : 'top-page'; 
             
             $PATH_VIEW = ROOT . DS . 'pages' . DS . $page . '.php';
             $valid = file_exists( $PATH_VIEW );
             // if we cannot find any, then find library/core directory
             if(!$valid){
 
-                $PATH_VIEW = ROOT . DS . 'pages' . DS . 'index' . '.php';
+                $PATH_VIEW = ROOT . DS . 'pages' . DS . '404' . '.php';
                 $valid = file_exists($PATH_VIEW);
 
                 if(!$valid){

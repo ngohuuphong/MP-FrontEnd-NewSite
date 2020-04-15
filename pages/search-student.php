@@ -1,4 +1,4 @@
-<div class="page9">
+<div class="search_student">
     <section>
         <div class="cards_container">
             <div class="card_item">
@@ -298,7 +298,7 @@
                         </div>
                     </div>
                     <div class="btn_div">
-                        <a class="btn_primary" href="" type="button">
+                        <a class="btn_primary" href="<?= Route('?page=search-details') ?>" type="button">
                             <span>詳細を表示</span>
                         </a>
                         <a class="btn_secondary" href="" type="button">

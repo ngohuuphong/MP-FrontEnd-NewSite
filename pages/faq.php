@@ -1,4 +1,4 @@
-<div class="page3">
+<div class="faq">
     <section>
         <div class="header">
             <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon_faq_menu.png" alt=""/>

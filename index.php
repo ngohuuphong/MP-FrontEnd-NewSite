@@ -35,7 +35,7 @@
         <div class="wrapper-content position-relative">
             <?php include 'layout/main_content.php'; ?>
 
-            <?php if(isset($_GET['page']) && $_GET['page'] == 'page5'){
+            <?php if(isset($_GET['page']) && $_GET['page'] == 'calendar'){
                 include("./layout/set_event.php");
             } ?>
         </div>

@@ -1,4 +1,4 @@
-<div class="page1">
+<div class="search_details">
     <section>
         <div class="cards_container">
             <div class="card_item">

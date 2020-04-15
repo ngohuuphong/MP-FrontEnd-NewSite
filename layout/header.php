@@ -1,11 +1,11 @@
 <header>
     <div id="header">
             <div class="header-left">
-                <a class="logo" href="#"><img class="img_logo" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/logo.png" alt=""/></a></a>
+                <a class="logo" href="<?= Route('?page=top-page') ?>"><img class="img_logo" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/logo.png" alt=""/></a></a>
             </div>
             <div class="header-right">
                 <div class="avatar">
-                    <a href="#" class="img">
+                    <a href="<?= Route('?page=top-page') ?>" class="img">
                         <img class="img_avatar" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar.png" alt=""/>
                         <span>トラストグロースワールドワイド</span>
                 </a>
@@ -13,7 +13,7 @@
                 <div class="menu">
                     <ul>
                         <li>
-                            <a href="../navbar-static-top/">
+                            <a href="<?= Route('?page=top-page') ?>">
                                 <div class="icon-container">
                                     <img class="icon-menu notice" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_notice.png" alt=""/>
                                     <div class="popup">5</div>
@@ -22,7 +22,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../navbar-static-top/" class="showpopup">
+                            <a href="<?= Route('?page=top-page') ?>" class="showpopup">
                                 <div class="icon-container">
                                     <img class="icon-menu mess" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_mess.png" alt=""/>
                                     <div class="popup">14</div>
@@ -31,19 +31,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="../navbar-static-top/">
+                            <a href="<?= Route('?page=top-page') ?>">
                                 <img class="icon-menu favorite" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_fav.png" alt=""/>
                                 <span class="fav">お気に入り</span>
                             </a>
                         </li>
                         <li>
-                            <a href="../navbar-static-top/">
+                            <a href="<?= Route('?page=top-page') ?>">
                                 <img class="icon-menu help" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_help.png" alt=""/>
                                 <span>お問い合わせ</span>
                             </a>
                         </li>
                         <li>
-                            <a href="../navbar-static-top/">
+                            <a href="<?= Route('?page=top-page') ?>">
                                 <img class="icon-menu back" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/menu_icon_back.png" alt=""/>
                                 <span>戻る</span>
                             </a>

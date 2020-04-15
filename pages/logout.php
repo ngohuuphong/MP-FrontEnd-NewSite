@@ -1,4 +1,4 @@
-<div class="page2">
+<div class="logout">
     <section>
         <div class="cards_container">
             <div class="card_item">
