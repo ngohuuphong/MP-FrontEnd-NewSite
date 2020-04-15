@@ -34,7 +34,9 @@
         </div>
         <div class="wrapper-content position-relative">
             <?php include 'layout/main_content.php'; ?>
-            <?php include("./layout/set_event.php") ?>
+            <?php if(isset($_GET['page']) && $_GET['page'] == 'calendar'){
+                include("./layout/set_event.php");
+            } ?>
         </div>
     </div>
 
@@ -45,6 +47,7 @@
     <!-- JS here -->
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
+    <script src="<?= asset('js/calendar.js') ?>"></script>
     
 </body>
 <script type="text/javascript">
@@ -56,6 +59,15 @@
             $('.dropdown-menu').hide();
         });
     });
+    var selector = document.getElementById('draw-calendar')
+    if(selector){
+
+        var insatnceCalendar = new Calendar();
+        insatnceCalendar.setElementDraw(selector);
+
+        insatnceCalendar.draw();
+    }
+    
 </script>
 
 </html>

@@ -1,0 +1,137 @@
+$BORDER_BUTTON       : 10px;
+$WIDTH_BUTTON_ICON   : 16px;
+$PADDING_BUTTON_LEFT : $WIDTH_BUTTON_ICON + 25px;
+$WIDTH_CREATE_COMPANY: 590px;
+$XPADDING_CART       : 28px;
+$GREY_DARK : #CCCCCC;
+
+.page-create-company{
+    
+
+    .button-head{
+        text-align: center;
+        .btn-create-view, .btn-create-export{
+        
+            display: inline-block;
+            padding: 4px 20px 4px $PADDING_BUTTON_LEFT;
+            color: $WHITE;
+            font-size:  convert(11pt, px);
+            border: 1px solid $WHITE;
+            border-radius: $BORDER_BUTTON;
+            margin-left: 8px;
+            margin-right: 8px;
+    
+    
+            .icon-btn{
+    
+                width            : $WIDTH_BUTTON_ICON;
+                display          : block;
+                position         : absolute;
+                left             : 20px;
+                top              : 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform   : translateY(-50%);
+                -o-transform     : translateY(-50%);
+                -ms-transform    : translateY(-50%);
+                transform        : translateY(-50%);
+            }
+        }
+        .btn-create-view{
+            background-color: $BLUE_LIGHT;
+        }
+        .btn-create-export{
+            background-color: $ORIGINAL;
+        }
+    }
+    
+    .cart {
+        width: $WIDTH_CREATE_COMPANY;
+        margin: 10px auto;
+
+        .cart-header{
+            background-color       : $GREEN;
+            color                  : $WHITE;
+            font-size              : convert(14pt, px);
+            padding                : 10px $XPADDING_CART;
+            border-top-left-radius : 20px;
+            border-top-right-radius: 20px;
+        }
+        .cart-body{
+            padding                : 10px $XPADDING_CART;
+            background-color: $WHITE;
+
+            .input-group{
+                &:after{
+                    @include clearfix();
+                }
+
+                .normal-input{
+                    min-width: 180px;
+
+                    &:nth-child(2){
+                        margin-left: 25px;
+                    }
+                }
+                .larg-input {
+                    min-width: 240px;
+
+                    @extend .normal-input;
+                }
+                .larger-input {
+                    min-width: 280px;
+
+                    @extend .normal-input;
+                }
+                .largest-input {
+                    width: 100%;
+
+                    @extend .normal-input;
+                }
+                .normal-select{
+                    min-width: 120px;
+                    font-size: convert(12pt, px);
+
+                }
+                span.text-select{
+                    
+                    padding: 6px 6px 0 6px;
+                    font-size: convert(12pt, px);
+                }
+                .small-select{
+                    min-width: 80px;
+                    margin-left: 25px;
+                    
+                    @extend .normal-select;
+                }
+                
+
+                label{
+                    margin-top: 7px;
+                    font-size : convert(12pt, px);
+                    display   : block;
+                }
+                input[type=text]{
+                    width        : 100%;
+                    display      : inline-block;
+                    border       : 1px solid $GREY_DARK;
+                    border-radius: 3px;
+    
+                    box-sizing: border-box;
+                    padding   : 5px 10px;
+                    margin    : 3px 0;
+                    font-size : convert(12pt, px);
+                }
+                select{
+                    width: 100%;
+                    display: inline-block;
+                    border: 1px solid #CCC;
+                    border-radius: 3px;
+                    box-sizing: border-box;
+                    padding: 5px 10px;
+                    margin: 3px 0;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
