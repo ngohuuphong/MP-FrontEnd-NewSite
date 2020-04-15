@@ -56,6 +56,7 @@ $card_border: 12px;
                         min-height: 46px;
                         border-radius: 12px;
                         background-color: white;
+                        cursor: pointer;
                         @include box_shadow();
                         .img_div {
                             width: 35px;
@@ -86,6 +87,7 @@ $card_border: 12px;
                         img {
                             height: 100%;
                             width: 100%;
+                            cursor: auto;
                         }
                         img:nth-child(1) {
                             display: block;
