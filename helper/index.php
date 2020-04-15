@@ -31,3 +31,10 @@ function Route( $path = null ){
     global $cfg;
     return $cfg['site']['base_url'] . $path;
 }
+
+function isPageActive( $page = null ){
+
+    if(isset($_GET['page']) && $_GET['page'] == $page)
+        return 'active';
+    return null;
+}

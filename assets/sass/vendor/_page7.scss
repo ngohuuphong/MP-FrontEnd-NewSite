@@ -66,19 +66,19 @@ $GREY_DARK : #CCCCCC;
                 }
 
                 .normal-input{
-                    min-width: 180px;
+                    width: 180px;
 
                     &:nth-child(2){
                         margin-left: 25px;
                     }
                 }
                 .larg-input {
-                    min-width: 240px;
+                    width: 240px;
 
                     @extend .normal-input;
                 }
                 .larger-input {
-                    min-width: 280px;
+                    width: 280px;
 
                     @extend .normal-input;
                 }
@@ -87,18 +87,32 @@ $GREY_DARK : #CCCCCC;
 
                     @extend .normal-input;
                 }
+                .small-input{
+                    width: 120px;
+
+                    @extend .normal-input;
+                }
                 .normal-select{
-                    min-width: 120px;
+                    width: 120px;
                     font-size: convert(12pt, px);
 
                 }
                 span.text-select{
-                    
+
                     padding: 6px 6px 0 6px;
                     font-size: convert(12pt, px);
                 }
+                .fix-small-input-margin{
+                    margin-left: 35px;
+                }
+                
+                span.text-input{
+
+                    padding: 36px 6px 0 6px;
+                    font-size: convert(12pt, px);
+                }
                 .small-select{
-                    min-width: 80px;
+                    width: 80px;
                     margin-left: 25px;
                     
                     @extend .normal-select;

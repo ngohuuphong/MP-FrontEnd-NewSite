@@ -1,7 +1,7 @@
 <aside class="left-sidebar">
     <nav class="left-nav">
         <ul class="list-menu-sidebar">
-            <li class="active">
+            <li class="<?= isPageActive('page1') ?>">
                 <a href="<?= Route('?page=page1') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/top-page.png') ?>"  />
@@ -29,8 +29,8 @@
                     <span class="counter"> 14 </span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li  class="<?= isPageActive('calendar') ?>">
+                <a href="<?= Route('?page=calendar') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
@@ -56,8 +56,8 @@
                     <span>登録情報</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li  class="<?= isPageActive('page4') ?>">
+                <a href="<?= Route('?page=page4') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/key.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/key-hover.png') ?>"  />
@@ -65,8 +65,8 @@
                     <span>パスワード変更</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li  class="<?= isPageActive('page3') ?>">
+                <a href="<?= Route('?page=page3') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/QA.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/QA-hover.png') ?>"  />
@@ -74,8 +74,8 @@
                     <span>よくあるご質問</span>
                 </a>
             </li>
-            <li>
-                <a href=""> 
+            <li class="<?= isPageActive('page2') ?>">
+                <a href="<?= Route('?page=page2') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/logout.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/logout-hover.png') ?>"  />
