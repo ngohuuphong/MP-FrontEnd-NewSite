@@ -8,14 +8,17 @@ $PINK_RED : #FF6C8E;
 
 $GREY_LIGHT: #E6E6E6;
 $GREY_DARK : #CCCCCC;
-$BLUE_LIGHT: #4472C4;
+$BLUE_LIGHT: #4472C4; 
 
 $BORDER_CALENDAR: 20px;
+$WIDTH_CALENDAR  : 718px;
 
 
 $WIDTH_TABLE_CALENDAR : 645px;
 .calendar-table {
     display         : block;
+    width: 718px;
+    margin: 0 auto;
 
     .calendar-table-header {
         color                  : $WHITE;
@@ -81,8 +84,8 @@ $WIDTH_TABLE_CALENDAR : 645px;
                 }
             }
             .calendar-cell-disable{
-                background-color: #f9f9f9;
-                opacity: 0.5;
+                background-color: #f4f4f4;
+                opacity: 0.3;
             }
             .calendar-today{
                 background-color: $YELLOW_BE !important;
@@ -109,25 +112,22 @@ $WIDTH_TABLE_CALENDAR : 645px;
     .calendar-table-wrapper{
         background-color: $GREY_DARK;
     }
-    .calendar-list-header {
+    .calendar-list-header.calendar-row {
         width: $WIDTH_TABLE_CALENDAR;
-        padding        : 0;
-        list-style-type: none;
-        text-align     : center;
-        margin         : 0 auto;
-        display: flex;
         
-        
-
-        li{
-            flex            : 1;
-            width           : 14%;
-            zoom            : 1;
+        .calendar-cell{
+            
             padding         : 2px 8px 1px;
             cursor          : pointer;
             font-size       : convert(12pt, px);
             background-color: $GREY_LIGHT;
-            margin          : 0.5px;
+            margin          : 1.5px;
+            min-height : unset;
+            height: 23px;
+
+            .calendar-cell-date{
+                text-align: center;
+            }
 
 
             &:nth-child(1){
@@ -136,9 +136,6 @@ $WIDTH_TABLE_CALENDAR : 645px;
             &:last-child{
                 background-color: $AQUAMARINE_DARK;
             }
-        }
-        &:after {
-            @include clearfix()
         }
     }
     .calendar-footer {
@@ -163,6 +160,11 @@ $WIDTH_TABLE_CALENDAR : 645px;
             color      : $BLUE_LIGHT;
             font-size  : convert(12pt, px);
 
+        }
+        .active-footer{
+            background-color: $BLUE_LIGHT;
+            color: $WHITE;
+            border-radius: 4px;
         }
         &::after {
             @include clearfix()
@@ -240,7 +242,7 @@ $WIDTH_TABLE_CALENDAR : 645px;
     }
     .modal-body{
         padding                   : 15px 30px 10px 30px;
-        background-color          : #E6E6E6;
+        background-color          : $GREY_LIGHT;
         border-bottom-left-radius : $BORDER_CALENDAR;
         border-bottom-right-radius: $BORDER_CALENDAR;
 
@@ -274,7 +276,8 @@ $WIDTH_TABLE_CALENDAR : 645px;
         }
         select, textarea{
             border: 0!important;
-            min-height: 23px;
+            height: 23px;
+            border-radius: 0!important;
         }
         .btn-accept, .btn-cancel{
             background-color: #4472C4;
@@ -284,6 +287,8 @@ $WIDTH_TABLE_CALENDAR : 645px;
             padding: 5px 20px;
             color: $WHITE;
             margin: 2px 15px 0;
+            border: 1px solid $WHITE;
         }
+        
     }
 }
