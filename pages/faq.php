@@ -72,7 +72,7 @@
                         </p>
                     </div>
                     <div class="img_expand">
-                        <a href="javascript:void(0)">
+                        <a onclick="faqExpand2(this)" href="javascript:void(0)">
                             <img class="expand_icon_faq" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/expand_icon.png" alt=""/>
                             <img  class="collapse_icon_faq" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/collapse_icon.png" alt=""/>
                         </a>
