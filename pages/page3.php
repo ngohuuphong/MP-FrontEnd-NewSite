@@ -63,7 +63,7 @@
             ?>
             <div class="wrapper_content">
                 <div class="question_div">
-                    <div class="question_content">
+                    <div class="question_content" onclick="faqExpand(this);" >
                         <div class="img_div">
                             <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/question_icon.png" alt=""/>
                         </div>
@@ -72,7 +72,7 @@
                         </p>
                     </div>
                     <div class="img_expand">
-                        <a onclick="faqExpand(this)" href="javascript:void(0)">
+                        <a href="javascript:void(0)">
                             <img class="expand_icon_faq" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/expand_icon.png" alt=""/>
                             <img  class="collapse_icon_faq" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/collapse_icon.png" alt=""/>
                         </a>

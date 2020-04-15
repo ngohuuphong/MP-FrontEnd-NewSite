@@ -14,7 +14,6 @@
     <!-- <link rel="manifest" href="site.webmanifest"> -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= asset('image/favicon.png') ?>">
     <!-- Place favicon.ico in the root directory -->
-
     <link rel="stylesheet" href="<?= asset('css/jquery.modal.min.css') ?>">
     <link rel="stylesheet" href="<?php echo $cfg['site']['assest_path']; ?>css/style.css">
     <script>
@@ -49,5 +48,6 @@
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/main.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
     <script src="<?= asset('js/calendar.js') ?>"></script>
+    
 </body>
 </html>

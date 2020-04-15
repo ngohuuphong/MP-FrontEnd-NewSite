@@ -1,8 +1,8 @@
 <aside class="left-sidebar">
     <nav class="left-nav">
         <ul class="list-menu-sidebar">
-            <li class="<?= isPageActive('page1') ?>">
-                <a href="<?= Route('?page=page1') ?>"> 
+            <li class="<?= isPageActive('index') ?>">
+                <a href="<?= Route('?page=index') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/top-page.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/top-page-hover.png') ?>"  />
