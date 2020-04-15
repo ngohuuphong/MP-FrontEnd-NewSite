@@ -46,28 +46,8 @@
     <!-- container end -->
     <!-- JS here -->
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo $cfg['site']['assest_path']; ?>js/main.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
     <script src="<?= asset('js/calendar.js') ?>"></script>
-    
 </body>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.showmenu').on('click', function () {
-            $('.dropdown-menu').toggle();
-        });
-        $('.menu_exit').on('click', function () {
-            $('.dropdown-menu').hide();
-        });
-    });
-    var selector = document.getElementById('draw-calendar')
-    if(selector){
-
-        var insatnceCalendar = new Calendar();
-        insatnceCalendar.setElementDraw(selector);
-
-        insatnceCalendar.draw();
-    }
-    
-</script>
-
 </html>
