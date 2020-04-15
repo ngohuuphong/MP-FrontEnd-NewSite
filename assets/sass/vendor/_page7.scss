@@ -145,7 +145,40 @@ $GREY_DARK : #CCCCCC;
                     margin: 3px 0;
                     font-size: 12px;
                 }
+                
+            }
+            .divider{
+                position  : relative;
+                margin-top: 25px;
+                font-size : convert(12pt, px);
+
+                span{
+                    background-color: $WHITE;
+                    padding-right   : 20px;
+                    position        : relative;
+                    z-index         : 2;
+                }
+
+                &:after{
+                    clear      : both;
+                    content    : ".";
+                    line-height: 1;
+                    color      : transparent;
+                    border-top : 1px solid $GREY_DARK;
+                    width      : 100%;
+                    position   : absolute;
+                    left       : 0;
+                    right      : 0;
+                    top        : 50%;
+                    z-index    : 1;
+                }
             }
         }
     }
+}
+
+.wrapper-select-custom{
+    position: relative;
+
+    
 }

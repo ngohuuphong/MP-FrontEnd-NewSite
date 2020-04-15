@@ -29,8 +29,8 @@
                     <span class="counter"> 14 </span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('calendar') ?>">
-                <a href="<?= Route('?page=calendar') ?>"> 
+            <li  class="<?= isPageActive('page5') ?>">
+                <a href="<?= Route('?page=page5') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/schedule.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/schedule-hover.png') ?>"  />
