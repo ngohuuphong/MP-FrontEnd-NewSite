@@ -13,6 +13,10 @@ $(document).ready(function() {
 
         insatnceCalendar.draw();
     }
+
+    $(".js-render-select2-multi").select2({
+        placeholder: "Select a State"
+    });
 });
 
 function faqExpand(self) {
@@ -40,3 +44,4 @@ function faqExpand2(self) {
         $(self).parent().parent().parent().find(".answer_div").slideUp();
     }
 }
+
