@@ -23,12 +23,18 @@ $GREY_DARK : #CCCCCC;
             border-radius: $BORDER_BUTTON;
             margin-left: 8px;
             margin-right: 8px;
+
+            img:first-child{
+                display: block;
+            }
+            img:last-child{
+                display: none;
+            }
      
     
             .icon-btn{
     
                 width            : $WIDTH_BUTTON_ICON;
-                height           : 16px;
                 display          : block;
                 position         : absolute;
                 left             : 20px;
@@ -42,9 +48,35 @@ $GREY_DARK : #CCCCCC;
         }
         .btn-create-view{
             background-color: $BLUE_LIGHT;
+
+            &:hover {
+                border: 1px solid #4472C4;
+                background-color: white;
+                color: #4472C4;
+
+                img:first-child{
+                    display: none;
+                } 
+                img:last-child{
+                    display: block;
+                }
+            }
         }
         .btn-create-export{
             background-color: $ORIGINAL;
+
+            &:hover {
+                border: 1px solid $ORIGINAL;
+                background-color: white;
+                color: $ORIGINAL;
+                
+                img:first-child{
+                    display: none;
+                }
+                img:last-child{
+                    display: block;
+                }
+            }
         }
     }
     .button-foot{
@@ -61,6 +93,12 @@ $GREY_DARK : #CCCCCC;
             border-radius: 12px;
             margin: 10px 8px 50px 0;
             width: 140px;
+
+            &:hover{
+                color: $ORIGINAL;
+                background-color: $WHITE;
+                border-color: $ORIGINAL;
+            }
         }
     }
     
@@ -184,7 +222,7 @@ $GREY_DARK : #CCCCCC;
                 font-size : convert(12pt, px);
 
                 span{
-                    background-color: $WHITE;
+                    background-color: #f2f2f2;
                     padding-right   : 20px;
                     position        : relative;
                     z-index         : 2;
@@ -208,6 +246,7 @@ $GREY_DARK : #CCCCCC;
     }
 }
 .block-intro{
+    background-color: #f2f2f2;
 
     &.block-intro:first-child .cart-title{
         
@@ -258,6 +297,26 @@ $GREY_DARK : #CCCCCC;
         border          : 1px solid $WHITE;
         border-radius   : $BORDER_BUTTON;
         background-color: $BLUE_LIGHT;
+
+        img:first-child{
+            display: block;
+        }
+        img:last-child{
+            display: none;
+        }
+
+        &:hover {
+            border: 1px solid #4472C4;
+            background-color: white;
+            color: #4472C4;
+
+            img:first-child{
+                display: none;
+            } 
+            img:last-child{
+                display: block;
+            }
+        }
 
 
         .icon-btn{
@@ -320,6 +379,26 @@ $GREY_DARK : #CCCCCC;
         border          : 1px solid $WHITE;
         border-radius   : $BORDER_BUTTON;
         background-color: $BLUE_LIGHT;
+
+        img:first-child{
+            display: block;
+        }
+        img:last-child{
+            display: none;
+        }
+
+        &:hover {
+            border: 1px solid #4472C4;
+            background-color: white;
+            color: #4472C4;
+
+            img:first-child{
+                display: none;
+            } 
+            img:last-child{
+                display: block;
+            }
+        }
 
 
         .icon-btn{
@@ -433,6 +512,11 @@ $GREY_DARK : #CCCCCC;
         transform        : translateY(-50%);
         border           : 1px solid $WHITE;
         border-radius    : 11.5px;
+        &:hover{
+            border: 1px solid $BLUE_LIGHT;
+            background-color: $WHITE;
+            color: $BLUE_LIGHT;
+        }
     }
     .btn-add-recruit{
         padding          : 2px 9px;
@@ -444,6 +528,12 @@ $GREY_DARK : #CCCCCC;
         top              : 0;
         border           : 1px solid $WHITE;
         border-radius    : 11.5px;
+
+        &:hover{
+            border: 1px solid $BLUE_LIGHT;
+            background-color: $WHITE;
+            color: $BLUE_LIGHT;
+        }
     }
 }
 
