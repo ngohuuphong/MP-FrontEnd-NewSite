@@ -23,54 +23,54 @@
                     <div class="input-group">
                         <div class="float-left larger-input">
                             <label for="">企業名*</label>
-                            <input type="text" placeholder="トラストグロース商事">
+                            <input class="bg-old-data" type="text" placeholder="トラストグロース商事">
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="float-left normal-input">
                             <label for="">担当者氏名*</label>
-                            <input type="text" placeholder="トラスト">
+                            <input class="bg-old-data" type="text" placeholder="トラスト">
                         </div>
                         <div class="float-left normal-input">
                             <label for="">担当者氏名（フリガナ）*</label>
-                            <input type="text" placeholder="太郎">
+                            <input class="bg-old-data" type="text" placeholder="太郎">
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="float-left normal-input">
                             <label for="">電話番号（ハイフン無し）*</label>
-                            <input type="text" placeholder="0333231234">
+                            <input class="bg-old-data" type="text" placeholder="0333231234">
                         </div>
                         <div class="float-left larg-input email">
                             <label for="">メールアドレス（マイページID）*</label>
-                            <input type="text" placeholder="krc3457hc@trust-growth.co.jp">
+                            <input class="bg-old-data" type="text" placeholder="krc3457hc@trust-growth.co.jp">
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="float-left normal-input">
                             <label for="">郵便番号（ハイフン無し）*</label>
-                            <input type="text">
+                            <input class="bg-old-data" type="text">
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="float-left normal-input">
                             <label for="">都道府県 *</label>
-                            <input type="text">
+                            <input class="bg-old-data" type="text">
                         </div>
                         <div class="float-left normal-input">
                             <label for="">市区町村 *</label>
-                            <input type="text">
+                            <input class="bg-old-data" type="text">
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="float-left largest-input">
                             <label for="">番地以下 *</label>
-                            <input type="text">
+                            <input class="bg-old-data" type="text">
                         </div>
                     </div>
 
