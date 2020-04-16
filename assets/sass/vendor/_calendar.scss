@@ -9,13 +9,17 @@ $BLUE_LIGHT: #4472C4;
 $BORDER_CALENDAR: 20px;
 $WIDTH_CALENDAR: 718px;
 $WIDTH_TABLE_CALENDAR: 645px;
+
+.calendar-page{
+    min-height: $content_min_height;
+}
 .calendar-table {
     display: block;
     width: 718px;
     margin: 15px auto;
-    min-height: $content_min_height;
     border-radius: $BORDER_CALENDAR;
-    //@include box_shadow();
+    @include box_shadow();
+
     .calendar-table-header {
         color: $WHITE;
         background-color: $AQUAMARINE;
