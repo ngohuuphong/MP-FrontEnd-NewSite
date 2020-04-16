@@ -147,7 +147,6 @@
                     </div>
                     <div class="content">
                         <textarea name="" rows="12">若手社員が実力を発揮！ 医療・福祉分野に強みを持つ総合人材サービス企業
-
 トラストグロースは2008年8月、医療・福祉分野専門の人材紹介サービス企業としてスタート
 しました。以来10年にわたり、人材不足に悩む同分野のお客さま企業を力強くサポート。同時
 に丁寧なケアと手厚いフォローにより、求職者さまからの厚い信頼も得ています。
@@ -232,6 +231,240 @@ ITアウトソージング
 
                 
             </div>
+
+
+                  
+            <div class="cart recruit">
+                <div class="cart-recruit-title">
+                    採用情報
+                </div>
+                <div class="cart-body">
+
+                    <div class="input-group">
+                        <div class="float-left largest-input">
+                            <label class="text-primary" for="">募集内訳</label>
+                            <input type="text" placeholder="総合職（営業・人材コーディネーター）">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="text-primary" for="">職種</label>
+                    </div>
+                    <div class="wrapper-select-custom">
+                        <div class="block-select2">
+                            <select multiple class="js-render-select2-multi">
+                                <option value="自動車・電気・機械" selected>総務・業務</option>
+                                <option value="その他（メーカー）" selected >人事・労務</option>
+                                <option value="通信（IT）" selected >財務・会計・経理</option>
+                                <option value="自動車・電気・機械" selected>広報・宣伝</option>
+
+                                <option value="その他（メーカー）" selected >法人（新規開拓）</option>
+                                <option value="通信（IT）" selected >法人（ルート営業）</option>
+                                <option value="自動車・電気・機械" selected>ネットワークエンジニア</option>
+                                <option value="その他（メーカー）" selected >システム運用・保守</option>
+
+                                <option value="通信（IT）" selected >Webプロデューサー・ディレクター</option>
+                                <option value="自動車・電気・機械" selected>機械・電機・電子機器設計</option>
+                                <option value="その他（メーカー）" selected >生産管理・品質管理・メンテナンス</option>
+                                
+                            </select>
+                        </div>
+                        <a href="javascript:void(0)" class="btn-add-recruit">+追加する</a>
+                    </div>
+
+                    <div class="block-intro-recruit">
+                        <div class="title">
+                            仕事内容
+                        </div>
+                        <div class="content-recruit"> 
+                            <textarea name="" rows="12">仕事を求める「求職者」と、人を求める「企業」をつなぐ仕事です！
+担当エリアを持ち、一貫したサービスで求職者と企業をサポートしてください。
+
+■派遣・紹介先の新規開拓
+部署により営業先の対象が異なりますが、担当エリア内の病院・老人ホーム・保育園などの医療
+福祉施設や、IT関連企業、メーカーなどを対象に当社の人材サービスをご案内します。
+
+■人材のマッチング
+登録者には「こんな職場で働きたい」「介護や看護の資格・経験を生かして働きたい」といった
+希望や、アピールしたいスキルがあります。一方、企業にも「こういう適性を持った方に来て
+ほしい」「こんなスキルが必要」といった求人ニーズがあります。
+人材のミスマッチを防ぎつつ、双方のニーズを照らし合わせて人選し、最適な登録者を企業へ提</textarea>
+    
+                            <div class="img-intro">
+                                <img src="assets/image/img-default.png" alt=""/>
+                            </div>
+                            <a href="javascript:void(0)" class="btn-create-upload position-relative">
+                                <span class="icon-btn">
+                                    <img src="assets/image/icon/icon-button-upload.png" alt="">
+                                </span>
+                                PDFをダウンロード
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="wrapper-block-recruit">
+                        <label class="text-title-recruit" for="">教育・研修制度</label>
+                        <div class="input-group">
+                            
+                            <div class="largest-input">
+                                
+                                <textarea name="" rows="12">◆入社前研修
+・入社後に必要な知識を座学で習得していただきます
+（内定後、複数回来社をお願いします）
+
+◆新人研修
+・初日は座学で研修
+　↓
+・部署配属後は、マンツーマンで指導担当が付きます
+　↓
+・指導担当の営業先へ同行など、見学からスタート
+　↓
+・OJTで学びつつ、まずは電話営業から始めていただきます</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="wrapper-block-recruit">
+
+                        <label class="text-title-recruit" for="">募集要項・選考フロー</label>
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">雇用形態</label>
+                                <input type="text" placeholder="正社員">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">募集人数</label>
+                                <input type="text" placeholder="10名～15名">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">勤務地</label>
+                                <textarea name="" rows="12">【東京本社】東京都新宿区西新宿2-7-1　小田急第一生命ビル13階
+◇2013年12月に引っ越した綺麗なオフィス。西新宿の高層ビルです！
+アクセス：都営大江戸線「都庁前駅」徒歩2分、各線「新宿駅」徒歩15分
+
+【北海道支社】北海道札幌市中央区南二条西7-5-6　第3サントービル4階
+アクセス：札幌市営地下鉄「大通駅」徒歩10分
+　
+【東北支社】宮城県仙台市青葉区本町1-12-7　三共仙台ビル2階
+アクセス：ＪＲ「仙台駅」徒歩9分
+
+【中部支社】愛知県名古屋市中村区名駅4-26-13　ちとせビル4階
+アクセス：ＪＲ「名古屋駅」徒歩10分</textarea>
+                                                            
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">勤務時間</label>
+                                <textarea name="" rows="12">◆実働8時間勤務
+9:00～18:00（休憩60分）
+
+【残業は極力しない方針！】
+社員に実力を存分に発揮してもらうため、ワークバランスに配慮しています。</textarea>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">給与</label>
+                                <textarea name="" rows="12">月給：220,000円
+◆別途インセンティブあり！
+※上記金額には一律支給の みなし残業手当（30時間分/50,000円）が含まれます。
+※残業時間が みなし残業手当分（30時間）を超えた場合は別途追加で支給します。</textarea>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">昇給</label>
+                                <input type="text" placeholder="あり（実績による）">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">賞与  </label>
+                                <input type="text" placeholder="年2回（7月、12月）">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">福利厚生</label>
+                                <textarea name="" rows="12">各種社会保険完備（健康保険・厚生年金・雇用保険・労災保険）
+実力主義の給与体系・評価制度を導入
+年間休日120日以上
+産休・育児休暇取得実績あり</textarea>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="largest-input">
+                                <label for="">選考フロー</label>
+                                <textarea name="" rows="12">会社説明会にご参加下さい
+（出席してくださった方のみ選考対象とさせていただきます）
+▼
+エントリーシート提出
+▼
+書類選考
+▼
+個別面接（原則1回を予定）
+▼
+内々定
+
+面接であなたの事をゆっくり聞かせてください</textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="devider-block"></div>
+
+                    <div class="wrapper-block-recruit end-child">
+                        <label class="text-title-recruit" for="">採用実績</label>
+                        <div class="input-group">
+                            
+                            <div class="largest-input">
+                                <textarea name="" rows="12">◆入社前研修
+・入社後に必要な知識を座学で習得していただきます
+（内定後、複数回来社をお願いします）
+
+◆新人研修
+・初日は座学で研修
+　↓
+・部署配属後は、マンツーマンで指導担当が付きます
+　↓
+・指導担当の営業先へ同行など、見学からスタート
+　↓
+・OJTで学びつつ、まずは電話営業から始めていただきます</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    
+
+                </div>
+            </div>
+
+            <div class="button-foot">
+                <a href="javascript:void(0)" class="btn-registry position-relative">
+                    登録する
+                </a>
+            </div>
+
+
+
+
+
+
+
         </div>   
         
         

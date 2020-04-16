@@ -43,6 +43,22 @@ $GREY_DARK : #CCCCCC;
             background-color: $ORIGINAL;
         }
     }
+    .button-foot{
+
+        text-align: center;
+
+        .btn-registry{
+            display: inline-block;
+            padding: 4px 20px 4px 20px;
+            color: $WHITE;
+            background-color: $ORIGINAL;
+            font-size:  convert(12pt, px);
+            border: 1px solid $WHITE;
+            border-radius: 12px;
+            margin: 10px 8px 50px 0;
+            width: 140px;
+        }
+    }
     
     .cart{
         width: $WIDTH_CREATE_COMPANY;
@@ -263,6 +279,110 @@ $GREY_DARK : #CCCCCC;
         margin-top   : 25px;
     }
 }
+.block-intro-recruit{
+
+
+    .title{
+        background-color       : $WHITE;
+        color: $BLUE_LIGHT;
+        font-size              : convert(13pt, px);
+        padding                : 20px 0 0;
+        line-height: 1;
+        border-top-left-radius : 20px;
+        border-top-right-radius: 20px;
+    }
+    .content-recruit {
+        padding         : 20px 0 0;
+        background-color: $WHITE;
+    }
+    textarea{
+        width        : 100%;
+        padding      : 10px 15px;
+        font-size    : convert(11pt, px);
+        border-color : $GREY_DARK;
+        margin-bottom: 15px;
+    }
+    .img-intro{
+        width: 170px;
+        margin-bottom: 10px;
+    }
+    .btn-create-upload{
+        
+        display         : inline-block;
+        padding         : 4px 15px 4px 35px;
+        color           : $WHITE;
+        font-size       : convert(13.5pt, px);
+        border          : 1px solid $WHITE;
+        border-radius   : $BORDER_BUTTON;
+        background-color: $BLUE_LIGHT;
+
+
+        .icon-btn{
+
+            width            : $WIDTH_BUTTON_ICON;
+            display          : block;
+            position         : absolute;
+            left             : 10px;
+            top              : 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform   : translateY(-50%);
+            -o-transform     : translateY(-50%);
+            -ms-transform    : translateY(-50%);
+            transform        : translateY(-50%);
+        }
+    }
+}
+.page-create-company .cart.recruit{
+
+    .cart-recruit-title{
+        background-color       : $GREEN;
+        color                  : $WHITE;
+        font-size              : convert(13pt, px);
+        padding                : 10px $XPADDING_CART;
+        border-top-left-radius : 20px;
+        border-top-right-radius: 20px;
+        
+    } 
+    
+    
+    
+    .larg-input:nth-child(2), 
+    .larger-input:nth-child(2), 
+    .largest-input:nth-child(2), 
+    .normal-input:nth-child(2),
+    .small-input:nth-child(2){
+        margin-left: 0;
+    }
+    .wrapper-block-recruit {
+
+        padding-top: 30px;
+
+        label.text-title-recruit{
+        
+            color: $BLUE_LIGHT;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 11px;
+            border-color: #CCC;
+            margin-top: 10px;
+            
+        }
+        &.end-child{
+            padding-top: 20px;
+        }
+    }
+    .devider-block{
+        width        : 100%;
+        height       : 0;
+        overflow     : hidden;
+        content      : ".";
+        color        : transparent;
+        border-bottom: 1px solid #B3B3B3;
+        margin-top   : 35px;
+    }
+}
 
 .wrapper-select-custom{
     position: relative;
@@ -305,6 +425,17 @@ $GREY_DARK : #CCCCCC;
         -o-transform     : translateY(-50%);
         -ms-transform    : translateY(-50%);
         transform        : translateY(-50%);
+        border           : 1px solid $WHITE;
+        border-radius    : 11.5px;
+    }
+    .btn-add-recruit{
+        padding          : 2px 9px;
+        font-size        : convert(10pt, px);
+        background-color : $BLUE_LIGHT;
+        color            : $WHITE;
+        position         : absolute;
+        right            : 0;
+        top              : 0;
         border           : 1px solid $WHITE;
         border-radius    : 11.5px;
     }
