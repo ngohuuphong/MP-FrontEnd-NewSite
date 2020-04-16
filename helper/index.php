@@ -34,7 +34,7 @@ function Route( $path = null ){
 
 function isPageActive( $_page = null ){
 
-    $page = isset($_GET['page']) ?  $_GET['page'] : 'index';
+    $page = isset($_GET['page']) ?  $_GET['page'] : 'top-page';
     if($page == $_page)
         return 'active';
     return null;
