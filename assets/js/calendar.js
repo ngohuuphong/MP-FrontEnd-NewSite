@@ -54,7 +54,11 @@ function Calendar() {
     this.classCellDisable= 'calendar-cell-disable';
     this.classCellEvent  = 'calendar-cell-event';
     this.classCellHasEvent  = 'calendar-cell-has-event'
-    this.classImagePlus  = 'calendar-cell-image-plus'
+    this.classImagePlus  = 'calendar-cell-image-plus';
+
+    this.isDrag    = false;
+    this.dragBegin = null;
+    this.dragEnd   = null;
 
     this.setCurrentDay = function( _day ){
 
@@ -120,6 +124,12 @@ function Calendar() {
             this.selector.innerHTML = '';
             this.selector.appendChild(table);
         }
+
+        window.onmouseup = function (event) {
+                
+            console.log(event, "onmouseup");
+            this.isDrag = false;
+        };
     }
 
     this.createHeader = function(){
@@ -173,48 +183,44 @@ function Calendar() {
 
         footer.appendChild(TAG_PREV);
 
+        var instance = this;
         var YEAR_PREV = this.selectYear - 1;
         var TAG_YEAR_PREV           = document.createElement("li");
             TAG_YEAR_PREV.innerHTML = YEAR_PREV+ " " + this.labelYear;
-            (function(_year, instance){
-                TAG_YEAR_PREV.addEventListener("click", function() {
+            TAG_YEAR_PREV.onclick = function() {
 
-                    instance.setSelectYear(_year);
-                    instance.draw();
-                }, false);
-            })(YEAR_PREV, this);
+                instance.setSelectYear(YEAR_PREV);
+                console.log('change year')
+                instance.draw();
+            }
 
         footer.appendChild(TAG_YEAR_PREV);
 
-        for(var month = 0; month < 12; month ++ ){
+        for(let month = 0; month < 12; month ++ ){
 
             var link  = document.createElement("li");
             link.innerHTML =  ( month + 1 )+ this.labelMonth;
             if( month == this.selectMonth ){
                 link.classList.add('active-footer');
             }
-            (function(_month, instance){
+            link.onclick = function() {
 
-                link.addEventListener("click", function() {
-
-                    instance.setSelectMonth(_month);
-                    instance.draw();
-                }, false);
-            })(month , this);
-
+                instance.setSelectMonth(month);
+                instance.draw();
+            }
+            
             footer.appendChild(link);
         }
 
         var YEAR_NEXT = this.selectYear + 1;
         var TAG_YEAR_NEXT           = document.createElement("li");
             TAG_YEAR_NEXT.innerHTML = YEAR_NEXT + " " + this.labelYear;
-            (function(_year, instance){
-                TAG_YEAR_NEXT.addEventListener("click", function() {
+            TAG_YEAR_NEXT.onclick = function() {
 
-                    instance.setSelectYear(_year);
-                    instance.draw();
-                }, false);
-            })(YEAR_NEXT, this);
+                instance.setSelectYear(YEAR_NEXT);
+                console.log('change year next')
+                instance.draw();
+            }
 
         footer.appendChild(TAG_YEAR_NEXT);
 
@@ -229,8 +235,8 @@ function Calendar() {
     this.createCell = function(i, j){
 
         var cell           = document.createElement("div");
-            cell.className = this.classCell;
-        var type = 0;
+            cell.className = this.classCell ;
+            cell.setAttribute('data-date', this.dateLoop);
 
         if (i === 0 && j < this.firstDay && this.dateLoopTemp == 0) {
             cell.classList.add(this.classCellDisable);
@@ -261,6 +267,8 @@ function Calendar() {
 
         } else {
 
+            cell = this.createEventDrag(this, cell);
+
             var textCell           = document.createElement("span");
             textCell.className = this.classCellDate;
                 textCell.innerHTML = (this.selectMonth + 1) + "/" + this.dateLoop;
@@ -268,7 +276,7 @@ function Calendar() {
 
 
             cell = this.drawEventToDate(cell);
-            cell = this.drawPlusButton(cell);
+            cell = this.drawPlusButton(cell, this.dateLoop);
             
             // color today's date
             if(this.checkToday()){
@@ -287,91 +295,76 @@ function Calendar() {
         }
         return cell;
     }
+    this.createEventDrag = function(instance, cell ){
+        
+        cell.onmousedown = function (event) {
+            
+            var cell = $(event.currentTarget).closest(this.classCell);
+            cell.addClass("is-select");
+            console.log(event.target, 'down');
+            instance.isDrag = true;
+            instance.dragBegin = cell
+        };
+        cell.onmouseover = function (event) {
+
+            if(instance.isDrag){
+                var cell = $(event.currentTarget).closest(this.classCell);
+                cell.addClass("is-select");
+                instance.dragEnd = cell;
+
+                console.log(event.target, 'over');
+
+                var selects = instance.selector.getElementsByClassName('is-select');
+                selects.forEach(element => {
+                    element.classList.remove("is-select");
+                });
+                //// 
+            }
+        };
+        cell.onmouseup = function (event) {
+                
+            var cell = $(event.currentTarget).closest(this.classCell);
+            cell.addClass("is-select");
+
+            console.log(event.target, "onmouseup cell");
+            instance.isDrag = false;
+        };
+        
+        return cell;
+    }
 
     this.setInstanceToGlobal = function(VariableGlobal){
          
         VariableGlobal = this;
     }
 
-    this.drawPlusButton = function(cell){
+    this.drawPlusButton = function(cell, date){
+        var instance = this;
 
         var textPlus           = document.createElement("span");
         textPlus.classList.add(this.classImagePlus);
+        textPlus.onclick = function(){
+            /// show popup
+            if(!instance.modalEvent){
+                alert('modal not setting');
+                return false;
+            }
+            document.getElementById('js-time-event-year').value  = instance.selectYear;
+            document.getElementById('js-time-event-month').value  = instance.selectMonth + 1
+            document.getElementById('js-time-event-date').value  = date
+            
+            $("#" + instance.modalEvent).modal({
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+            var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
 
-        (function(date, instance){
+            btnAccept.onclick = function(){
+                instance.handleBtnAccept(instance, date)
+            };
+        }
 
-            textPlus.addEventListener("click", function() {
-
-                /// show popup
-                if(!instance.modalEvent){
-                    alert('modal not setting');
-                    return false;
-                }
-                
-                $("#" + instance.modalEvent).modal({
-                    escapeClose: false,
-                    clickClose: false,
-                    showClose: false
-                });
-                var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
-                var btnCancel = document.getElementById(instance.modalEvent).getElementsByClassName('js-cancel-event')[0];
-
-                btnAccept.addEventListener("click", handleRemove = function(){
-                    
-                    var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'};
-                    
-                    if(typeof instance.data[instance.selectYear]  == 'undefined'){
-
-                        instance.data[instance.selectYear] = {};
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-                    }
-                    
-                    if( typeof instance.data[instance.selectYear]
-                    [instance.formatZeroBefore(instance.selectMonth + 1)] == 'undefined' ){
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
-                        
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-
-                    }
-                    if( typeof instance.data[instance.selectYear]
-                    [instance.formatZeroBefore(instance.selectMonth + 1)]
-                    [instance.formatZeroBefore(date)] == 'undefined' ){
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-                    }
-
-                    instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)].push(evt)
-                    
-                    $.modal.close();
-                    /// remove event listen of btn
-                    btnAccept.removeEventListener('click', handleRemove, false);
-                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
-                    instance.draw();
-                }, false);
-                btnCancel.addEventListener("click", handleRemoveCancel = function(){
-
-                    btnAccept.removeEventListener('click', handleRemove, false);
-                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
-                }, false);
-                
-                // instance.setInstanceToGlobal(OBJECT_DATA)
-
-            }, false);
-        })(this.dateLoop, this);
 
         var imgPlus     = document.createElement("img");
             imgPlus.src = this.srcPlus;
@@ -381,6 +374,67 @@ function Calendar() {
         cell.appendChild(textPlus);
 
         return cell;
+    }
+    this.setInitDataDate = function(date){
+        if(typeof this.data[this.selectYear]  == 'undefined'){
+
+            this.data[this.selectYear] = {};
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)] = {};
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+        }
+        
+        if( typeof this.data[this.selectYear]
+        [this.formatZeroBefore(this.selectMonth + 1)] == 'undefined' ){
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)] = {};
+            
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+
+        }
+        if( typeof this.data[this.selectYear]
+        [this.formatZeroBefore(this.selectMonth + 1)]
+        [this.formatZeroBefore(date)] == 'undefined' ){
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+        }
+    }
+    this.handleBtnAccept = function(instance, date){
+        console.log('đã click vào')
+        
+        var start = this.formatZeroBefore(document.getElementById('js-time-event-begin-h').value) 
+                    + ':' 
+                    + this.formatZeroBefore(document.getElementById('js-time-event-begin-m').value);
+        var end = this.formatZeroBefore(document.getElementById('js-time-event-end-h').value) 
+                    + ':' 
+                    + this.formatZeroBefore(document.getElementById('js-time-event-end-m').value)
+
+        var evt = { 
+            'start': start ,
+            'end'  : end,
+            'type' : document.getElementById('js-type').value,
+            'memo' : document.getElementById('js-memo').value
+        };
+
+        console.log(evt);
+        instance.setInitDataDate(date);
+        
+
+        instance.data[instance.selectYear]
+            [instance.formatZeroBefore(instance.selectMonth + 1)]
+            [instance.formatZeroBefore(date)].push(evt)
+        
+        $.modal.close();
+        instance.draw();
     }
 
     this.drawEventToDate = function(cell){
