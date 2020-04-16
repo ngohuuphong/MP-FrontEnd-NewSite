@@ -1,5 +1,5 @@
 $container_margin: 15px;
-$card_height: 990px;
+$card_height: auto;
 $card_width: 600px;
 $card_border: 20px;
 $card_header_height: 46px;
@@ -86,7 +86,7 @@ $card_header_height: 46px;
     }
 }
 
-.page1 {
+.search_details {
     background-color: #DFE6E6;
     padding: 0;
     min-height: $content_min_height;
@@ -245,7 +245,7 @@ $card_header_height: 46px;
                     span {
                         color: white;
                         font-size: convert(11pt, px);
-                        line-height: 11px;
+                        line-height: convert(11pt, px);
                     }
                     img {
                         width: 13px;
@@ -264,7 +264,7 @@ $card_header_height: 46px;
                         span {
                             color: #4472C4;
                             font-size: convert(11pt, px);
-                            line-height: 11px;
+                            line-height: convert(11pt, px);
                         }
                         img:nth-child(1) {
                             display: none!important;
@@ -286,7 +286,7 @@ $card_header_height: 46px;
                     span {
                         color: #999999;
                         font-size: convert(11pt, px);
-                        line-height: 11px;
+                        line-height: convert(11pt, px);
                     }
                     &:hover {
                         border: 1px solid #F7931E;
@@ -294,7 +294,7 @@ $card_header_height: 46px;
                         span {
                             color: #F7931E;
                             font-size: convert(11pt, px);
-                            line-height: 11px;
+                            line-height: convert(11pt, px);
                         }
                     }
                 }

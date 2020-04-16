@@ -32,9 +32,10 @@ function Route( $path = null ){
     return $cfg['site']['base_url'] . $path;
 }
 
-function isPageActive( $page = null ){
+function isPageActive( $_page = null ){
 
-    if(isset($_GET['page']) && $_GET['page'] == $page)
+    $page = isset($_GET['page']) ?  $_GET['page'] : 'index';
+    if($page == $_page)
         return 'active';
     return null;
 }

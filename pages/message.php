@@ -1,4 +1,4 @@
-<div class="page10">
+<div class="message">
     <section>
         <div class="cards_container">
             <div class="card_item">
