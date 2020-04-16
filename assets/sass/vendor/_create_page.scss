@@ -248,20 +248,18 @@ $GREY_DARK : #CCCCCC;
 .block-intro{
     background-color: #f2f2f2;
 
-    &.block-intro:first-child .cart-title{
+    &:first-child{
         
         border-top-left-radius : 20px;
         border-top-right-radius: 20px;
     }
-    &.block-intro:last-child{
+    &:last-child{
         padding-bottom            : 25px;
-        background-color          : $WHITE;
         border-bottom-left-radius : 20px;
         border-bottom-right-radius: 20px;
     }
 
     .cart-title{
-        background-color       : $WHITE;
         color: $BLUE_LIGHT;
         font-size              : convert(13pt, px);
         padding                : 20px $XPADDING_CART 0;
@@ -272,7 +270,6 @@ $GREY_DARK : #CCCCCC;
     }
     .content {
         padding         : 10px $XPADDING_CART 0;
-        background-color: $WHITE;
         &.px-0{
             padding: 20px 0 0;
         }
@@ -347,7 +344,6 @@ $GREY_DARK : #CCCCCC;
 
 
     .title{
-        background-color       : $WHITE;
         color: $BLUE_LIGHT;
         font-size              : convert(13pt, px);
         padding                : 20px 0 0;
@@ -357,7 +353,6 @@ $GREY_DARK : #CCCCCC;
     }
     .content-recruit {
         padding         : 20px 0 0;
-        background-color: $WHITE;
     }
     textarea{
         width        : 100%!important;
