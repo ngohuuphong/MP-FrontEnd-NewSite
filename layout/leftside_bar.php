@@ -38,8 +38,8 @@
                     <span>スケジュール管理</span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('create-page-creating') ?>">
-                <a href="<?= Route('?page=create-page-creating') ?>"> 
+            <li  class="<?= isPageActive('create-page') ?>">
+                <a href="<?= Route('?page=create-page') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/create.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/create-hover.png') ?>"  />
@@ -47,8 +47,8 @@
                     <span>企業公開ページ作成</span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('register-info-creating') ?>">
-                <a href="<?= Route('?page=register-info-creating') ?>"> 
+            <li  class="<?= isPageActive('register-info') ?>">
+                <a href="<?= Route('?page=register-info') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/database.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/database-hover.png') ?>"  />
@@ -56,8 +56,8 @@
                     <span>登録情報</span>
                 </a>
             </li>
-            <li  class="<?= isPageActive('change-password-creating') ?>">
-                <a href="<?= Route('?page=change-password-creating') ?>"> 
+            <li  class="<?= isPageActive('change-password') ?>">
+                <a href="<?= Route('?page=change-password') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/key.png') ?>"  />
                         <img class="hover" src="<?= asset('image/icon/key-hover.png') ?>"  />
