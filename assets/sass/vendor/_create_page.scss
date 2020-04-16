@@ -43,10 +43,28 @@ $GREY_DARK : #CCCCCC;
             background-color: $ORIGINAL;
         }
     }
+    .button-foot{
+
+        text-align: center;
+
+        .btn-registry{
+            display: inline-block;
+            padding: 4px 20px 4px 20px;
+            color: $WHITE;
+            background-color: $ORIGINAL;
+            font-size:  convert(12pt, px);
+            border: 1px solid $WHITE;
+            border-radius: 12px;
+            margin: 10px 8px 50px 0;
+            width: 140px;
+        }
+    }
     
-    .cart {
+    .cart{
         width: $WIDTH_CREATE_COMPANY;
         margin: 10px auto;
+        border-radius : 20px;
+        @include box_shadow();
 
         .cart-header{
             background-color       : $GREEN;
@@ -56,10 +74,17 @@ $GREY_DARK : #CCCCCC;
             border-top-left-radius : 20px;
             border-top-right-radius: 20px;
         }
+        
         .cart-body{
-            padding                : 10px $XPADDING_CART;
+            padding                : 10px $XPADDING_CART 25px;
             background-color: $WHITE;
+            border-bottom-left-radius : 20px;
+            border-bottom-right-radius: 20px;
+            
 
+            .text-primary {
+                color: $BLUE_LIGHT;
+            }
             .input-group{
                 &:after{
                     @include clearfix();
@@ -150,6 +175,7 @@ $GREY_DARK : #CCCCCC;
             .divider{
                 position  : relative;
                 margin-top: 25px;
+                margin-bottom: 10px;
                 font-size : convert(12pt, px);
 
                 span{
@@ -176,9 +202,241 @@ $GREY_DARK : #CCCCCC;
         }
     }
 }
+.block-intro{
+
+    &.block-intro:first-child .cart-title{
+        
+        border-top-left-radius : 20px;
+        border-top-right-radius: 20px;
+    }
+    &.block-intro:last-child{
+        padding-bottom            : 25px;
+        background-color          : $WHITE;
+        border-bottom-left-radius : 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .cart-title{
+        background-color       : $WHITE;
+        color: $BLUE_LIGHT;
+        font-size              : convert(13pt, px);
+        padding                : 20px $XPADDING_CART 0;
+        line-height: 1;
+        &.px-0{
+            padding:  20px 0 0;
+        }
+    }
+    .content {
+        padding         : 10px $XPADDING_CART 0;
+        background-color: $WHITE;
+        &.px-0{
+            padding: 20px 0 0;
+        }
+    }
+    textarea{
+        width        : 100%;
+        padding      : 10px 15px;
+        font-size    : convert(11pt, px);
+        border-color : $GREY_DARK;
+        margin-bottom: 15px;
+    }
+    .img-intro{
+        width: 170px;
+        margin-bottom: 10px;
+    }
+    .btn-create-upload{
+        
+        display         : inline-block;
+        padding         : 4px 15px 4px 35px;
+        color           : $WHITE;
+        font-size       : convert(13.5pt, px);
+        border          : 1px solid $WHITE;
+        border-radius   : $BORDER_BUTTON;
+        background-color: $BLUE_LIGHT;
+
+
+        .icon-btn{
+
+            width            : $WIDTH_BUTTON_ICON;
+            display          : block;
+            position         : absolute;
+            left             : 10px;
+            top              : 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform   : translateY(-50%);
+            -o-transform     : translateY(-50%);
+            -ms-transform    : translateY(-50%);
+            transform        : translateY(-50%);
+        }
+    }
+    .devider-block{
+        width        : 100%;
+        height       : 0;
+        overflow     : hidden;
+        content      : ".";
+        color        : transparent;
+        border-bottom: 1px solid #B3B3B3;
+        margin-top   : 25px;
+    }
+}
+.block-intro-recruit{
+
+
+    .title{
+        background-color       : $WHITE;
+        color: $BLUE_LIGHT;
+        font-size              : convert(13pt, px);
+        padding                : 20px 0 0;
+        line-height: 1;
+        border-top-left-radius : 20px;
+        border-top-right-radius: 20px;
+    }
+    .content-recruit {
+        padding         : 20px 0 0;
+        background-color: $WHITE;
+    }
+    textarea{
+        width        : 100%;
+        padding      : 10px 15px;
+        font-size    : convert(11pt, px);
+        border-color : $GREY_DARK;
+        margin-bottom: 15px;
+    }
+    .img-intro{
+        width: 170px;
+        margin-bottom: 10px;
+    }
+    .btn-create-upload{
+        
+        display         : inline-block;
+        padding         : 4px 15px 4px 35px;
+        color           : $WHITE;
+        font-size       : convert(13.5pt, px);
+        border          : 1px solid $WHITE;
+        border-radius   : $BORDER_BUTTON;
+        background-color: $BLUE_LIGHT;
+
+
+        .icon-btn{
+
+            width            : $WIDTH_BUTTON_ICON;
+            display          : block;
+            position         : absolute;
+            left             : 10px;
+            top              : 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform   : translateY(-50%);
+            -o-transform     : translateY(-50%);
+            -ms-transform    : translateY(-50%);
+            transform        : translateY(-50%);
+        }
+    }
+}
+.page-create-company .cart.recruit{
+
+    .cart-recruit-title{
+        background-color       : $GREEN;
+        color                  : $WHITE;
+        font-size              : convert(13pt, px);
+        padding                : 10px $XPADDING_CART;
+        border-top-left-radius : 20px;
+        border-top-right-radius: 20px;
+        
+    } 
+    
+    
+    
+    .larg-input:nth-child(2), 
+    .larger-input:nth-child(2), 
+    .largest-input:nth-child(2), 
+    .normal-input:nth-child(2),
+    .small-input:nth-child(2){
+        margin-left: 0;
+    }
+    .wrapper-block-recruit {
+
+        padding-top: 30px;
+
+        label.text-title-recruit{
+        
+            color: $BLUE_LIGHT;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 11px;
+            border-color: #CCC;
+            margin-top: 10px;
+            
+        }
+        &.end-child{
+            padding-top: 20px;
+        }
+    }
+    .devider-block{
+        width        : 100%;
+        height       : 0;
+        overflow     : hidden;
+        content      : ".";
+        color        : transparent;
+        border-bottom: 1px solid #B3B3B3;
+        margin-top   : 35px;
+    }
+}
 
 .wrapper-select-custom{
     position: relative;
-
     
+
+    .block-select2{
+
+        font-size: convert(10pt, px);
+        width: 460px;
+        .select2-container{
+            width: 100%!important;
+        }
+
+        &:after{
+            @include clearfix();
+        }
+        .select2-selection__choice{
+            background-color: $WHITE;
+            color           : #478DC7;
+            border-color    : #8DCCD6;
+        }
+        .select2-container--default .select2-selection--multiple{
+            border-color: $GREY_DARK;
+        }
+        .select2-selection__rendered{
+            padding: 0 5px 5px 5px;
+        }
+    }
+    .btn-add-select2{
+
+        padding          : 2px 9px;
+        font-size        : convert(10pt, px);
+        background-color : $BLUE_LIGHT;
+        color            : $WHITE;
+        position         : absolute;
+        right            : 0;
+        top              : 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform   : translateY(-50%);
+        -o-transform     : translateY(-50%);
+        -ms-transform    : translateY(-50%);
+        transform        : translateY(-50%);
+        border           : 1px solid $WHITE;
+        border-radius    : 11.5px;
+    }
+    .btn-add-recruit{
+        padding          : 2px 9px;
+        font-size        : convert(10pt, px);
+        background-color : $BLUE_LIGHT;
+        color            : $WHITE;
+        position         : absolute;
+        right            : 0;
+        top              : 0;
+        border           : 1px solid $WHITE;
+        border-radius    : 11.5px;
+    }
 }
