@@ -11,11 +11,11 @@
                         <input type="password" id="pass" name="password">
                     </div>
                     <div class="input_cpt">
-                        <label for="pass">現在のパスワード</label>
+                        <label for="pass">新しいパスワード</label>
                         <input type="password" id="pass" name="password">
                     </div>
                     <div class="input_cpt">
-                        <label for="pass">現在のパスワード</label>
+                        <label for="pass">新しいパスワード（確認要）</label>
                         <input type="password" id="pass" name="password">
                     </div>
                     <a class="btn_primary" href="" type="button">
