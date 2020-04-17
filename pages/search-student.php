@@ -251,6 +251,7 @@
                         <div>
                             <a class="btn_primary" href="" type="button">
                                 <img class="" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon_search.png" alt="">
+                                <img class="" src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon_search_hover.png" alt="">
                                 <span>この条件で検索する</span>
                             </a>
                             <a class="btn_secondary" href="" type="button">

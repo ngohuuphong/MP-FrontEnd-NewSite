@@ -237,6 +237,25 @@ $card_header_height: 40px;
                                     height: 12px;
                                     margin-right: 5px;
                                 }
+                                img:nth-child(1) {
+                                    display: block!important;
+                                }
+                                img:nth-child(2) {
+                                    display: none!important;
+                                }
+                                &:hover {
+                                    border: 1px solid #4472C4;
+                                    background-color: white;
+                                    span {
+                                        color: #4472C4;
+                                    }
+                                    img:nth-child(1) {
+                                        display: none!important;
+                                    }
+                                    img:nth-child(2) {
+                                        display: block!important;
+                                    }
+                                }
                             }
                             .btn_secondary {
                                 width: 82px;
@@ -251,6 +270,19 @@ $card_header_height: 40px;
                                     color: #4472C4;
                                     font-size: convert(12pt, px);
                                     line-height: 12px;
+                                }
+                                &:hover {
+                                    border: 1px solid white;
+                                    background-color: #4472C4;
+                                    span {
+                                        color: white;
+                                    }
+                                    img:nth-child(1) {
+                                        display: none!important;
+                                    }
+                                    img:nth-child(2) {
+                                        display: block!important;
+                                    }
                                 }
                             }
                         }
@@ -396,6 +428,13 @@ $card_header_height: 40px;
                                 font-size: convert(12pt, px);
                                 line-height: 12px;
                             }
+                            &:hover {
+                                border: 1px solid #4472C4;
+                                background-color: white;
+                                span {
+                                    color: #4472C4;
+                                }
+                            }
                         }
                         .btn_secondary {
                             width: 28px;
@@ -424,6 +463,7 @@ $card_header_height: 40px;
                         font-size: convert(12pt, px);
                         line-height: convert(12pt, px);
                         color: #4472C4;
+                        cursor: pointer;
                     }
                     span.active {
                         background-color: #4472C4;
