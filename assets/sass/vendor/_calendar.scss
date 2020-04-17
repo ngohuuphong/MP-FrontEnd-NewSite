@@ -75,7 +75,11 @@ $WIDTH_TABLE_CALENDAR: 645px;
                     line-height: 0;
                     cursor: pointer;
                 }
+                &.picked{  
+                    background-color: #e5bdbd!important;
+                }
             }
+
             .calendar-cell-disable {
                 background-color: #f4f4f4;
                 opacity: 0.3;
@@ -233,7 +237,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
             }
         }
         .bg-pink {
-            background-color: #FF7BAC;
+            background-color: $PINK_DARK;
         }
         .memo {
             width: 100%;
@@ -251,7 +255,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         }
         .btn-accept,
         .btn-cancel {
-            background-color: #4472C4;
+            background-color: $BLUE_LIGHT;
             border-radius: $BORDER_CALENDAR;
             font-size: convert(11pt, px);
             font-weight: bold;
@@ -259,6 +263,12 @@ $WIDTH_TABLE_CALENDAR: 645px;
             color: $WHITE;
             margin: 2px 15px 0;
             border: 1px solid $WHITE;
+            &:hover{
+                color: $BLUE_LIGHT;
+                background-color: $WHITE;
+                border: 1px solid $BLUE_LIGHT;
+            }
         }
+        
     }
 }

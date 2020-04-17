@@ -56,6 +56,7 @@ function Calendar() {
     this.classCellHasEvent  = 'calendar-cell-has-event'
     this.classImagePlus  = 'calendar-cell-image-plus';
 
+    this.canPickDrag = false;
     this.isDrag    = false;
     this.dragBegin = null;
     this.dragEnd   = null;
@@ -267,7 +268,10 @@ function Calendar() {
 
         } else {
 
-            cell = this.createEventDrag(this, cell);
+            if(this.canPickDrag){
+                cell = this.createEventDrag(this, cell);
+            }
+            
 
             var textCell           = document.createElement("span");
             textCell.className = this.classCellDate;
@@ -298,39 +302,87 @@ function Calendar() {
     this.createEventDrag = function(instance, cell ){
         
         cell.onmousedown = function (event) {
-            
-            var cell = $(event.currentTarget).closest(this.classCell);
-            cell.addClass("is-select");
-            console.log(event.target, 'down');
+
             instance.isDrag = true;
-            instance.dragBegin = cell
+
+            let attributeDataDate = 'data-date';
+            
+            var cell = $(event.target);
+            if(!cell.hasClass(instance.classCell)){
+                cell = cell.closest("." + instance.classCell);
+            }
+
+            if(cell && cell.attr(attributeDataDate)){
+                
+                instance.dragBegin = cell.attr(attributeDataDate);
+                instance.dragEnd = cell.attr(attributeDataDate);
+                instance.pickData(instance)
+            }
         };
+
         cell.onmouseover = function (event) {
 
+            let attributeDataDate = 'data-date';
+
             if(instance.isDrag){
-                var cell = $(event.currentTarget).closest(this.classCell);
-                cell.addClass("is-select");
-                instance.dragEnd = cell;
-
-                console.log(event.target, 'over');
-
-                var selects = instance.selector.getElementsByClassName('is-select');
-                selects.forEach(element => {
-                    element.classList.remove("is-select");
-                });
-                //// 
+                var cell = $(event.target);
+                if(!cell.hasClass(instance.classCell)){
+                    cell = cell.closest("." + instance.classCell);
+                }
+                
+                if(cell && cell.attr(attributeDataDate)){
+                    
+                    instance.dragEnd = cell.attr(attributeDataDate);
+                    instance.pickData(instance)
+                }
+                
+                
             }
         };
         cell.onmouseup = function (event) {
-                
-            var cell = $(event.currentTarget).closest(this.classCell);
-            cell.addClass("is-select");
 
-            console.log(event.target, "onmouseup cell");
+            let attributeDataDate = 'data-date';
+
             instance.isDrag = false;
+            
+            var cell = $(event.target);
+            if(!cell.hasClass(instance.classCell)){
+                cell = cell.closest("." + instance.classCell);
+            }
+
+            
+
+            if(cell && cell.attr(attributeDataDate)){
+                    
+                instance.dragEnd = cell.attr(attributeDataDate);
+                instance.pickData(instance)
+            }
         };
         
         return cell;
+    }
+    this.pickData = function(instance){
+
+        let attributeDataDate = 'data-date';
+        let classPicked       = 'picked';
+
+        $("." + classPicked).removeClass(classPicked);
+        
+        let beginDate = instance.dragBegin;
+        let endDate   = instance.dragEnd;
+
+        if(beginDate > endDate ){
+            let temp      = beginDate;
+                beginDate = endDate;
+                endDate   = temp;
+        }
+        console.log(beginDate, endDate)
+        
+        for (let selectLoop = beginDate; selectLoop <= endDate; selectLoop++) {
+
+            $("." + instance.classCell + '['+attributeDataDate+'='+selectLoop+']')
+            .addClass(classPicked);
+        }
     }
 
     this.setInstanceToGlobal = function(VariableGlobal){
@@ -536,13 +588,14 @@ function Calendar() {
         prevImg.src = BASE_URL + 'image/icon/calendar-prev.png';
         prevHead.appendChild(prevImg);
 
-        (function(_month, instance){
-            prevHead.addEventListener("click", function() {
+        var _month_prevHead = this.selectMonth - 1 ;
+        let instance = this;
+        prevHead.onclick = function() {
 
-                instance.setSelectMonth(_month);
-                instance.draw();
-            }, false);
-        })(this.selectMonth - 1 , this );
+            instance.setSelectMonth(_month_prevHead);
+            instance.draw();
+        }
+
         
 
         wrapperRow.appendChild(prevHead);
@@ -574,13 +627,13 @@ function Calendar() {
         nextImg.src = BASE_URL + 'image/icon/calendar-next.png';
         nextFooter.appendChild(nextImg);
 
-        (function(_month, instance){
-            nextFooter.addEventListener("click", function() {
+        var _month_nextFooter = this.selectMonth + 1;
+        
+        nextFooter.onclick = function() {
 
-                instance.setSelectMonth(_month);
-                instance.draw();
-            }, false);
-        })(this.selectMonth + 1 , this );
+            instance.setSelectMonth(_month_nextFooter);
+            instance.draw();
+        }
 
         wrapperRow.appendChild(nextFooter);
 
