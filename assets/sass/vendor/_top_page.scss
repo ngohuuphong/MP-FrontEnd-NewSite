@@ -1,6 +1,6 @@
 $container_margin: 15px;
-$card_height: 300px;
-$card_width: 230px;
+$card_height: 305px;
+$card_width: 240px;
 $card_margin: 7px;
 $card_border: 20px;
 $card_header_height: 50px;
@@ -61,10 +61,10 @@ $card_header_height: 50px;
                     div {
                         position: relative;
                         margin-top: 15px;
-                        width: 230px;
+                        width: 240px;
                         height: 135px;
                         img.img1 {
-                            width: 230px;
+                            width: 240px;
                             height: 135px;
                             background-color: gray;
                         }
@@ -82,14 +82,14 @@ $card_header_height: 50px;
                     }
                     p.p1 {
                         color: black;
-                        font-size: convert(14pt, px);
-                        line-height: convert(14pt, px);
+                        font-size: convert(17pt, px);
+                        line-height: convert(17pt, px);
                         margin-top: 23px;
                     }
                     p.p2 {
                         color: #FF6C8E;
-                        font-size: convert(12pt, px);
-                        line-height: convert(12pt, px);
+                        font-size: convert(14pt, px);
+                        line-height: convert(14pt, px);
                         margin-top: 10px;
                         padding: 7px 0;
                         border: 2px solid #FF6C8E;
@@ -102,20 +102,20 @@ $card_header_height: 50px;
                         height: 53px;
                         margin-top: 42px;
                         .title {
-                            font-size: convert(15pt, px);
-                            line-height: convert(15pt, px);
+                            font-size: convert(16pt, px);
+                            line-height: convert(16pt, px);
                         }
                         .num {
-                            font-size: convert(23pt, px);
-                            line-height: convert(23pt, px);
+                            font-size: convert(28pt, px);
+                            line-height: convert(28pt, px);
                             margin-top: 22px;
                             color: #FF6C8E;
                             display: flex;
                             align-items: center;
                             span {
                                 padding-left: 4px;
-                                font-size: convert(13pt, px);
-                                line-height: convert(13pt, px);
+                                font-size: convert(16pt, px);
+                                line-height: convert(16pt, px);
                             }
                         }
                     }
@@ -123,7 +123,7 @@ $card_header_height: 50px;
             }
         }
         .lists_container {
-            @include card_item(290px, 718px);
+            @include card_item(325px, 718px);
             @include box_shadow();
             margin: auto;
             .header {
@@ -134,15 +134,17 @@ $card_header_height: 50px;
                 align-items: center;
                 span {
                     margin-left: 26px;
+                    font-size: convert(17pt, px);
+                    line-height: convert(17pt, px);
                 }
             }
             .content {
-                height: 240px;
+                height: 270px;
                 width: 703px;
                 overflow-y: scroll;
                 .item_container {
                     background-color: white;
-                    height: 73px;
+                    height: 85px;
                     width: 650px;
                     border: 0.5px solid rgba(153, 153, 153, 0.25);
                     border-radius: 12px;
@@ -151,15 +153,15 @@ $card_header_height: 50px;
                     @include box_shadow();
                     .image_div {
                         height: calc(100% - 6px);
-                        width: 78px;
+                        width: 85px;
                         border-right: 0.5px solid #49BC1F;
                         margin: 3px 0 3px 0;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         img {
-                            height: 60px;
-                            width: 60px;
+                            height: 75px;
+                            width: 75px;
                             border-radius: 50%;
                             @include img_box_shadow();
                         }
@@ -178,8 +180,8 @@ $card_header_height: 50px;
                             .tag {
                                 display: flex;
                                 align-items: center;
-                                font-size: convert(10pt, px);
-                                line-height: convert(10pt, px);
+                                font-size: convert(12pt, px);
+                                line-height: convert(12pt, px);
                                 height: 20px;
                                 color: #49BC1F;
                                 background-color: white;
@@ -189,8 +191,8 @@ $card_header_height: 50px;
                                 margin-right: 3px;
                                 span {
                                     display: inline-block;
-                                    font-size: convert(10pt, px);
-                                    line-height: convert(10pt, px);
+                                    font-size: convert(12pt, px);
+                                    line-height: convert(12pt, px);
                                     background-color: #FF6C8E;
                                     color: white;
                                     border: 1px solid #FF6C8E;
@@ -208,8 +210,8 @@ $card_header_height: 50px;
                             justify-content: flex-start;
                             p {
                                 margin: 0;
-                                font-size: convert(10pt, px);
-                                line-height: convert(15pt, px);
+                                font-size: convert(13pt, px);
+                                line-height: convert(17pt, px);
                             }
                         }
                     }

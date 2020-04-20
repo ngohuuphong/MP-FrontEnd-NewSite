@@ -1,6 +1,6 @@
 $container_margin: 15px;
-$card_height: 243px;
-$card_width: 200px;
+$card_height: 270px;
+$card_width: 215px;
 $card_border: 12px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 12px) {
     height: $height;
@@ -27,8 +27,8 @@ $card_border: 12px;
                 align-items: center;
                 justify-content: flex-start;
                 .img_div {
-                    width: 70px;
-                    height: 70px;
+                    width: 90px;
+                    height: 90px;
                     margin-top: 22px;
                     img {
                         height: 100%;
@@ -40,8 +40,8 @@ $card_border: 12px;
                     }
                 }
                 p {
-                    font-size: convert(12pt, px);
-                    line-height: convert(12pt, px);
+                    font-size: convert(14pt, px);
+                    line-height: convert(14pt, px);
                     color: #808080;
                     &.p1 {
                         margin-top: 20px;
@@ -53,13 +53,13 @@ $card_border: 12px;
                 .btn {
                     height: 28px;
                     width: 115px;
-                    border-radius: 13px;
+                    border-radius: 15px;
                     text-align: center;
                     vertical-align: middle;
                     padding-top: 1px;
                     span {
-                        font-size: convert(12pt, px);
-                        line-height: convert(12pt, px);
+                        font-size: convert(14pt, px);
+                        line-height: convert(14pt, px);
                     }
                     &.btn_primary {
                         margin-top: 15px;

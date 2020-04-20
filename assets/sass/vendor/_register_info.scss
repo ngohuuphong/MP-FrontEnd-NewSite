@@ -105,7 +105,7 @@ $card_header_height: 40px;
                     align-items: center;
                     span {
                         margin-left: 17px;
-                        font-size: convert(14pt, px);
+                        font-size: convert(17pt, px);
                         color: white;
                     }
                 }
@@ -120,7 +120,7 @@ $card_header_height: 40px;
                     justify-content: flex-start;
                     align-items: flex-start;
                     padding: 25px 50px 20px 30px;
-                    font-size: convert(11pt, px);
+                    font-size: convert(14pt, px);
                     line-height: convert(19pt, px);
                     .rows {
                         width: 100%;
@@ -136,8 +136,10 @@ $card_header_height: 40px;
                         }
                         .col_title {
                             width: 113px;
+                            font-size: convert(16pt, px);
                             color: #4472C4;
                             &.text_black {
+                                font-size: convert(15pt, px);
                                 color: black;
                             }
                         }
@@ -155,7 +157,7 @@ $card_header_height: 40px;
                                 }
                             }
                             table {
-                                width: 280px;
+                                width: 350px;
                                 border: 0.5px solid #f2f2f2;
                                 tr {
                                     height: 22px;
@@ -168,7 +170,7 @@ $card_header_height: 40px;
                                         }
                                     }
                                     td:nth-child(1) {
-                                        width: 76px;
+                                        width: 100px;
                                         background-color: #f2f2f2;
                                         border-right: 1px solid white;
                                     }
@@ -195,8 +197,8 @@ $card_header_height: 40px;
                                     justify-content: center;
                                     align-items: center;
                                     color: #478DC7;
-                                    font-size: convert(10pt, px);
-                                    line-height: convert(10pt, px);
+                                    font-size: convert(12pt, px);
+                                    line-height: convert(12pt, px);
                                     height: 18px;
                                     padding: 0 10px;
                                     background-color: #F0F3E6;
@@ -227,7 +229,7 @@ $card_header_height: 40px;
                 .btn_primary {
                     width: 140px;
                     height: 28px;
-                    border-radius: 13px;
+                    border-radius: 15px;
                     background-color: #4472C4;
                     border: 1px solid white;
                     display: flex;
@@ -235,16 +237,16 @@ $card_header_height: 40px;
                     align-items: center;
                     span {
                         color: white;
-                        font-size: convert(12pt, px);
-                        line-height: convert(12pt, px);
+                        font-size: convert(14pt, px);
+                        line-height: convert(14pt, px);
                     }
                     &:hover {
                         border: 1px solid #4472C4;
                         background-color: white;
                         span {
                             color: #4472C4;
-                            font-size: convert(12pt, px);
-                            line-height: convert(12pt, px);
+                            font-size: convert(14pt, px);
+                            line-height: convert(14pt, px);
                         }
                     }
                 }
