@@ -31,36 +31,37 @@
         <div class="item set-time">
             <label for="hour">時間</label>
             <select name="hour" id="js-time-event-begin-h">
-                <?php for($hour = 1; $hour < 25; $hour++): ?>
+                <?php for($hour = 0; $hour < 24; $hour++): ?>
                     <option value="<?= $hour ?>"><?= $hour ?> 時</option>
                 <?php endfor; ?>
             </select>
             <select name="minute" id="js-time-event-begin-m">
-                <?php for($minute = 1; $minute < 61; $minute++): ?>
+                <?php for($minute = 0; $minute < 60; $minute++): ?>
                     <option value="<?= $minute ?>"><?= $minute ?> 分 </option>
                 <?php endfor; ?>
             </select>
             <label class="divider-item " for="hour"> ～　</label>
             <select name="hour" id="js-time-event-end-h">
-                <?php for($hour = 1; $hour < 25; $hour++): ?>
+                <?php for($hour = 0; $hour < 24; $hour++): ?>
                     <option value="<?= $hour ?>"><?= $hour ?> 時</option>
                 <?php endfor; ?>
             </select>
-            <select name="minute" id="js-time-event-end-h">
-                <?php for($minute = 1; $minute < 61; $minute++): ?>
+            <select name="minute" id="js-time-event-end-m">
+                <?php for($minute = 0; $minute < 60; $minute++): ?>
                     <option value="<?= $minute ?>"><?= $minute ?> 分 </option>
                 <?php endfor; ?>
             </select>
         </div>
         <div class="item set-type">
             <label for="hour">予定</label>
-            <select name="hour" id="js-time-event-begin-h" class="bg-pink">
-                <option value=""> 面接 </option>
+            <select name="hour" id="js-type" class="bg-pink">
+                <option value="面接"> 面接 </option>
+                <option value="ahihi"> ahihi </option>
             </select>
         </div>
         <div class="item set-memo">
             <label for="memo">メモ</label>
-            <textarea name="memo" class="memo">会社：トラストグロース
+            <textarea name="memo" id="js-memo" class="memo">会社：トラストグロース
 場所：西新宿（地下鉄：都庁前）</textarea>
         </div>
 

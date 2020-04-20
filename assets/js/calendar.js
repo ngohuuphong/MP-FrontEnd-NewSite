@@ -41,7 +41,12 @@ function Calendar() {
     this.classCellDisable= 'calendar-cell-disable';
     this.classCellEvent  = 'calendar-cell-event';
     this.classCellHasEvent  = 'calendar-cell-has-event'
-    this.classImagePlus  = 'calendar-cell-image-plus'
+    this.classImagePlus  = 'calendar-cell-image-plus';
+
+    this.canPickDrag = false;
+    this.isDrag    = false;
+    this.dragBegin = null;
+    this.dragEnd   = null;
 
     this.labelModalHeader = 'calendar';
 
@@ -130,6 +135,12 @@ function Calendar() {
             this.selector.innerHTML = '';
             this.selector.appendChild(table);
         }
+
+        window.onmouseup = function (event) {
+                
+            console.log(event, "onmouseup");
+            this.isDrag = false;
+        };
     }
 
     this.createHeader = function(){
@@ -183,48 +194,44 @@ function Calendar() {
 
         footer.appendChild(TAG_PREV);
 
+        var instance = this;
         var YEAR_PREV = this.selectYear - 1;
         var TAG_YEAR_PREV           = document.createElement("li");
             TAG_YEAR_PREV.innerHTML = YEAR_PREV+ " " + this.labelYear;
-            (function(_year, instance){
-                TAG_YEAR_PREV.addEventListener("click", function() {
+            TAG_YEAR_PREV.onclick = function() {
 
-                    instance.setSelectYear(_year);
-                    instance.draw();
-                }, false);
-            })(YEAR_PREV, this);
+                instance.setSelectYear(YEAR_PREV);
+                console.log('change year')
+                instance.draw();
+            }
 
         footer.appendChild(TAG_YEAR_PREV);
 
-        for(var month = 0; month < 12; month ++ ){
+        for(let month = 0; month < 12; month ++ ){
 
             var link  = document.createElement("li");
             link.innerHTML =  ( month + 1 )+ this.labelMonth;
             if( month == this.selectMonth ){
                 link.classList.add('active-footer');
             }
-            (function(_month, instance){
+            link.onclick = function() {
 
-                link.addEventListener("click", function() {
-
-                    instance.setSelectMonth(_month);
-                    instance.draw();
-                }, false);
-            })(month , this);
-
+                instance.setSelectMonth(month);
+                instance.draw();
+            }
+            
             footer.appendChild(link);
         }
 
         var YEAR_NEXT = this.selectYear + 1;
         var TAG_YEAR_NEXT           = document.createElement("li");
             TAG_YEAR_NEXT.innerHTML = YEAR_NEXT + " " + this.labelYear;
-            (function(_year, instance){
-                TAG_YEAR_NEXT.addEventListener("click", function() {
+            TAG_YEAR_NEXT.onclick = function() {
 
-                    instance.setSelectYear(_year);
-                    instance.draw();
-                }, false);
-            })(YEAR_NEXT, this);
+                instance.setSelectYear(YEAR_NEXT);
+                console.log('change year next')
+                instance.draw();
+            }
 
         footer.appendChild(TAG_YEAR_NEXT);
 
@@ -239,8 +246,8 @@ function Calendar() {
     this.createCell = function(i, j){
 
         var cell           = document.createElement("div");
-            cell.className = this.classCell;
-        var type = 0;
+            cell.className = this.classCell ;
+            cell.setAttribute('data-date', this.dateLoop);
 
         if (i === 0 && j < this.firstDay && this.dateLoopTemp == 0) {
             cell.classList.add(this.classCellDisable);
@@ -271,6 +278,11 @@ function Calendar() {
 
         } else {
 
+            if(this.canPickDrag){
+                cell = this.createEventDrag(this, cell);
+            }
+            
+
             var textCell           = document.createElement("span");
             textCell.className = this.classCellDate;
                 textCell.innerHTML = (this.selectMonth + 1) + "/" + this.dateLoop;
@@ -278,7 +290,7 @@ function Calendar() {
 
 
             cell = this.drawEventToDate(cell);
-            cell = this.drawPlusButton(cell);
+            cell = this.drawPlusButton(cell, this.dateLoop);
             
             // color today's date
             if(this.checkToday()){
@@ -297,91 +309,124 @@ function Calendar() {
         }
         return cell;
     }
+    this.createEventDrag = function(instance, cell ){
+        
+        cell.onmousedown = function (event) {
+
+            instance.isDrag = true;
+
+            let attributeDataDate = 'data-date';
+            
+            var cell = $(event.target);
+            if(!cell.hasClass(instance.classCell)){
+                cell = cell.closest("." + instance.classCell);
+            }
+
+            if(cell && cell.attr(attributeDataDate)){
+                
+                instance.dragBegin = cell.attr(attributeDataDate);
+                instance.dragEnd = cell.attr(attributeDataDate);
+                instance.pickData(instance)
+            }
+        };
+
+        cell.onmouseover = function (event) {
+
+            let attributeDataDate = 'data-date';
+
+            if(instance.isDrag){
+                var cell = $(event.target);
+                if(!cell.hasClass(instance.classCell)){
+                    cell = cell.closest("." + instance.classCell);
+                }
+                
+                if(cell && cell.attr(attributeDataDate)){
+                    
+                    instance.dragEnd = cell.attr(attributeDataDate);
+                    instance.pickData(instance)
+                }
+                
+                
+            }
+        };
+        cell.onmouseup = function (event) {
+
+            let attributeDataDate = 'data-date';
+
+            instance.isDrag = false;
+            
+            var cell = $(event.target);
+            if(!cell.hasClass(instance.classCell)){
+                cell = cell.closest("." + instance.classCell);
+            }
+
+            
+
+            if(cell && cell.attr(attributeDataDate)){
+                    
+                instance.dragEnd = cell.attr(attributeDataDate);
+                instance.pickData(instance)
+            }
+        };
+        
+        return cell;
+    }
+    this.pickData = function(instance){
+
+        let attributeDataDate = 'data-date';
+        let classPicked       = 'picked';
+
+        $("." + classPicked).removeClass(classPicked);
+        
+        let beginDate = instance.dragBegin;
+        let endDate   = instance.dragEnd;
+
+        if(beginDate > endDate ){
+            let temp      = beginDate;
+                beginDate = endDate;
+                endDate   = temp;
+        }
+        console.log(beginDate, endDate)
+        
+        for (let selectLoop = beginDate; selectLoop <= endDate; selectLoop++) {
+
+            $("." + instance.classCell + '['+attributeDataDate+'='+selectLoop+']')
+            .addClass(classPicked);
+        }
+    }
 
     this.setInstanceToGlobal = function(VariableGlobal){
          
         VariableGlobal = this;
     }
 
-    this.drawPlusButton = function(cell){
+    this.drawPlusButton = function(cell, date){
+        var instance = this;
 
         var textPlus           = document.createElement("span");
         textPlus.classList.add(this.classImagePlus);
+        textPlus.onclick = function(){
+            /// show popup
+            if(!instance.modalEvent){
+                alert('modal not setting');
+                return false;
+            }
+            document.getElementById('js-time-event-year').value  = instance.selectYear;
+            document.getElementById('js-time-event-month').value  = instance.selectMonth + 1
+            document.getElementById('js-time-event-date').value  = date
+            
+            $("#" + instance.modalEvent).modal({
+                escapeClose: false,
+                clickClose: false,
+                showClose: false
+            });
+            var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
 
-        (function(date, instance){
+            btnAccept.onclick = function(){
+                instance.handleBtnAccept(instance, date)
+            };
+        }
 
-            textPlus.addEventListener("click", function() {
-
-                /// show popup
-                if(!instance.modalEvent){
-                    alert('modal not setting');
-                    return false;
-                }
-                
-                $("#" + instance.modalEvent).modal({
-                    escapeClose: false,
-                    clickClose: false,
-                    showClose: false
-                });
-                var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
-                var btnCancel = document.getElementById(instance.modalEvent).getElementsByClassName('js-cancel-event')[0];
-
-                btnAccept.addEventListener("click", handleRemove = function(){
-                    
-                    var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg'};
-                    
-                    if(typeof instance.data[instance.selectYear]  == 'undefined'){
-
-                        instance.data[instance.selectYear] = {};
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-                    }
-                    
-                    if( typeof instance.data[instance.selectYear]
-                    [instance.formatZeroBefore(instance.selectMonth + 1)] == 'undefined' ){
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)] = {};
-                        
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-
-                    }
-                    if( typeof instance.data[instance.selectYear]
-                    [instance.formatZeroBefore(instance.selectMonth + 1)]
-                    [instance.formatZeroBefore(date)] == 'undefined' ){
-
-                        instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)] = [];
-                    }
-
-                    instance.data[instance.selectYear]
-                        [instance.formatZeroBefore(instance.selectMonth + 1)]
-                        [instance.formatZeroBefore(date)].push(evt)
-                    
-                    $.modal.close();
-                    /// remove event listen of btn
-                    btnAccept.removeEventListener('click', handleRemove, false);
-                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
-                    instance.draw();
-                }, false);
-                btnCancel.addEventListener("click", handleRemoveCancel = function(){
-
-                    btnAccept.removeEventListener('click', handleRemove, false);
-                    btnCancel.removeEventListener('click', handleRemoveCancel, false);
-                }, false);
-                
-                // instance.setInstanceToGlobal(OBJECT_DATA)
-
-            }, false);
-        })(this.dateLoop, this);
 
         var imgPlus     = document.createElement("img");
             imgPlus.src = this.srcPlus;
@@ -391,6 +436,67 @@ function Calendar() {
         cell.appendChild(textPlus);
 
         return cell;
+    }
+    this.setInitDataDate = function(date){
+        if(typeof this.data[this.selectYear]  == 'undefined'){
+
+            this.data[this.selectYear] = {};
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)] = {};
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+        }
+        
+        if( typeof this.data[this.selectYear]
+        [this.formatZeroBefore(this.selectMonth + 1)] == 'undefined' ){
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)] = {};
+            
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+
+        }
+        if( typeof this.data[this.selectYear]
+        [this.formatZeroBefore(this.selectMonth + 1)]
+        [this.formatZeroBefore(date)] == 'undefined' ){
+
+            this.data[this.selectYear]
+            [this.formatZeroBefore(this.selectMonth + 1)]
+            [this.formatZeroBefore(date)] = [];
+        }
+    }
+    this.handleBtnAccept = function(instance, date){
+        console.log('đã click vào')
+        
+        var start = this.formatZeroBefore(document.getElementById('js-time-event-begin-h').value) 
+                    + ':' 
+                    + this.formatZeroBefore(document.getElementById('js-time-event-begin-m').value);
+        var end = this.formatZeroBefore(document.getElementById('js-time-event-end-h').value) 
+                    + ':' 
+                    + this.formatZeroBefore(document.getElementById('js-time-event-end-m').value)
+
+        var evt = { 
+            'start': start ,
+            'end'  : end,
+            'type' : document.getElementById('js-type').value,
+            'memo' : document.getElementById('js-memo').value
+        };
+
+        console.log(evt);
+        instance.setInitDataDate(date);
+        
+
+        instance.data[instance.selectYear]
+            [instance.formatZeroBefore(instance.selectMonth + 1)]
+            [instance.formatZeroBefore(date)].push(evt)
+        
+        $.modal.close();
+        instance.draw();
     }
 
     this.drawEventToDate = function(cell){
@@ -492,13 +598,14 @@ function Calendar() {
         prevImg.src = BASE_URL + 'image/icon/calendar-prev.png';
         prevHead.appendChild(prevImg);
 
-        (function(_month, instance){
-            prevHead.addEventListener("click", function() {
+        var _month_prevHead = this.selectMonth - 1 ;
+        let instance = this;
+        prevHead.onclick = function() {
 
-                instance.setSelectMonth(_month);
-                instance.draw();
-            }, false);
-        })(this.selectMonth - 1 , this );
+            instance.setSelectMonth(_month_prevHead);
+            instance.draw();
+        }
+
         
 
         wrapperRow.appendChild(prevHead);
@@ -530,13 +637,13 @@ function Calendar() {
         nextImg.src = BASE_URL + 'image/icon/calendar-next.png';
         nextFooter.appendChild(nextImg);
 
-        (function(_month, instance){
-            nextFooter.addEventListener("click", function() {
+        var _month_nextFooter = this.selectMonth + 1;
+        
+        nextFooter.onclick = function() {
 
-                instance.setSelectMonth(_month);
-                instance.draw();
-            }, false);
-        })(this.selectMonth + 1 , this );
+            instance.setSelectMonth(_month_nextFooter);
+            instance.draw();
+        }
 
         wrapperRow.appendChild(nextFooter);
 
