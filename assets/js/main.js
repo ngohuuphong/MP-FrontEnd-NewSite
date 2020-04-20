@@ -5,14 +5,6 @@ $(document).ready(function() {
     $('.menu_exit').on('click', function() {
         $('.dropdown-menu').hide();
     });
-    var selector = document.getElementById('draw-calendar')
-    if (selector) {
-
-        var insatnceCalendar = new Calendar();
-        insatnceCalendar.setElementDraw(selector);
-
-        insatnceCalendar.draw();
-    }
 
     $(".js-render-select2-multi").select2({
         placeholder: "Select a State"

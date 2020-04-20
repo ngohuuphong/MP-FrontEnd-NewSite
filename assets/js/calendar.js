@@ -1,4 +1,4 @@
-
+'use trick'
 function Calendar() {
 
     this.selector     = null;
@@ -19,26 +19,13 @@ function Calendar() {
 
     this.firstDay = (new Date(this.selectYear, this.selectMonth)).getDay()
 
-    this.labelDays  = ["日", "月", "火", "水", "木", "金", "土"];
-    this.labelYear  = '年';
-    this.labelMonth = '月';
+    this.labelDays  = ["su", "mo", "tu", "we", "th", "fr", "sa"];
+    this.labelYear  = 'year';
+    this.labelMonth = 'month';
 
     this.modalEvent = 'js-modal-event';
 
-    this.data = {
-        '2020' : {
-            '01' : {
-                '07' : [
-                    { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                ]
-            },
-            '04' : {
-                '14' : [
-                    { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                ]
-            }
-        }
-    };
+    this.data = {};
 
     this.classCell       = 'calendar-cell';
     this.classRow        = 'calendar-row';
@@ -56,6 +43,24 @@ function Calendar() {
     this.classCellHasEvent  = 'calendar-cell-has-event'
     this.classImagePlus  = 'calendar-cell-image-plus'
 
+    this.labelModalHeader = 'calendar';
+
+    this.setLabelDays = function(_labelDays){
+
+        this.labelDays = _labelDays;
+    }
+    this.setLabelModalHeader = function(_labelModalHeader){
+
+        this.labelModalHeader = _labelModalHeader;
+    }
+    this.setLabelMonth = function(_labelMonth){
+
+        this.labelMonth = _labelMonth;
+    }
+    this.setLabelYear = function(_labelYear){
+
+        this.labelYear = _labelYear;
+    }
     this.setCurrentDay = function( _day ){
 
         this.toDay        = _day;
@@ -102,6 +107,11 @@ function Calendar() {
         return 32 - new Date(iYear, iMonth, 32).getDate();
     }
 
+    this.setEventDefault = function(_event){
+
+        this.data = _event;
+    }
+
     this.draw = function(){
 
         var table           = document.createElement("div");
@@ -142,7 +152,7 @@ function Calendar() {
 
         TextTitleHead = document.createTextNode(this.selectYear  + this.labelYear + " " + 
                             ( this.selectMonth + 1 ) + this.labelMonth + " "
-                            + "スケジュール");
+                            + this.labelModalHeader);
         titleHead.appendChild(headerIcon);
         titleHead.appendChild(TextTitleHead);
         
@@ -318,7 +328,7 @@ function Calendar() {
 
                 btnAccept.addEventListener("click", handleRemove = function(){
                     
-                    var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'};
+                    var evt = { 'start' : '08:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg'};
                     
                     if(typeof instance.data[instance.selectYear]  == 'undefined'){
 
@@ -537,3 +547,38 @@ function Calendar() {
         return wrapperRow;
     }
 };
+
+
+
+// without jQuery (doesn't work in older IEs)
+document.addEventListener('DOMContentLoaded', function(){ 
+    var selector = document.getElementById('draw-calendar')
+    if (selector) {
+
+        var insatnceCalendar = new Calendar();
+
+
+        var eventDefault = {
+            '2020' : {
+                '01' : {
+                    '07' : [
+                        { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                    ]
+                },
+                '04' : {
+                    '14' : [
+                        { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
+                    ]
+                }
+            }
+        };
+        insatnceCalendar.setLabelDays(["日", "月", "火", "水", "木", "金", "土"]);
+        insatnceCalendar.setLabelYear('年');
+        insatnceCalendar.setLabelMonth('月');
+        insatnceCalendar.setLabelModalHeader("スケジュール");
+        insatnceCalendar.setEventDefault(eventDefault);
+        insatnceCalendar.setElementDraw(selector);
+
+        insatnceCalendar.draw();
+    }
+}, false);

@@ -49,7 +49,7 @@
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/jquery-3.4.1.min.js"></script>
     <script src="<?php echo $cfg['site']['assest_path']; ?>js/main.js"></script>
     <script src="<?= asset('js/jquery.modal.min.js') ?>"></script>
-    <script src="<?= asset('js/calendar.js') ?>"></script>
+    <script src="<?= asset('js/calendar.bundle.js') ?>"></script>
     <script src="<?= asset('js/select2.js') ?>"></script>
     
 </body>

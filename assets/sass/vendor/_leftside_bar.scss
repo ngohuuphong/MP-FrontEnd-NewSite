@@ -22,9 +22,9 @@ $BORDER: 1px solid transparent;
     display: block;
     height: 0;
     line-height: 0;
-    visibility: hidden;
+    visibility: hidden; 
     overflow: hidden;
-}
+} 
 
 @mixin sidebar-link( $color, $background) {
     zoom: 1;
@@ -36,12 +36,15 @@ $BORDER: 1px solid transparent;
     color: $color;
     border: $BORDER;
     background-color: $background;
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
     cursor: pointer;
     &:after {
         @include clearfix()
     }
     span {
         color: $color;
+        font-size: $FONT_SIZE_SIDEBAR;
+        font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
     }
 }
 
@@ -101,7 +104,7 @@ $BORDER: 1px solid transparent;
                 height: 17px;
                 padding: 0 3px;
                 margin-left: 10px;
-                font-size: convert(11pt, px);
+                font-size: convert(11pt, px)!important;
             }
             .icon-sidebar {
                 padding-top: 0;

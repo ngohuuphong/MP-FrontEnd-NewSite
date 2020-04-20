@@ -115,6 +115,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
             height: 23px;
             .calendar-cell-date {
                 text-align: center;
+                font-size: convert(12pt, px);
             }
             &:nth-child(1) {
                 background-color: $PINK_LIGHT;
@@ -201,18 +202,24 @@ $WIDTH_TABLE_CALENDAR: 645px;
         text-align: center;
         .title {
             display: inline-block;
-            font-size: convert(12pt, px);
+            font-size: convert(13pt, px);
             padding: 10px 10px 10px 32px;
-            .title-modal-header img {
-                width: 26px;
-                height: 25px;
-                position: absolute;
-                left: 0;
-                top: 5px;
+            .title-modal-header {
+                font-size: convert(13pt, px);
+
+                img {
+                    width: 26px;
+                    height: 25px;
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                }
             }
         }
     }
     .modal-body {
+
+        font-size: convert(12pt, px);
         padding: 15px 30px 10px 30px;
         background-color: $GREY_LIGHT;
         border-bottom-left-radius: $BORDER_CALENDAR;
@@ -245,6 +252,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         }
         select,
         textarea {
+            font-size: convert(12pt, px);
             border: 0!important;
             height: 23px;
             border-radius: 0!important;
