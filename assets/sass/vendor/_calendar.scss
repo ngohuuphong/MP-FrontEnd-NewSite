@@ -1,23 +1,25 @@
-$AQUAMARINE: #00A3AF;
-$AQUAMARINE_DARK: #8FDEEA;
-$PINK_DARK: #FF7BAC;
-$PINK_LIGHT: #FFD0F6;
-$PINK_RED: #FF6C8E;
-$GREY_LIGHT: #E6E6E6;
-$GREY_DARK: #CCCCCC;
-$BLUE_LIGHT: #4472C4;
-$BORDER_CALENDAR: 20px;
-$WIDTH_CALENDAR: 718px;
+$AQUAMARINE          : #00A3AF;
+$AQUAMARINE_DARK     : #8FDEEA;
+$PINK_DARK           : #FF7BAC;
+$PINK_LIGHT          : #FFD0F6;
+$PINK_RED            : #FF6C8E;
+$GREY_LIGHT          : #E6E6E6;
+$GREY_DARK           : #CCCCCC;
+$BLUE_LIGHT          : #4472C4;
+$BORDER_CALENDAR     : 20px;
+$WIDTH_CALENDAR      : 718px;
 $WIDTH_TABLE_CALENDAR: 645px;
 
 .calendar-page{
     min-height: $content_min_height;
 }
 .calendar-table {
-    display: block;
-    width: 718px;
-    margin: 15px auto;
+    display      : block;
+    width        : 718px;
+    margin       : 15px auto;
     border-radius: $BORDER_CALENDAR;
+    font-family  : 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+    box-sizing   : border-box;
     @include box_shadow();
 
     .calendar-table-header {
@@ -95,12 +97,12 @@ $WIDTH_TABLE_CALENDAR: 645px;
             }
             .calendar-cell-event {
                 background-color: $PINK_DARK;
-                color: $WHITE;
-                overflow: hidden;
-                font-size: convert(9pt, px);
-                padding: 0 5px;
-                border: 1px solid transparent;
-                margin-top: 1px;
+                color           : $WHITE;
+                overflow        : hidden;
+                font-size       : convert(9pt, px);
+                padding         : 0;
+                border          : 1px solid transparent;
+                margin-top      : 1px;
             }
         }
     }
