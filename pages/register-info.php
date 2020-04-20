@@ -261,11 +261,8 @@
                         </div>
                     </div>
                     <div class="rows">
-                        <div class="col_title">
+                        <div class="col_title" style="width:100%">
                             募集要項・選考フロー
-                        </div>
-                        <div class="col_content">
-                            
                         </div>
                     </div>
                     <div class="rows">
