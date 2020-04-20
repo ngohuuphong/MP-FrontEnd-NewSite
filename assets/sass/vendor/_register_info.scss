@@ -119,7 +119,7 @@ $card_header_height: 40px;
                     background-color: white;
                     justify-content: flex-start;
                     align-items: flex-start;
-                    padding: 25px 50px 20px 30px;
+                    padding: 25px 40px 20px 30px;
                     font-size: convert(14pt, px);
                     line-height: convert(19pt, px);
                     .rows {
@@ -155,6 +155,10 @@ $card_header_height: 40px;
                                     width: 100%;
                                     height: 100%;
                                 }
+                            }
+                            .img_div.logo {
+                                margin-top: 0;
+                                width: 230px;
                             }
                             table {
                                 width: 350px;

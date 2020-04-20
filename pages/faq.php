@@ -45,7 +45,7 @@
                             break;
                         case 9:
                             $_question = '退会方法を教えてください。';
-                            $_answers = '<span class="highlight">「登録情報」</span>から退会手続きを行ってください。';
+                            $_answers = '<a href="" class="highlight">「登録情報」</a>から退会手続きを行ってください。';
                             break;
                         case 10:
                             $_question = 'マイページの閲覧・操作時に不具合が発生しました。';
@@ -56,7 +56,7 @@
                             　【ブラウザ設定】JavaScript 有効許可,Cookie 受取許可<br/>
                             また、ウェブサイトの構成、利用条件、URLおよびコンテンツなどを、予告なしに変更また
                             は中止することがあります。<br/>
-                            お急ぎの場合、数日経っても不具合が改善されない場合は<span class="highlight">「お問い合わせ」</span>よりお問い合わ
+                            お急ぎの場合、数日経っても不具合が改善されない場合は<a href="" class="highlight">「お問い合わせ」</a>よりお問い合わ
                             せください。';
                             break;    
                     }
