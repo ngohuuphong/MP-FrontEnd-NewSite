@@ -23,17 +23,20 @@ $WIDTH_TABLE_CALENDAR: 645px;
     @include box_shadow();
 
     .calendar-table-header {
-        color: $WHITE;
-        background-color: $AQUAMARINE;
-        text-align: center;
-        padding: 10px 5px;
-        border-top-left-radius: $BORDER_CALENDAR;
+        color                  : $WHITE;
+        background-color       : $AQUAMARINE;
+        text-align             : center;
+        padding                : 10px 5px;
+        border-top-left-radius : $BORDER_CALENDAR;
         border-top-right-radius: $BORDER_CALENDAR;
         .calendar-title-pannel {
-            font-size: convert(13pt, px);
-            display: inline-block;
-            line-height: 2;
+            font-size   : convert(13pt, px);
+            display     : inline-block;
+            line-height : 2;
             padding-left: 32px;
+            font-family : 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+            box-sizing  : border-box;
+
             .title-modal-header {
                 position: absolute;
                 left: 0;
@@ -55,12 +58,13 @@ $WIDTH_TABLE_CALENDAR: 645px;
         .calendar-row {
             display: flex;
             .calendar-cell {
-                width: 14%;
-                border: 1px solid transparent;
+                width           : 14%;
+                border          : 1px solid transparent;
                 background-color: $WHITE;
-                flex: 1;
-                margin: 1.5px;
-                min-height: 35px;
+                flex            : 1;
+                min-height      : 35px;
+                border          : 1px solid $GREY_DARK;
+                padding: 2px;
                 &.calendar-cell-has-event {
                     background-color: $PINK_LIGHT;
                 }
@@ -116,7 +120,6 @@ $WIDTH_TABLE_CALENDAR: 645px;
             cursor: pointer;
             font-size: convert(12pt, px);
             background-color: $GREY_LIGHT;
-            margin: 1.5px;
             min-height: unset;
             height: 23px;
             .calendar-cell-date {
