@@ -1,4 +1,4 @@
-$BORDER_BUTTON       : 10px;
+$BORDER_BUTTON       : 15px;
 $WIDTH_BUTTON_ICON   : 16px;
 $PADDING_BUTTON_LEFT : $WIDTH_BUTTON_ICON + 25px;
 $WIDTH_CREATE_COMPANY: 590px;
@@ -18,7 +18,7 @@ $GREY_DARK : #CCCCCC;
             display: inline-block;
             padding: 4px 20px 4px $PADDING_BUTTON_LEFT;
             color: $WHITE;
-            font-size:  convert(11pt, px);
+            font-size:  convert(14pt, px);
             border: 1px solid $WHITE;
             border-radius: $BORDER_BUTTON;
             margin-left: 8px;
@@ -82,16 +82,17 @@ $GREY_DARK : #CCCCCC;
     .button-foot{
 
         text-align: center;
+        padding-bottom: 50px;
 
         .btn-registry{
             display: inline-block;
             padding: 4px 20px 4px 20px;
             color: $WHITE;
             background-color: $ORIGINAL;
-            font-size:  convert(12pt, px);
+            font-size:  convert(14pt, px);
             border: 1px solid $WHITE;
-            border-radius: 12px;
-            margin: 10px 8px 50px 0;
+            border-radius: $BORDER_BUTTON;
+            margin: 10px 8px;
             width: 140px;
 
             &:hover{
@@ -112,7 +113,7 @@ $GREY_DARK : #CCCCCC;
         .cart-header{
             background-color       : $GREEN;
             color                  : $WHITE;
-            font-size              : convert(14pt, px);
+            font-size              : convert(17pt, px);
             padding                : 10px $XPADDING_CART;
             border-top-left-radius : 20px;
             border-top-right-radius: 20px;
@@ -126,6 +127,7 @@ $GREY_DARK : #CCCCCC;
             
 
             .text-primary {
+                font-size              : convert(16pt, px)!important;
                 color: $BLUE_LIGHT;
             }
             .input-group{
@@ -134,14 +136,14 @@ $GREY_DARK : #CCCCCC;
                 }
 
                 .normal-input{
-                    width: 180px;
+                    width: 210px;
 
                     &:nth-child(2){
                         margin-left: 25px;
                     }
                 }
                 .larg-input {
-                    width: 240px;
+                    width: 250px;
 
                     @extend .normal-input;
                 }
@@ -189,7 +191,7 @@ $GREY_DARK : #CCCCCC;
 
                 label{
                     margin-top: 7px;
-                    font-size : convert(12pt, px);
+                    font-size : convert(14pt, px);
                     display   : block;
                 }
                 input[type=text]{
@@ -201,7 +203,7 @@ $GREY_DARK : #CCCCCC;
                     box-sizing: border-box;
                     padding   : 5px 10px;
                     margin    : 3px 0;
-                    font-size : convert(12pt, px);
+                    font-size : convert(14pt, px);
                 }
                 select{
                     width: 100%;
@@ -211,7 +213,7 @@ $GREY_DARK : #CCCCCC;
                     box-sizing: border-box;
                     padding: 5px 10px;
                     margin: 3px 0;
-                    font-size: 12px;
+                    font-size : convert(14pt, px);
                 }
                 
             }
@@ -219,7 +221,7 @@ $GREY_DARK : #CCCCCC;
                 position  : relative;
                 margin-top: 25px;
                 margin-bottom: 10px;
-                font-size : convert(12pt, px);
+                font-size : convert(14pt, px);
 
                 span{
                     background-color: #f2f2f2;
@@ -261,7 +263,7 @@ $GREY_DARK : #CCCCCC;
 
     .cart-title{
         color: $BLUE_LIGHT;
-        font-size              : convert(13pt, px);
+        font-size              : convert(16pt, px);
         padding                : 20px $XPADDING_CART 0;
         line-height: 1;
         &.px-0{
@@ -277,7 +279,7 @@ $GREY_DARK : #CCCCCC;
     textarea{
         width        : 100%!important;
         padding      : 10px 15px;
-        font-size    : convert(11pt, px);
+        font-size    : convert(14pt, px);
         border-color : $GREY_DARK;
         margin-bottom: 15px;
     }
@@ -290,7 +292,7 @@ $GREY_DARK : #CCCCCC;
         display         : inline-block;
         padding         : 4px 15px 4px 35px;
         color           : $WHITE;
-        font-size       : convert(13.5pt, px);
+        font-size       : convert(14pt, px);
         border          : 1px solid $WHITE;
         border-radius   : $BORDER_BUTTON;
         background-color: $BLUE_LIGHT;
@@ -345,7 +347,7 @@ $GREY_DARK : #CCCCCC;
 
     .title{
         color: $BLUE_LIGHT;
-        font-size              : convert(13pt, px);
+        font-size              : convert(16pt, px);
         padding                : 20px 0 0;
         line-height: 1;
         border-top-left-radius : 20px;
@@ -357,7 +359,7 @@ $GREY_DARK : #CCCCCC;
     textarea{
         width        : 100%!important;
         padding      : 10px 15px;
-        font-size    : convert(11pt, px);
+        font-size    : convert(14pt, px);
         border-color : $GREY_DARK;
         margin-bottom: 15px;
     }
@@ -370,7 +372,7 @@ $GREY_DARK : #CCCCCC;
         display         : inline-block;
         padding         : 4px 15px 4px 35px;
         color           : $WHITE;
-        font-size       : convert(13.5pt, px);
+        font-size       : convert(14pt, px);
         border          : 1px solid $WHITE;
         border-radius   : $BORDER_BUTTON;
         background-color: $BLUE_LIGHT;
@@ -416,7 +418,7 @@ $GREY_DARK : #CCCCCC;
     .cart-recruit-title{
         background-color       : $GREEN;
         color                  : $WHITE;
-        font-size              : convert(13pt, px);
+        font-size              : convert(17pt, px);
         padding                : 10px $XPADDING_CART;
         border-top-left-radius : 20px;
         border-top-right-radius: 20px;
@@ -436,9 +438,16 @@ $GREY_DARK : #CCCCCC;
 
         padding-top: 30px;
 
+        label{
+            margin-top: 7px;
+            font-size : convert(14pt, px);
+            display   : block;
+        }
+
         label.text-title-recruit{
         
             color: $BLUE_LIGHT;
+            font-size: convert(16pt, px);
         }
         textarea {
             width: 100%!important;
@@ -446,7 +455,7 @@ $GREY_DARK : #CCCCCC;
             font-size: 11px;
             border-color: #CCC;
             margin-top: 10px;
-            
+            font-size: convert(14pt, px);
         }
         &.end-child{
             padding-top: 20px;
@@ -469,8 +478,8 @@ $GREY_DARK : #CCCCCC;
 
     .block-select2{
 
-        font-size: convert(10pt, px);
-        width: 460px;
+        font-size: convert(12pt, px);
+        width: 450px;//460px;
         .select2-container{
             width: 100%!important;
         }
@@ -478,9 +487,12 @@ $GREY_DARK : #CCCCCC;
         &:after{
             @include clearfix();
         }
+        .select2-selection__choice__remove{
+            color           : $BLUE_LIGHT;
+        }
         .select2-selection__choice{
             background-color: $WHITE;
-            color           : #478DC7;
+            color           : $BLUE_LIGHT;
             border-color    : #8DCCD6;
             background-color: #F0F3E6;
         }
@@ -494,7 +506,7 @@ $GREY_DARK : #CCCCCC;
     .btn-add-select2{
 
         padding          : 2px 9px;
-        font-size        : convert(10pt, px);
+        font-size        : convert(13pt, px);
         background-color : $BLUE_LIGHT;
         color            : $WHITE;
         position         : absolute;
@@ -506,7 +518,7 @@ $GREY_DARK : #CCCCCC;
         -ms-transform    : translateY(-50%);
         transform        : translateY(-50%);
         border           : 1px solid $WHITE;
-        border-radius    : 11.5px;
+        border-radius    : 13px;
         &:hover{
             border: 1px solid $BLUE_LIGHT;
             background-color: $WHITE;
@@ -515,14 +527,14 @@ $GREY_DARK : #CCCCCC;
     }
     .btn-add-recruit{
         padding          : 2px 9px;
-        font-size        : convert(10pt, px);
+        font-size        : convert(13pt, px);
         background-color : $BLUE_LIGHT;
         color            : $WHITE;
         position         : absolute;
         right            : 0;
         top              : 0;
         border           : 1px solid $WHITE;
-        border-radius    : 11.5px;
+        border-radius    : 13px;
 
         &:hover{
             border: 1px solid $BLUE_LIGHT;
