@@ -11,17 +11,27 @@
     <div class="modal-body">
         <div class="item set-date">
             <label for="year">日付</label>
-            <select name="year" id="js-time-event-year">
+            <select name="year" id="js-time-event-year" disabled>
                 <?php for($year = 1990; $year < 2030; $year++): ?>
                     <option value="<?= $year ?>"><?= $year ?> 年</option>
                 <?php endfor; ?>
             </select>
-            <select name="month" id="js-time-event-month">
+            <select name="month" id="js-time-event-month" disabled>
                 <?php for($month = 1; $month < 13; $month++): ?>
                     <option value="<?= $month ?>"><?= $month ?> 月 </option>
                 <?php endfor; ?>
             </select>
-            <select name="date" id="js-time-event-date">
+            <select name="date" id="js-time-event-date" disabled>
+                <?php for($date = 1; $date < 32; $date++): ?>
+                    <option value="<?= $date ?>"><?= $date ?> 日</option>
+                <?php endfor; ?>
+            </select>
+            <select name="date" id="js-time-event-date-from" class="d-none" disabled>
+                <?php for($date = 1; $date < 32; $date++): ?>
+                    <option value="<?= $date ?>"><?= $date ?> 日</option>
+                <?php endfor; ?>
+            </select>
+            <select name="date" id="js-time-event-date-to" class="d-none" disabled>
                 <?php for($date = 1; $date < 32; $date++): ?>
                     <option value="<?= $date ?>"><?= $date ?> 日</option>
                 <?php endfor; ?>

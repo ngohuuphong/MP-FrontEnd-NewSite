@@ -43,10 +43,10 @@ function Calendar() {
     this.classCellHasEvent  = 'calendar-cell-has-event'
     this.classImagePlus  = 'calendar-cell-image-plus';
 
-    this.canPickDrag = false;
-    this.isDrag    = false;
-    this.dragBegin = null;
-    this.dragEnd   = null;
+    this.canPickDrag = true;
+    this.isDrag      = false;
+    this.dragBegin   = null;
+    this.dragEnd     = null;
 
     this.labelModalHeader = 'calendar';
 
@@ -136,10 +136,70 @@ function Calendar() {
             this.selector.appendChild(table);
         }
 
+        var instance = this;
         window.onmouseup = function (event) {
-                
-            console.log(event, "onmouseup");
-            this.isDrag = false;
+            if (event.which === 3) {
+                //prevent RIGHT mouse click
+                return;
+            }
+            
+            instance.isDrag = false;
+            /// show popup create event 
+            let classPicked = 'picked';
+            if($("." + classPicked).length){
+                instance.openModalCreateEvent(instance, null)
+            }
+        };
+    }
+
+    this.openModalCreateEvent = function(instance, date){
+
+        let classPicked = 'picked';
+        var dates       = [];
+
+        if(!date){
+            /// thực hiện multi select
+            $("." + instance.classCell + "." + classPicked).each(function(index, ele){
+
+                dates.push($(ele).attr('data-date'));
+                $(ele).removeClass(classPicked);
+            });
+        }else{
+            dates = [ date ]
+            $("." + classPicked).each(function(index, ele){
+
+                $(ele).removeClass(classPicked);
+            });
+        }
+
+        document.getElementById('js-time-event-year').value  = instance.selectYear;
+        document.getElementById('js-time-event-month').value  = instance.selectMonth + 1
+        if(dates.length > 1 ){
+            document.getElementById('js-time-event-date-from').value  = dates[0];
+            document.getElementById('js-time-event-date-from').classList.remove("d-none");
+            document.getElementById('js-time-event-date-to').value  = dates[dates.length - 1]
+            document.getElementById('js-time-event-date-to').classList.remove("d-none");
+
+            //// format 1 date hidden
+            document.getElementById('js-time-event-date').classList.add("d-none");
+        }else{
+            document.getElementById('js-time-event-date').value  = dates[0];
+            document.getElementById('js-time-event-date').classList.remove("d-none");
+
+            /// format multi date hidden
+            document.getElementById('js-time-event-date-from').classList.add("d-none");
+            document.getElementById('js-time-event-date-to').classList.add("d-none");
+        }
+        
+        $("#" + instance.modalEvent).modal({
+            escapeClose: false,
+            clickClose: false,
+            showClose: false
+        });
+        var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
+
+        btnAccept.onclick = function(){
+            instance.handleBtnAccept(instance, dates)
         };
     }
 
@@ -201,7 +261,6 @@ function Calendar() {
             TAG_YEAR_PREV.onclick = function() {
 
                 instance.setSelectYear(YEAR_PREV);
-                console.log('change year')
                 instance.draw();
             }
 
@@ -229,7 +288,6 @@ function Calendar() {
             TAG_YEAR_NEXT.onclick = function() {
 
                 instance.setSelectYear(YEAR_NEXT);
-                console.log('change year next')
                 instance.draw();
             }
 
@@ -312,6 +370,10 @@ function Calendar() {
     this.createEventDrag = function(instance, cell ){
         
         cell.onmousedown = function (event) {
+            if (event.which === 3) {
+                //prevent RIGHT mouse click
+                return;
+            }
 
             instance.isDrag = true;
 
@@ -331,7 +393,7 @@ function Calendar() {
         };
 
         cell.onmouseover = function (event) {
-
+            
             let attributeDataDate = 'data-date';
 
             if(instance.isDrag){
@@ -350,6 +412,10 @@ function Calendar() {
             }
         };
         cell.onmouseup = function (event) {
+            if (event.which === 3) {
+                //prevent RIGHT mouse click
+                return;
+            }
 
             let attributeDataDate = 'data-date';
 
@@ -378,20 +444,20 @@ function Calendar() {
 
         $("." + classPicked).removeClass(classPicked);
         
-        let beginDate = instance.dragBegin;
-        let endDate   = instance.dragEnd;
+        let beginDate = parseInt(instance.dragBegin);
+        let endDate   = parseInt(instance.dragEnd);
 
-        if(beginDate > endDate ){
-            let temp      = beginDate;
-                beginDate = endDate;
+        if(parseInt(beginDate) > parseInt(endDate) ){
+            let temp      = parseInt(beginDate);
+                beginDate = parseInt(endDate);
                 endDate   = temp;
         }
-        console.log(beginDate, endDate)
         
         for (let selectLoop = beginDate; selectLoop <= endDate; selectLoop++) {
 
-            $("." + instance.classCell + '['+attributeDataDate+'='+selectLoop+']')
-            .addClass(classPicked);
+            var domPicked = $("." + instance.classCell + '['+attributeDataDate+'='+selectLoop+']:not(.'+instance.classCellDisable+')');
+            domPicked.addClass(classPicked);
+                
         }
     }
 
@@ -411,20 +477,9 @@ function Calendar() {
                 alert('modal not setting');
                 return false;
             }
-            document.getElementById('js-time-event-year').value  = instance.selectYear;
-            document.getElementById('js-time-event-month').value  = instance.selectMonth + 1
-            document.getElementById('js-time-event-date').value  = date
             
-            $("#" + instance.modalEvent).modal({
-                escapeClose: false,
-                clickClose: false,
-                showClose: false
-            });
-            var btnAccept = document.getElementById(instance.modalEvent).getElementsByClassName('js-accept-event')[0];
-
-            btnAccept.onclick = function(){
-                instance.handleBtnAccept(instance, date)
-            };
+            
+            instance.openModalCreateEvent(instance, date)
         }
 
 
@@ -470,8 +525,7 @@ function Calendar() {
             [this.formatZeroBefore(date)] = [];
         }
     }
-    this.handleBtnAccept = function(instance, date){
-        console.log('đã click vào')
+    this.handleBtnAccept = function(instance, dates){
         
         var start = this.formatZeroBefore(document.getElementById('js-time-event-begin-h').value) 
                     + ':' 
@@ -487,15 +541,29 @@ function Calendar() {
             'memo' : document.getElementById('js-memo').value
         };
 
-        console.log(evt);
-        instance.setInitDataDate(date);
-        
-
-        instance.data[instance.selectYear]
-            [instance.formatZeroBefore(instance.selectMonth + 1)]
-            [instance.formatZeroBefore(date)].push(evt)
+        if(dates.length == 0 ){
+            alert('no have date select')
+            return false
+        }else{
+            
+            for (let index = 0; index < dates.length; index++) {
+                const date = dates[index];
+                instance.setInitDataDate(date);
+                
+                instance.data[instance.selectYear]
+                [instance.formatZeroBefore(instance.selectMonth + 1)]
+                [instance.formatZeroBefore(date)].push(evt)
+            }
+        }
         
         $.modal.close();
+        
+        document.getElementById('js-time-event-date').classList.remove("d-none");
+
+        /// format multi date hidden
+        document.getElementById('js-time-event-date-from').classList.add("d-none");
+        document.getElementById('js-time-event-date-to').classList.add("d-none");
+
         instance.draw();
     }
 
@@ -655,37 +723,3 @@ function Calendar() {
     }
 };
 
-
-
-// without jQuery (doesn't work in older IEs)
-document.addEventListener('DOMContentLoaded', function(){ 
-    var selector = document.getElementById('draw-calendar')
-    if (selector) {
-
-        var insatnceCalendar = new Calendar();
-
-
-        var eventDefault = {
-            '2020' : {
-                '01' : {
-                    '07' : [
-                        { 'start' : '09:00', 'end' : '14:00', 'type' : 'ahihi', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                    ]
-                },
-                '04' : {
-                    '14' : [
-                        { 'start' : '06:00', 'end' : '17:00', 'type' : '面接', 'memo' : 'dfg hjhf dgfj dgb fdj  gb jg'}
-                    ]
-                }
-            }
-        };
-        insatnceCalendar.setLabelDays(["日", "月", "火", "水", "木", "金", "土"]);
-        insatnceCalendar.setLabelYear('年');
-        insatnceCalendar.setLabelMonth('月');
-        insatnceCalendar.setLabelModalHeader("スケジュール");
-        insatnceCalendar.setEventDefault(eventDefault);
-        insatnceCalendar.setElementDraw(selector);
-
-        insatnceCalendar.draw();
-    }
-}, false);

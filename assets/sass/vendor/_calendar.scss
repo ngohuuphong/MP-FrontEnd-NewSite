@@ -58,6 +58,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         .calendar-row {
             display: flex;
             .calendar-cell {
+                user-select: none;
                 width           : 14%;
                 border          : 1px solid transparent;
                 background-color: $WHITE;
