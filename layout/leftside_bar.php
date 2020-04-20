@@ -10,7 +10,7 @@
                     <span>トップ</span>
                 </a>
             </li>
-            <li class="<?= isPageActive('search-student') ?>">
+            <li class="<?= isPageActive('search-student') ?><?= isPageActive('search-details') ?>">
                 <a href="<?= Route('?page=search-student') ?>"> 
                     <span class="icon-sidebar">
                         <img src="<?= asset('image/icon/student-search.png') ?>"  />
