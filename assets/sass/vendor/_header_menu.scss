@@ -25,9 +25,9 @@
         width: $rightside_width;
         .avatar {
             justify-content: flex-start;
-            width: $avartarside_width;
-            margin-top: 22px;
-            align-items: center;
+            width          : $avartarside_width;
+            margin-top     : 18px;
+            align-items    : center;
             a {
                 text-decoration: none;
                 color: $menu_color;
@@ -35,7 +35,7 @@
                 justify-content: flex-start;
                 align-items: center;
                 .img_avatar {
-                    width: 35px;
+                    width: 43px;
                     height: width;
                     border-radius: 3px;
                 }
