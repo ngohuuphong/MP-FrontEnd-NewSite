@@ -26,7 +26,7 @@
         .avatar {
             justify-content: flex-start;
             width          : $avartarside_width;
-            margin-top     : 18px;
+            margin-top     : 15px;
             align-items    : center;
             a {
                 text-decoration: none;
@@ -35,15 +35,15 @@
                 justify-content: flex-start;
                 align-items: center;
                 .img_avatar {
-                    width: 43px;
-                    height: width;
+                    width: 45px;
+                    height: 45px;
                     border-radius: 3px;
                 }
                 span {
-                    font-size: convert(10pt, px);
+                    font-size: convert(12pt, px);
                     padding-left: 10px;
                 }
-            }
+            }  
         }
         .menu {
             justify-content: flex-end;
