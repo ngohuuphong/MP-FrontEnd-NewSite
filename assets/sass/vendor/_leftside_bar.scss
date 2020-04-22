@@ -16,6 +16,9 @@ $WIDTH_LOGO_SIDEBAR: 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
 $BORDER: 1px solid transparent;
+
+
+$ACTIVE_COLOR : #0067B4;
 @mixin clearfix() {
     clear: both;
     content: ".";
@@ -56,6 +59,7 @@ $BORDER: 1px solid transparent;
         li {
             @include sidebar-link($color, $background);
             &.active {
+                background-color : $activeBackground!important;
                 @include sidebar-link($activeColor, $activeBackground);
                 .icon-sidebar {
                     img:nth-child(1) {
@@ -70,10 +74,10 @@ $BORDER: 1px solid transparent;
                 @include sidebar-link($hoverColor, $hoverBackground);
                 .icon-sidebar {
                     img:nth-child(1) {
-                        display: block!important;
+                        display: block;
                     }
                     img:nth-child(2) {
-                        display: none!important;
+                        display: none;
                     }
                 }
             }
@@ -91,7 +95,7 @@ $BORDER: 1px solid transparent;
         }
         &.default {
             background-color: $GREEN_LIGHT;
-            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $BLUE_LIGHT, $GREEN_LIGHT);
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $ACTIVE_COLOR, $GREEN_LIGHT);
             span {
                 float: left;
                 padding-top: 0;
