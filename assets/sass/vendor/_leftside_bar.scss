@@ -98,7 +98,7 @@ $ACTIVE_COLOR : #0067B4;
             @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $ACTIVE_COLOR, $GREEN_LIGHT);
             span {
                 float: left;
-                padding-top: 0;
+                padding-top: 0; 
             }
             span.counter {
                 color: $WHITE!important;
