@@ -1,0 +1,128 @@
+$container_margin: 15px;
+$card_height: 423px;
+$card_width: 718px;
+$card_border: 20px;
+$card_header_height: 46px;
+@mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
+    height: $height;
+    width: $width;
+    border-radius: $borderRadius;
+    background-color: white;
+}
+
+@mixin card_item_header() {
+    height: $card_header_height;
+    width: 100%;
+    background-color: #00a3af;
+    border-top-left-radius: $card_border;
+    border-top-right-radius: $card_border;
+}
+
+@mixin card_item_content() {
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: $card_border;
+    border-bottom-right-radius: $card_border;
+}
+
+.message {
+    background-color: #DFE6E6;
+    padding: 0;
+    min-height: $content_min_height;
+    section {
+        .cards_container {
+            margin: $container_margin auto;
+            width: $card_width;
+            display: flex;
+            .card_item {
+                @include card_item($card_height, $card_width);
+                @include box_shadow();
+                .header {
+                    @include card_item_header();
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    span {
+                        margin-left: 30px;
+                        font-size: convert(17pt, px);
+                        color: white;
+                    }
+                }
+                .content {
+                    @include card_item_content();
+                    height: $card_height - $card_header_height;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: white;
+                    .item {
+                        width: 230px;
+                        height: 300px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        align-items: center;
+                        border-radius: $card_border;
+                        -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.25);
+                        -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.25);
+                        box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.25);
+                        margin: 18px;
+                        padding: 15px;
+                        .p1 {
+                            font-size: convert(16pt, px);
+                            line-height: convert(16pt, px);
+                        }
+                        .p2 {
+                            font-size: convert(14pt, px);
+                            line-height: convert(14pt, px);
+                        }
+                        .img_div {
+                            height: 115px;
+                            width: 115px;
+                            position: relative;
+                            a {
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                }
+                                img:nth-child(1) {
+                                    display: block!important;
+                                }
+                                img:nth-child(2) {
+                                    display: none!important;
+                                }
+                                &:hover {
+                                    img:nth-child(1) {
+                                        display: none!important;
+                                    }
+                                    img:nth-child(2) {
+                                        display: block!important;
+                                    }
+                                }
+                            }
+                            .notice {
+                                position: absolute;
+                                right: -11px;
+                                top: 2px;
+                                width: 30px;
+                                height: 30px;
+                                background-color: #F7931E;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                span {
+                                    font-size: convert(12pt, px);
+                                    line-height: convert(12pt, px);
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

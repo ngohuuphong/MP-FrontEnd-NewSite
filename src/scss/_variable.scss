@@ -1,0 +1,45 @@
+$page_width: 980px;
+$leftside_width: 230px;
+$avartarside_width: 300px;
+$rightside_width: $page_width - $leftside_width;
+$menu_color: #999999;
+//header height
+$header_height: 73px;
+$content_min_height: calc(100vh - 73px);
+//@function
+$baseSize: 16px;
+$convertBase: $baseSize;
+//ss
+@mixin box_shadow() {
+    -webkit-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 7px 7px 5px -3px rgba(0, 0, 0, 0.1);
+}
+
+@mixin img_box_shadow() {
+    -webkit-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 5px -1px rgba(0, 0, 0, 0.1);
+}
+
+@function convert($value, $convertUnit, $convertBase: $convertBase) {
+    $currentUnit: unit($value);
+    $strippedValue: $value / ($value * 0 + 1);
+    @if not unitless($convertBase) {
+        @if unit($convertBase) !=px {
+            @error "Not supported unit '#{unit($convertBase)}' as convert base!";
+        }
+        $convertBase: $convertBase / ($convertBase * 0 + 1);
+    }
+    @if $currentUnit==pt {
+        @if $convertUnit==px {
+            @return 0px+($strippedValue * 1.000);
+        }
+        @else if $convertUnit==ems {
+            @return $value / 12+0em;
+        }
+        @else if $convertUnit==percent {
+            @return percentage($value / 12)
+        }
+    }
+}

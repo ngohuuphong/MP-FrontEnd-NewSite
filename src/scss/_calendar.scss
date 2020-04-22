@@ -1,0 +1,288 @@
+$AQUAMARINE          : #00A3AF;
+$AQUAMARINE_DARK     : #8FDEEA;
+$PINK_DARK           : #FF7BAC;
+$PINK_LIGHT          : #FFD0F6;
+$PINK_RED            : #FF6C8E;
+$GREY_LIGHT          : #E6E6E6;
+$GREY_DARK           : #CCCCCC;
+$BLUE_LIGHT          : #4472C4;
+$BORDER_CALENDAR     : 20px;
+$WIDTH_CALENDAR      : 718px;
+$WIDTH_TABLE_CALENDAR: 645px;
+
+.calendar-page{
+    min-height: $content_min_height;
+}
+.calendar-table {
+    display      : block; 
+    width        : 718px;
+    margin       : 15px auto;
+    border-radius: $BORDER_CALENDAR;
+    font-family  : 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+    box-sizing   : border-box;
+    @include box_shadow();
+
+    .calendar-table-header {
+        color                  : $WHITE;
+        background-color       : $AQUAMARINE;
+        text-align             : center;
+        padding                : 10px 5px;
+        border-top-left-radius : $BORDER_CALENDAR;
+        border-top-right-radius: $BORDER_CALENDAR;
+        .calendar-title-pannel {
+            font-size   : convert(13pt, px);
+            display     : inline-block;
+            line-height : 2;
+            padding-left: 32px;
+            font-family : 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
+            box-sizing  : border-box;
+
+            .title-modal-header {
+                position: absolute;
+                left: 0;
+                top: -2px;
+                width: 27px;
+                height: 25px;
+                display: inline-block;
+            }
+        }
+    }
+    .calendar-wrapper-row {
+        padding: 18px 0;
+        display: block;
+        background-color: $GREY_DARK;
+        .calendar-wrapper-table-cell {
+            width: $WIDTH_TABLE_CALENDAR;
+            margin: 0 auto;
+        }
+        .calendar-row {
+            display: flex;
+            .calendar-cell {
+                user-select: none;
+                width           : 14%;
+                border          : 1px solid transparent;
+                background-color: $WHITE;
+                flex            : 1;
+                min-height      : 35px;
+                border          : 1px solid $GREY_DARK;
+                padding: 2px;
+                &.calendar-cell-has-event {
+                    background-color: $PINK_LIGHT;
+                }
+                .calendar-cell-date {
+                    display: block;
+                    line-height: 1;
+                    font-size: convert(10pt, px);
+                }
+                .calendar-cell-image-plus {
+                    width: 11px;
+                    height: 11px;
+                    margin: 5px;
+                    display: block;
+                    line-height: 0;
+                    cursor: pointer;
+                }
+                &.picked{  
+                    background-color: #e5bdbd!important;
+                }
+            }
+
+            .calendar-cell-disable {
+                background-color: #f4f4f4;
+                opacity: 0.3;
+            }
+            .calendar-today {
+                background-color: $YELLOW_BE !important;
+            }
+            .calendar-sunday {
+                background-color: $PINK_LIGHT;
+            }
+            .calendar-satday {
+                background-color: $BLUE_BERIN;
+            }
+            .calendar-cell-event {
+                background-color: $PINK_DARK;
+                color           : $WHITE;
+                overflow        : hidden;
+                font-size       : convert(9pt, px);
+                padding         : 0;
+                border          : 1px solid transparent;
+                margin-top      : 1px;
+            }
+        }
+    }
+    .calendar-table-wrapper {
+        background-color: $GREY_DARK;
+    }
+    .calendar-list-header.calendar-row {
+        width: $WIDTH_TABLE_CALENDAR;
+        .calendar-cell {
+            padding: 2px 8px 1px;
+            cursor: pointer;
+            font-size: convert(12pt, px);
+            background-color: $GREY_LIGHT;
+            min-height: unset;
+            height: 23px;
+            .calendar-cell-date {
+                text-align: center;
+                font-size: convert(12pt, px);
+            }
+            &:nth-child(1) {
+                background-color: $PINK_LIGHT;
+            }
+            &:last-child {
+                background-color: $AQUAMARINE_DARK;
+            }
+        }
+    }
+    .calendar-footer {
+        padding: 10px 20px 15px;
+        margin: 0;
+        list-style-type: none;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        background-color: $WHITE;
+        border-bottom-left-radius: $BORDER_CALENDAR;
+        border-bottom-right-radius: $BORDER_CALENDAR;
+        li {
+            padding: 5px 8px;
+            cursor: pointer;
+            line-height: 1;
+            color: $BLUE_LIGHT;
+            font-size: convert(12pt, px);
+        }
+        .active-footer {
+            background-color: $BLUE_LIGHT;
+            color: $WHITE;
+            border-radius: 4px;
+        }
+        &::after {
+            @include clearfix()
+        }
+    }
+    .calendar-prev-page {
+        width: 37px;
+        display: inline-block;
+        padding: 8px;
+        position: absolute;
+        left: 0;
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        cursor: pointer;
+        .calendar-prev-img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .calendar-next-page {
+        width: 37px;
+        display: inline-block;
+        padding: 8px;
+        position: absolute;
+        right: 0;
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        cursor: pointer;
+        .calendar-next-img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+.modal.calendar {
+    border: 3px solid $WHITE;
+    border-radius: $BORDER_CALENDAR;
+    .modal-header {
+        background-color: $PINK_RED;
+        border-top-left-radius: $BORDER_CALENDAR;
+        border-top-right-radius: $BORDER_CALENDAR;
+        color: $WHITE;
+        text-align: center;
+        .title {
+            display: inline-block;
+            font-size: convert(13pt, px);
+            padding: 10px 10px 10px 32px;
+            .title-modal-header {
+                font-size: convert(13pt, px);
+
+                img {
+                    width: 26px;
+                    height: 25px;
+                    position: absolute;
+                    left: 0;
+                    top: 5px;
+                }
+            }
+        }
+    }
+    .modal-body {
+
+        font-size: convert(12pt, px);
+        padding: 15px 30px 10px 30px;
+        background-color: $GREY_LIGHT;
+        border-bottom-left-radius: $BORDER_CALENDAR;
+        border-bottom-right-radius: $BORDER_CALENDAR;
+        .item {
+            padding-left: 37px;
+            position: relative;
+            width: 100%;
+            margin-bottom: 8px;
+            font-size: convert(12pt, px);
+            label {
+                position: absolute;
+                left: 0;
+                &.divider-item {
+                    position: relative;
+                    padding: 5px; 
+                }
+            }
+        }
+        .bg-pink {
+            background-color: $PINK_DARK;
+        }
+        .memo {
+            width: 100%;
+            min-height: 66px;
+        }
+        .modal-footer {
+            justify-content: center;
+            display: flex;
+        }
+        select,
+        textarea {
+            font-size: convert(12pt, px);
+            border: 0!important;
+            height: 23px;
+            border-radius: 0!important;
+        }
+        .btn-accept,
+        .btn-cancel {
+            background-color: $BLUE_LIGHT;
+            border-radius: $BORDER_CALENDAR;
+            font-size: convert(11pt, px);
+            font-weight: bold;
+            padding: 5px 20px;
+            color: $WHITE;
+            margin: 2px 15px 0;
+            border: 1px solid $WHITE;
+            &:hover{
+                color: $BLUE_LIGHT;
+                background-color: $WHITE;
+                border: 1px solid $BLUE_LIGHT;
+            }
+        }
+        
+    }
+}

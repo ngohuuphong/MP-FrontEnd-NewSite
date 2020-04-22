@@ -272,8 +272,7 @@
             <div class="content">   
                 <?php 
                     $arr = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-                    foreach ($arr as &$value){
-                ?>
+                    foreach ($arr as &$value){ ?>
                 <div class="item_container">
                     <div class="image_div">
                         <img class="img" src="<?php echo $cfg['site']['assest_path']; ?>image/avatar_item.png" alt="">

@@ -1,0 +1,141 @@
+$GREEN_DARK: #9DD29C;
+$GREEN_LIGHT: #B8DDC0;
+$GREEN: #00A3AF;
+$PINK: #ff6c8e;
+$WHITE: #ffffff;
+$BLUE_DARK: #426AB3;
+$BLUE_LIGHT: #4472C4;
+$ORIGINAL: #F7931E;
+$PINK_DARK: #FF7BAC;
+$PINK_LIGHT: #FFD0F6;
+$BLUE_BERIN: #C4EDED;
+$YELLOW_BE: #FFFFB7;
+$WIDTH_CONTENT: 980px;
+$WIDTH_SIDEBAR: 230px;
+$WIDTH_LOGO_SIDEBAR: 20px;
+$HEIGHT_LOGO_SIDEBAR: 20px;
+$FONT_SIZE_SIDEBAR: convert(14pt, px);
+$BORDER: 1px solid transparent;
+
+
+$ACTIVE_COLOR : #0067B4;
+@mixin clearfix() {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden; 
+    overflow: hidden;
+} 
+
+@mixin sidebar-link( $color, $background) {
+    zoom: 1;
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    font-size: $FONT_SIZE_SIDEBAR;
+    text-align: left;
+    color: $color;
+    border: $BORDER;
+    background-color: $background;
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
+    cursor: pointer;
+    &:after {
+        @include clearfix()
+    }
+    span {
+        color: $color;
+        font-size: $FONT_SIZE_SIDEBAR;
+        font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
+    }
+}
+
+@mixin sidebar( $color, $background, $activeColor, $activeBackground, $hoverColor, $hoverBackground) {
+    ul.list-menu-sidebar {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+            @include sidebar-link($color, $background);
+            &.active {
+                background-color : $activeBackground!important;
+                @include sidebar-link($activeColor, $activeBackground);
+                .icon-sidebar {
+                    img:nth-child(1) {
+                        display: none!important;
+                    }
+                    img:nth-child(2) {
+                        display: block!important;
+                    }
+                }
+            }
+            &:hover {
+                @include sidebar-link($hoverColor, $hoverBackground);
+                .icon-sidebar {
+                    img:nth-child(1) {
+                        display: block;
+                    }
+                    img:nth-child(2) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wrapper-main-content {
+    max-width: $WIDTH_CONTENT;
+    display: flex;
+    margin: 0 auto;
+    .wrapper-sidebar {
+        .left-sidebar {
+            width: $WIDTH_SIDEBAR;
+        }
+        &.default {
+            background-color: $GREEN_LIGHT;
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $GREEN, $ACTIVE_COLOR); 
+            span {
+                float: left;
+                padding-top: 0; 
+            }
+            span.counter {
+                color: $WHITE!important;
+                background-color: $PINK;
+                border-radius: 3px;
+                width: 22px;
+                height: 17px;
+                padding: 0 3px;
+                margin-left: 10px;
+                font-size: convert(11pt, px)!important;
+            }
+            .icon-sidebar {
+                padding-top: 0;
+                width: 20px;
+                height: 20px;
+                margin-right: 15px;
+                vertical-align: middle;
+                img {
+                    vertical-align: middle;
+                }
+                img:nth-child(1) {
+                    display: block;
+                }
+                img:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+        // &.primary{
+        //     background-color: $sidebar_background_primary_color;
+        //     @include sidebar-link($sidebar_primary_color, $sidebar_background_color_active ,$sidebar_background_primary_color_hover)
+        // }
+    }
+    .wrapper-content {
+        background-color: #DFE6E6;
+        padding: 15px 0;
+        flex-grow: 999;
+        width: $WIDTH_CONTENT - $WIDTH_SIDEBAR;
+    }
+}
