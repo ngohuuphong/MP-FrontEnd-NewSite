@@ -8,7 +8,7 @@ const config = require('./config/system.webpack.js');
 
 
 var entryJS = './src/javascript/main.js';
-var namePage = 'top-page';
+var namePage = 'calendar';
 var teamplateHTML = './page/'+namePage+'.html';
 
 module.exports = {
@@ -47,7 +47,6 @@ module.exports = {
                 test: /\.(png|woff|woff2|eot|otf|ttf|svg)$/, 
                 loader: 'url-loader', 
                 options: {
-                    name : 'fonts/[name].[ext]',
                     limit: 100000
                 }
             },

@@ -204,6 +204,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
 .modal.calendar {
     border: 3px solid $WHITE;
     border-radius: $BORDER_CALENDAR;
+    padding: 0;
     .modal-header {
         background-color: $PINK_RED;
         border-top-left-radius: $BORDER_CALENDAR;
