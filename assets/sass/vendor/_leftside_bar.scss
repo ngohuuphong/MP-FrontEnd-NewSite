@@ -95,7 +95,7 @@ $ACTIVE_COLOR : #0067B4;
         }
         &.default {
             background-color: $GREEN_LIGHT;
-            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $ACTIVE_COLOR, $GREEN_LIGHT);
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $GREEN, $ACTIVE_COLOR); 
             span {
                 float: left;
                 padding-top: 0; 
