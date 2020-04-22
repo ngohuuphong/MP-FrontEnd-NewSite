@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath : '/dist/',
+  publicPath : '../',
   path : {
     css : 'css/',
     file: 'images/',

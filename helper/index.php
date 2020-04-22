@@ -29,7 +29,7 @@ function asset( $path = null){
 }
 function Route( $path = null ){
     global $cfg;
-    return $cfg['site']['base_url'] . "/dist/page/" . str_replace('?page=', '' , $path). ".html";
+    return $cfg['site']['base_url'] . str_replace('?page=', '' , $path). ".html";
 }
 
 function isPageActive( $_page = null ){
