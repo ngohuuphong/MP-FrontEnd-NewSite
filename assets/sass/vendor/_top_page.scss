@@ -1,7 +1,7 @@
 $container_margin: 15px;
 $card_height: 305px;
 $card_width: 240px;
-$card_margin: 7px;
+$card_margin: 15px;
 $card_border: 20px;
 $card_header_height: 50px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
@@ -123,7 +123,7 @@ $card_header_height: 50px;
             }
         }
         .lists_container {
-            @include card_item(325px, 718px);
+            @include card_item(345px, 900px);
             @include box_shadow();
             margin: auto;
             .header {
@@ -139,23 +139,23 @@ $card_header_height: 50px;
                 }
             }
             .content {
-                height: 270px;
-                width: 703px;
+                height: 286px;
+                width: 880px;
                 overflow-y: scroll;
                 .item_container {
                     background-color: white;
-                    height: 85px;
-                    width: 650px;
+                    height: 90px;
+                    width: 815px;
                     border: 0.5px solid rgba(153, 153, 153, 0.25);
                     border-radius: 12px;
                     margin: 0 0 7px 22px;
                     display: flex;
                     @include box_shadow();
                     .image_div {
-                        height: calc(100% - 6px);
-                        width: 85px;
+                        height: calc(100% - 10px);
+                        width: 90px;
                         border-right: 0.5px solid #49BC1F;
-                        margin: 3px 0 3px 0;
+                        margin: 5px 0;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -169,7 +169,7 @@ $card_header_height: 50px;
                     .content_body {
                         width: calc(100% - 100px);
                         height: 100%;
-                        margin-left: 20px;
+                        margin: 0px 20px;
                         display: flex;
                         flex-direction: column;
                         .tags {

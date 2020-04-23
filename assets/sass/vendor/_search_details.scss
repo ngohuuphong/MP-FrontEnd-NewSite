@@ -1,6 +1,6 @@
 $container_margin: 15px;
 $card_height: auto;
-$card_width: 600px;
+$card_width: 750px;
 $card_border: 20px;
 $card_header_height: 46px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
@@ -132,23 +132,23 @@ $card_header_height: 46px;
                             padding-top: 0;
                         }
                         .col_title {
-                            width: 80px;
+                            width: 100px;
                             color: #4472C4;
                         }
                         .col_content {
-                            width: calc(100% - 80px);
+                            width: calc(100% - 100px);
                             display: flex;
                             flex-direction: row;
                             .name {
-                                width: 63px;
+                                width: 70px;
                                 font-size: convert(18pt, px);
                             }
                             .title_gender {
-                                width: 43px;
+                                width: 60px;
                                 color: #4472C4;
                             }
                             .birthday {
-                                width: 220px;
+                                width: 240px;
                             }
                             .title_addr {
                                 width: 45px;
@@ -301,4 +301,4 @@ $card_header_height: 46px;
             }
         }
     }
-}  
+}
