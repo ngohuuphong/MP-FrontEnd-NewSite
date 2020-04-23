@@ -7,7 +7,7 @@ $GREY_LIGHT          : #E6E6E6;
 $GREY_DARK           : #CCCCCC;
 $BLUE_LIGHT          : #4472C4;
 $BORDER_CALENDAR     : 20px;
-$WIDTH_CALENDAR      : 718px;
+$WIDTH_CALENDAR      : 718px * 1.25;
 $WIDTH_TABLE_CALENDAR: 645px;
 
 .calendar-page{
@@ -15,7 +15,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
 }
 .calendar-table {
     display      : block; 
-    width        : 718px;
+    width        : $WIDTH_CALENDAR;
     margin       : 15px auto;
     border-radius: $BORDER_CALENDAR;
     font-family  : 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
@@ -52,7 +52,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         display: block;
         background-color: $GREY_DARK;
         .calendar-wrapper-table-cell {
-            width: $WIDTH_TABLE_CALENDAR;
+            width: $WIDTH_CALENDAR - ( 40px * 2 ) ;
             margin: 0 auto;
         }
         .calendar-row {
@@ -115,7 +115,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         background-color: $GREY_DARK;
     }
     .calendar-list-header.calendar-row {
-        width: $WIDTH_TABLE_CALENDAR;
+        width: $WIDTH_CALENDAR - ( 40px * 2 ) ;
         .calendar-cell {
             padding: 2px 8px 1px;
             cursor: pointer;
