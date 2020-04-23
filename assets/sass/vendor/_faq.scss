@@ -17,7 +17,7 @@ $card_border: 12px;
         align-items: center;
         .header {
             margin: $container_margin auto;
-            width: 550px;
+            width: 680px;
             height: 42px;
             border-radius: 20px;
             border: 1px solid white;
@@ -38,7 +38,7 @@ $card_border: 12px;
             }
         }
         .content {
-            width: 560px;
+            width: 680px;
             display: flex;
             flex-direction: column;
             .wrapper_content {
@@ -51,7 +51,7 @@ $card_border: 12px;
                     height: auto;
                     margin: 12.5px 0;
                     .question_content {
-                        width: 525px;
+                        width: 640px;
                         height: auto;
                         min-height: 46px;
                         border-radius: 12px;
@@ -59,8 +59,8 @@ $card_border: 12px;
                         cursor: pointer;
                         @include box_shadow();
                         .img_div {
-                            width: 45px;
-                            height: 45px;
+                            width: 43px;
+                            height: 43px;
                             padding-top: 2px;
                             img {
                                 width: 100%;
@@ -105,15 +105,15 @@ $card_border: 12px;
                     height: auto;
                     margin: 15px 0;
                     .answer_content {
-                        width: 525px;
+                        width: 640px;
                         height: auto;
                         min-height: 46px;
                         border-radius: 12px;
                         background-color: white;
                         @include box_shadow();
                         .img_div {
-                            width: 45px;
-                            height: 45px;
+                            width: 43px;
+                            height: 43px;
                             margin-top: 2px;
                             img {
                                 width: 100%;

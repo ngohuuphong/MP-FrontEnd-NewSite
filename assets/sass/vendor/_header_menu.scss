@@ -14,9 +14,9 @@
         width: $leftside_width;
         a {
             .img_logo {
-                margin: 7px;
-                width: 59px;
-                height: width;
+                margin: 10px;
+                height: 55px;
+                width: auto;
             }
         }
     }
@@ -25,9 +25,9 @@
         width: $rightside_width;
         .avatar {
             justify-content: flex-start;
-            width          : $avartarside_width;
-            margin-top     : 15px;
-            align-items    : center;
+            width: $avartarside_width;
+            margin-top: 15px;
+            align-items: center;
             a {
                 text-decoration: none;
                 color: $menu_color;
@@ -43,7 +43,7 @@
                     font-size: convert(12pt, px);
                     padding-left: 10px;
                 }
-            }  
+            }
         }
         .menu {
             justify-content: flex-end;

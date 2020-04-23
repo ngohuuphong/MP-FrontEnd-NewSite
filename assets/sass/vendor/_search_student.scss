@@ -1,6 +1,6 @@
 $container_margin: 15px;
 $card_height: 550px;
-$card_width: 718px;
+$card_width: 900px;
 $card_border: 20px;
 $card_header_height: 40px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
@@ -131,11 +131,11 @@ $card_header_height: 40px;
                         justify-content: flex-start;
                         .textbox {
                             margin-top: 7px;
-                            width: 540px;
+                            width: 680px;
                             height: 29px;
                             border: 0.5px solid rgba(153, 153, 153, 0.25);
                             border-radius: 20px;
-                            padding-left: 13px;
+                            padding: 0 13px;
                             font-size: convert(14pt, px);
                             line-height: convert(14pt, px);
                             @include box_shadow();
@@ -146,8 +146,8 @@ $card_header_height: 40px;
                             justify-content: flex-start;
                             margin-top: 10px;
                             .item {
-                                width: 172px;
-                                margin-right: 13px;
+                                width: 210px;
+                                margin-right: 25px;
                                 span {
                                     font-size: convert(14pt, px);
                                     line-height: convert(14pt, px);
@@ -220,7 +220,7 @@ $card_header_height: 40px;
                     }
                     div.checkboxs_section {
                         height: 157px;
-                        width: 659px;
+                        width: 825px;
                         background-color: white;
                         border-radius: 12px;
                         border: 0.5px solid rgba(129, 202, 155, 0.25);
@@ -319,7 +319,7 @@ $card_header_height: 40px;
             }
         }
         .lists_container {
-            @include card_item(100%, 718px);
+            @include card_item(100%, $card_width);
             @include box_shadow();
             margin: auto;
             margin-top: 20px;
@@ -341,16 +341,16 @@ $card_header_height: 40px;
                 }
             }
             .content {
-                width: 718px;
+                width: 900px;
                 padding: 10px 0 10px 10px;
-                background-color: #E6E6E6;
+                background-color: #f2f2f2; //#E6E6E6;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 .item_container {
                     background-color: white;
-                    width: 652px;
+                    width: 815px;
                     height: 96px;
                     border: 0.5px solid rgba(153, 153, 153, 0.25);
                     border-radius: 12px;
@@ -373,7 +373,7 @@ $card_header_height: 40px;
                         }
                     }
                     .content_body {
-                        width: calc(100% - 100px - 115px);
+                        width: calc(100% - 100px - 130px);
                         height: 100%;
                         margin-left: 10px;
                         display: flex;
@@ -415,31 +415,43 @@ $card_header_height: 40px;
                             flex-direction: column;
                             justify-content: flex-end;
                             padding-bottom: 5px;
-                            p {
+                            .head {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: flex-end;
+                                height: 45%;
+                                .name {
+                                    width: 180px;
+                                    span {
+                                        font-size: convert(18pt, px);
+                                        line-height: convert(18pt, px);
+                                    }
+                                }
+                                .school_name {
+                                    width: 200px;
+                                    span {
+                                        font-size: convert(16pt, px);
+                                        line-height: convert(16pt, px);
+                                    }
+                                }
+                                .fav {
+                                    span {
+                                        color: #F7931E;
+                                        font-size: convert(14pt, px);
+                                        line-height: convert(14pt, px);
+                                    }
+                                }
+                            }
+                            .text_content {
                                 margin: 0;
                                 font-size: convert(13pt, px);
                                 line-height: convert(15pt, px);
-                                .val:nth-child(1) {
-                                    font-size: convert(18pt, px);
-                                    line-height: convert(18pt, px);
-                                }
-                                .val:nth-child(2) {
-                                    font-size: convert(16pt, px);
-                                    line-height: convert(16pt, px);
-                                }
-                                .fav {
-                                    color: #F7931E;
-                                    font-size: convert(14pt, px);
-                                    line-height: convert(14pt, px);
-                                }
-                            }
-                            p.p1 {
-                                padding-bottom: 5px;
+                                height: 55%;
                             }
                         }
                     }
                     .btn_div {
-                        width: 115px;
+                        width: 130px;
                         height: calc(100% - 30px);
                         border-left: 0.5px solid #49BC1F;
                         margin: 15px 0px;
@@ -477,7 +489,7 @@ $card_header_height: 40px;
             }
             .pagination {
                 height: 40px;
-                width: 718px;
+                width: $card_width;
                 background-color: white;
                 border-bottom-left-radius: $card_border;
                 border-bottom-right-radius: $card_border;
