@@ -1,6 +1,6 @@
 $container_margin: 15px;
 $card_height: auto;
-$card_width: 718px;
+$card_width: 900px;
 $card_border: 20px;
 $card_header_height: 40px;
 @mixin card_item($height: 100%, $width:100%, $borderRadius: 20px) {
@@ -192,7 +192,7 @@ $card_header_height: 40px;
                             .tags {
                                 border: 1px solid #CCCCCC;
                                 border-radius: 3px;
-                                width: 460px;
+                                width: 650px;
                                 height: auto;
                                 min-height: 34px;
                                 padding: 8px;
