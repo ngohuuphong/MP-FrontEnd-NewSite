@@ -308,14 +308,14 @@
             </div>
             <div class="pagination">
                     <div class="content">
-                        <span><<</span>
+                        <span>&lt;&lt;</span>
                         <span>1</span>
                         <span>2</span>
                         <span class="active">3</span>
                         <span>4</span>
                         <span>5</span>
                         <span>6</span>
-                        <span>>></span>
+                        <span>&gt;&gt;</span>
                     </div>
                 </div>
         </div>

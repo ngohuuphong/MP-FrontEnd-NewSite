@@ -8,7 +8,7 @@ const config = require('./config/system.webpack.js');
 
 
 var entryJS = './src/javascript/main.js';
-var namePage = 'calendar';
+var namePage = 'top-page';
 var teamplateHTML = './page/'+namePage+'.html';
 
 module.exports = {
@@ -30,7 +30,7 @@ module.exports = {
             title   : 'title',
             filename: config.path.html + namePage +'.html',
             template: teamplateHTML,///////////////////////<-------////////////
-            minify  : false
+            minify  : true
         }),
         new MiniCssExtractPlugin({
             filename: config.path.css + namePage +'.min.css',
@@ -52,7 +52,7 @@ module.exports = {
             },
             {
                 test: /\.(css|scss)$/,
-                loader : [ MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader' ]
+                loader : [ MiniCssExtractPlugin.loader, 'css-loader?url=false', 'sass-loader' ]
             },
             {
                 test   : /\.(png|jpg|jpeg|gif|ico|svg)$/,
@@ -67,4 +67,5 @@ module.exports = {
     devServer: {
       port: 8008
     },
+    devtool: 'inline-source-map'
 };

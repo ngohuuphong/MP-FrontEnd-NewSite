@@ -195,7 +195,7 @@ $GREY_DARK : #CCCCCC;
                     font-size : convert(14pt, px);
                     display   : block;
                 }
-                input[type=text]{
+                input[type=text], input{
                     width        : 100%;
                     display      : inline-block;
                     border       : 1px solid $GREY_DARK;

@@ -3,15 +3,15 @@
             <div class="button-head">
                 <a href="javascript:void(0)" class="btn-create-view position-relative">
                     <span class="icon-btn">
-                        <img src="assets/image/icon/eye.png" alt="">
-                        <img src="assets/image/icon/eye-hover.png" alt="">
+                        <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/eye.png" alt="">
+                        <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/eye-hover.png" alt="">
                     </span>
                     学生公開プレビュー
                 </a>
                 <a href="javascript:void(0)" class="btn-create-export position-relative">
                     <span class="icon-btn">
-                        <img src="assets/image/icon/export.png" alt="">
-                        <img src="assets/image/icon/export-hover.png" alt="">
+                        <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/export.png" alt="">
+                        <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/export-hover.png" alt="">
                     </span>
                     PDFをダウンロード
                 </a>
@@ -161,12 +161,12 @@
 かできない営業」を目標に育成・指導を実践し、社員一人ひとりのスキルアップを図ります。</textarea>
 
                         <div class="img-intro">
-                            <img src="assets/image/img-default.png" alt=""/>
+                            <img src="<?php echo $cfg['site']['assest_path']; ?>image/img-default.png" alt=""/>
                         </div>
                         <a href="javascript:void(0)" class="btn-create-upload position-relative">
                             <span class="icon-btn">
-                                <img src="assets/image/icon/icon-button-upload.png" alt="">
-                                <img src="assets/image/icon/icon-button-upload-hover.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload-hover.png" alt="">
                             </span>
                             PDFをダウンロード
                         </a>
@@ -191,12 +191,12 @@
 年次や社歴で評価しません！意欲次第でどんどん成長できます！</textarea>
 
                         <div class="img-intro">
-                            <img src="assets/image/img-default.png" alt=""/>
+                            <img src="<?php echo $cfg['site']['assest_path']; ?>image/img-default.png" alt=""/>
                         </div>
                         <a href="javascript:void(0)" class="btn-create-upload position-relative">
                             <span class="icon-btn">
-                                <img src="assets/image/icon/icon-button-upload.png" alt="">
-                                <img src="assets/image/icon/icon-button-upload-hover.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload-hover.png" alt="">
                             </span>
                             PDFをダウンロード
                         </a>
@@ -222,12 +222,12 @@ ITアウトソージング
 再就職給付金取扱職業紹介事業者</textarea>
 
                         <div class="img-intro">
-                            <img src="assets/image/img-default.png" alt=""/>
+                            <img src="<?php echo $cfg['site']['assest_path']; ?>image/img-default.png" alt=""/>
                         </div>
                         <a href="javascript:void(0)" class="btn-create-upload position-relative">
                             <span class="icon-btn">
-                                <img src="assets/image/icon/icon-button-upload.png" alt="">
-                                <img src="assets/image/icon/icon-button-upload-hover.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload.png" alt="">
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload-hover.png" alt="">
                             </span>
                             PDFをダウンロード
                         </a>
@@ -296,12 +296,12 @@ ITアウトソージング
 人材のミスマッチを防ぎつつ、双方のニーズを照らし合わせて人選し、最適な登録者を企業へ提</textarea>
     
                             <div class="img-intro">
-                                <img src="assets/image/img-default.png" alt=""/>
+                                <img src="<?php echo $cfg['site']['assest_path']; ?>image/img-default.png" alt=""/>
                             </div>
                             <a href="javascript:void(0)" class="btn-create-upload position-relative">
                                 <span class="icon-btn">
-                                    <img src="assets/image/icon/icon-button-upload.png" alt="">
-                                    <img src="assets/image/icon/icon-button-upload-hover.png" alt="">
+                                    <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload.png" alt="">
+                                    <img src="<?php echo $cfg['site']['assest_path']; ?>image/icon/icon-button-upload-hover.png" alt="">
                                 </span>
                                 PDFをダウンロード
                             </a>
