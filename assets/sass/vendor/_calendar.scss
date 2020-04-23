@@ -7,11 +7,11 @@ $GREY_LIGHT          : #E6E6E6;
 $GREY_DARK           : #CCCCCC;
 $BLUE_LIGHT          : #4472C4;
 $BORDER_CALENDAR     : 20px;
-$WIDTH_CALENDAR      : 718px * 1.25;
+$WIDTH_CALENDAR      : 590px * 1.25; 
 $WIDTH_TABLE_CALENDAR: 645px;
 
 .calendar-page{
-    min-height: $content_min_height;
+    min-height: $content_min_height; 
 }
 .calendar-table {
     display      : block; 

@@ -1,9 +1,14 @@
+$CUSTOM_ZOOM : 1.25;
+
+
 $BORDER_BUTTON       : 15px;
 $WIDTH_BUTTON_ICON   : 16px;
 $PADDING_BUTTON_LEFT : $WIDTH_BUTTON_ICON + 25px;
-$WIDTH_CREATE_COMPANY: 590px * 1.25;
+$WIDTH_CREATE_COMPANY: 590px * $CUSTOM_ZOOM;
 $XPADDING_CART       : 28px;
 $GREY_DARK : #CCCCCC;
+
+
 
 .bg-old-data{
     background-color: #FFE9BF;
@@ -137,19 +142,19 @@ $GREY_DARK : #CCCCCC;
                 }
 
                 .normal-input{
-                    width: 210px;
+                    width: 210px * $CUSTOM_ZOOM;
 
                     &:nth-child(2){
                         margin-left: 25px;
                     }
                 }
                 .larg-input {
-                    width: 250px;
+                    width: 250px * $CUSTOM_ZOOM;
 
                     @extend .normal-input;
                 }
                 .larger-input {
-                    width: 280px;
+                    width: 280px * $CUSTOM_ZOOM;
 
                     @extend .normal-input;
                 }
@@ -159,12 +164,12 @@ $GREY_DARK : #CCCCCC;
                     @extend .normal-input;
                 }
                 .small-input{
-                    width: 120px;
+                    width: 120px * $CUSTOM_ZOOM;
 
                     @extend .normal-input;
                 }
                 .normal-select{
-                    width: 120px;
+                    width: 120px * $CUSTOM_ZOOM;
                     font-size: convert(14pt, px);
 
                 }
@@ -183,7 +188,7 @@ $GREY_DARK : #CCCCCC;
                     font-size: convert(14pt, px);
                 }
                 .small-select{
-                    width: 80px;
+                    width: 80px * $CUSTOM_ZOOM;
                     margin-left: 25px;
                     
                     @extend .normal-select;
@@ -464,7 +469,7 @@ $GREY_DARK : #CCCCCC;
     }
     .devider-block{
         width        : 100%;
-        height       : 0;
+        height       : 0; 
         overflow     : hidden;
         content      : ".";
         color        : transparent;
