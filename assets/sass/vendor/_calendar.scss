@@ -115,7 +115,7 @@ $WIDTH_TABLE_CALENDAR: 645px;
         background-color: $GREY_DARK;
     }
     .calendar-list-header.calendar-row {
-        width: $WIDTH_CALENDAR - ( 40px * 2 ) ;
+        width: $WIDTH_CALENDAR - ( 40px * 2 ) ; 
         .calendar-cell {
             padding: 2px 8px 1px;
             cursor: pointer;
