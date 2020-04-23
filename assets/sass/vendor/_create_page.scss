@@ -1,7 +1,7 @@
 $BORDER_BUTTON       : 15px;
 $WIDTH_BUTTON_ICON   : 16px;
 $PADDING_BUTTON_LEFT : $WIDTH_BUTTON_ICON + 25px;
-$WIDTH_CREATE_COMPANY: 590px;
+$WIDTH_CREATE_COMPANY: 590px * 1.25;
 $XPADDING_CART       : 28px;
 $GREY_DARK : #CCCCCC;
 
@@ -10,7 +10,7 @@ $GREY_DARK : #CCCCCC;
 }
 
 .page-create-company{
-    
+    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
 
     .button-head{
         text-align: center;
@@ -480,7 +480,7 @@ $GREY_DARK : #CCCCCC;
     .block-select2{
 
         font-size: convert(12pt, px);
-        width: 450px;//460px;
+        width:  $WIDTH_CREATE_COMPANY - 90px - ( 30px * 2 );// 450px;//460px; 
         .select2-container{
             width: 100%!important;
         }

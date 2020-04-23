@@ -10,7 +10,7 @@ $PINK_DARK: #FF7BAC;
 $PINK_LIGHT: #FFD0F6;
 $BLUE_BERIN: #C4EDED;
 $YELLOW_BE: #FFFFB7;
-$WIDTH_CONTENT: 1220px;
+$WIDTH_CONTENT: 1220px; 
 $WIDTH_SIDEBAR: 230px;
 $WIDTH_LOGO_SIDEBAR: 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
@@ -98,7 +98,7 @@ $ACTIVE_COLOR: #0067B4;
                 float: left;
                 padding-top: 0;
             }
-            span.counter {
+            span.counter { 
                 color: $WHITE!important;
                 background-color: $PINK;
                 border-radius: 3px;
@@ -134,6 +134,6 @@ $ACTIVE_COLOR: #0067B4;
         background-color: #DFE6E6;
         padding: 15px 0;
         flex-grow: 999;
-        width: $WIDTH_CONTENT - $WIDTH_SIDEBAR;
+        min-width: $WIDTH_CONTENT - $WIDTH_SIDEBAR;
     }
 }
