@@ -10,24 +10,22 @@ $PINK_DARK: #FF7BAC;
 $PINK_LIGHT: #FFD0F6;
 $BLUE_BERIN: #C4EDED;
 $YELLOW_BE: #FFFFB7;
-$WIDTH_CONTENT: 980px;
+$WIDTH_CONTENT: 1220px;
 $WIDTH_SIDEBAR: 230px;
 $WIDTH_LOGO_SIDEBAR: 20px;
 $HEIGHT_LOGO_SIDEBAR: 20px;
 $FONT_SIZE_SIDEBAR: convert(14pt, px);
 $BORDER: 1px solid transparent;
-
-
-$ACTIVE_COLOR : #0067B4;
+$ACTIVE_COLOR: #0067B4;
 @mixin clearfix() {
     clear: both;
     content: ".";
     display: block;
     height: 0;
     line-height: 0;
-    visibility: hidden; 
+    visibility: hidden;
     overflow: hidden;
-} 
+}
 
 @mixin sidebar-link( $color, $background) {
     zoom: 1;
@@ -39,7 +37,7 @@ $ACTIVE_COLOR : #0067B4;
     color: $color;
     border: $BORDER;
     background-color: $background;
-    font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
+    font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
     cursor: pointer;
     &:after {
         @include clearfix()
@@ -47,7 +45,7 @@ $ACTIVE_COLOR : #0067B4;
     span {
         color: $color;
         font-size: $FONT_SIZE_SIDEBAR;
-        font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,Osaka,'ＭＳ Ｐゴシック',MS PGothic,sans-serif;
+        font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', MS PGothic, sans-serif;
     }
 }
 
@@ -59,7 +57,7 @@ $ACTIVE_COLOR : #0067B4;
         li {
             @include sidebar-link($color, $background);
             &.active {
-                background-color : $activeBackground!important;
+                background-color: $activeBackground!important;
                 @include sidebar-link($activeColor, $activeBackground);
                 .icon-sidebar {
                     img:nth-child(1) {
@@ -95,10 +93,10 @@ $ACTIVE_COLOR : #0067B4;
         }
         &.default {
             background-color: $GREEN_LIGHT;
-            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $GREEN, $ACTIVE_COLOR); 
+            @include sidebar( $GREEN, $GREEN_LIGHT, $GREEN, $GREEN_DARK, $GREEN, $ACTIVE_COLOR);
             span {
                 float: left;
-                padding-top: 0; 
+                padding-top: 0;
             }
             span.counter {
                 color: $WHITE!important;
