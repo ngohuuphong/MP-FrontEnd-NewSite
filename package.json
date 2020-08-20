@@ -16,7 +16,7 @@
         "ejs": "^3.0.2",
         "gulp-livereload": "^4.0.2",
         "iohook": "^0.6.5",
-        "bcrypt": "^3.0.6",
+        "bcrypt": "^5.0.0",
         "body-parser": "^1.18.3",
         "connect-flash": "^0.1.1",
         "express": "^4.17.1",
